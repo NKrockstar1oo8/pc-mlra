@@ -1,5 +1,3 @@
----
-
 ````md
 # PC-MLRA  
 ## Proof-Carrying Medical Legal Rights Advisor
