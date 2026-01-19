@@ -101,3 +101,8 @@ instance/
 pc-mlra.log
 server.log
 test_input.txt
+
+# Backup and temporary files
+*.backup
+cleanup.sh
+gunicorn_config.py
