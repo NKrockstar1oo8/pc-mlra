@@ -1,3 +1,5 @@
 Flask==2.3.3
 Flask-CORS==4.0.0
 gunicorn==21.2.0
+# Add these dependencies from your project:
+# (Check if you have a requirements_flask.txt or add these)

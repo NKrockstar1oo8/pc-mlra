@@ -96,7 +96,7 @@ print("=" * 60)
 
 # Create Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'pc-mlra-secret-key-2024')
+app.secret_key = os.environ.get('SECRET_KEY', 'pc-mlra-secret-key-2026')
 CORS(app)
 
 # In-memory storage for chat history (for demo purposes)
@@ -175,7 +175,7 @@ def get_system_stats():
             return jsonify({
                 'system_name': 'PC-MLRA (Demo Mode)',
                 'version': '1.0.0',
-                'total_clauses': 77,
+                'total_clauses': 46,
                 'documents': [
                     'NHRC Patient Charter (2019)',
                     'IMC Ethics Regulations (2002)'
