@@ -12,6 +12,6 @@ services:
       - key: PORT
         value: 10000
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.9.18  # ← MUST be full version like 3.9.18, not just 3.9
     healthCheckPath: /api/health
     autoDeploy: true
