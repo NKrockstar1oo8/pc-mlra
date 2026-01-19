@@ -8,39 +8,89 @@ import os
 import sys
 import json
 import uuid
+import traceback
 from flask import Flask, render_template, request, jsonify, session
 from flask_cors import CORS
 from datetime import datetime
 
-# Add current directory to path to import PC-MLRA modules
-sys.path.insert(0, os.path.dirname(__file__))
+# Get the absolute path to the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+print(f"📁 Current directory: {current_dir}")
+
+# Add src directory to Python path
+src_dir = os.path.join(current_dir, 'src')
+sys.path.insert(0, current_dir)  # Add current directory first
+sys.path.insert(0, src_dir)      # Then add src directory
 
 print("🚀 Starting PC-MLRA Web Application...")
 print("=" * 60)
+print(f"Python path: {sys.path}")
 
-# Import PC-MLRA components
+# Import PC-MLRA components with robust error handling
+pc_mlra = None
+
 try:
+    # Try direct import first
+    print("Attempting to import PCMLRAConsole...")
     from src.main import PCMLRAConsole
-    print("✓ PC-MLRA Console imported successfully")
-    
+    print("✓ Import successful: from src.main import PCMLRAConsole")
+except ImportError as e1:
+    print(f"First import attempt failed: {e1}")
+    try:
+        # Try alternative import path
+        from main import PCMLRAConsole
+        print("✓ Import successful: from main import PCMLRAConsole")
+    except ImportError as e2:
+        print(f"Second import attempt failed: {e2}")
+        # List files to debug
+        print("\n🔍 Checking directory structure:")
+        print(f"Current dir contents: {os.listdir(current_dir)}")
+        if os.path.exists(src_dir):
+            print(f"src dir contents: {os.listdir(src_dir)}")
+        
+        # Try one more approach
+        try:
+            # Manually add the path
+            import_path = os.path.join(current_dir, 'src', 'main.py')
+            if os.path.exists(import_path):
+                print(f"Found main.py at: {import_path}")
+                # Use exec to import
+                with open(import_path, 'r') as f:
+                    code = f.read()
+                exec_globals = {}
+                exec(code, exec_globals)
+                PCMLRAConsole = exec_globals.get('PCMLRAConsole')
+                if PCMLRAConsole:
+                    print("✓ Import successful via exec")
+                else:
+                    raise ImportError("PCMLRAConsole not found in main.py")
+            else:
+                raise ImportError(f"main.py not found at {import_path}")
+        except Exception as e3:
+            print(f"Final import attempt failed: {e3}")
+            traceback.print_exc()
+            sys.exit(1)
+
+try:
     # Initialize PC-MLRA system
-    print("Initializing PC-MLRA system...")
+    print("\n🔧 Initializing PC-MLRA system...")
     pc_mlra = PCMLRAConsole()
+    print("✓ PC-MLRA Console initialized")
     
     # Quick test
     test_response = pc_mlra.process_query("Can I get my medical reports?")
     if test_response:
-        print(f"✓ System test passed: Generated {len(test_response)} character response")
+        print(f"✓ System test passed: Generated response")
     else:
         print("✓ System initialized (command mode)")
         
-    print("✓ PC-MLRA system ready!")
+    print("✅ PC-MLRA system ready!")
     
 except Exception as e:
-    print(f"✗ Error initializing PC-MLRA: {e}")
-    import traceback
+    print(f"❌ Error initializing PC-MLRA: {e}")
     traceback.print_exc()
-    sys.exit(1)
+    print("\n⚠️ Continuing without PC-MLRA core (demo mode)...")
+    # We'll continue in demo mode instead of exiting
 
 print("=" * 60)
 
@@ -70,6 +120,26 @@ def format_response_for_html(response_text):
     
     return formatted
 
+def demo_process_query(query):
+    """Demo response if PC-MLRA is not available"""
+    demo_responses = {
+        "Can I get my medical reports?": "Yes, you have the right to access your medical records and reports. This is established in the NHRC Patient Charter 2019.",
+        "Doctor was rude to me": "Doctors are expected to maintain professional conduct. The IMC Ethics Regulations 2002 outline obligations regarding respectful behavior.",
+        "I need a second opinion": "You have the right to seek a second opinion from another healthcare provider.",
+        "Hospital is charging too much": "Hospitals should provide transparent billing. Patients have rights regarding fair and itemized charges.",
+        "Can I choose my own pharmacy?": "Yes, you generally have the right to choose your pharmacy or source for medications.",
+        "hi": "Hello! I'm PC-MLRA, your Medical Legal Rights Advisor. How can I help you today?",
+        "hello": "Hello! I'm PC-MLRA, your Medical Legal Rights Advisor. How can I help you today?",
+        "help": "I can help you understand your medical rights and doctor obligations. Try asking about medical records, consent, billing, or doctor behavior.",
+    }
+    
+    query_lower = query.lower()
+    for key in demo_responses:
+        if key.lower() in query_lower or query_lower in key.lower():
+            return demo_responses[key]
+    
+    return f"I understand you're asking about '{query}'. In the full PC-MLRA system, I would provide specific legal references from the NHRC Patient Charter 2019 and IMC Ethics Regulations 2002."
+
 @app.route('/')
 def index():
     """Home page"""
@@ -93,6 +163,7 @@ def health_check():
         'service': 'PC-MLRA',
         'version': '1.0.0',
         'system': 'Proof-Carrying Medical Legal Rights Advisor',
+        'pc_mlra_available': pc_mlra is not None,
         'timestamp': datetime.now().isoformat()
     })
 
@@ -100,6 +171,31 @@ def health_check():
 def get_system_stats():
     """Get system statistics"""
     try:
+        if pc_mlra is None:
+            return jsonify({
+                'system_name': 'PC-MLRA (Demo Mode)',
+                'version': '1.0.0',
+                'total_clauses': 77,
+                'documents': [
+                    'NHRC Patient Charter (2019)',
+                    'IMC Ethics Regulations (2002)'
+                ],
+                'categories': {
+                    'Access Information': 8,
+                    'Consent Autonomy': 12,
+                    'Privacy Confidentiality': 9,
+                    'Quality Safety': 10,
+                    'Redressal Complaint': 7,
+                    'Professional Conduct': 8,
+                    'Transparency Rates': 6,
+                    'Continuity Care': 5,
+                    'Emergency Care': 4,
+                    'Research Education': 4,
+                    'Non Discrimination': 4
+                },
+                'system_status': 'demo_mode'
+            })
+        
         # Get system metadata
         metadata = pc_mlra.kb.get_metadata()
         
@@ -165,22 +261,24 @@ def process_query():
         }
         chat_histories[session_id].append(user_message)
         
-        # Process query using PC-MLRA
-        show_proof = data.get('show_proof', False)
-        response_text = pc_mlra.process_query(user_query)
-        
-        # Handle commands that return None (like 'stats', 'list rights')
-        if response_text is None:
-            # For commands, we need to capture their output
-            # Since we can't easily capture console output, return a generic message
-            response_text = "Command executed. For detailed output, please use the console version."
-        
-        # Get proof trace if available
-        proof_trace = None
-        if hasattr(pc_mlra.assembler, 'last_proof_trace'):
-            proof = pc_mlra.assembler.last_proof_trace
-            if hasattr(proof, 'to_dict'):
-                proof_trace = proof.to_dict()
+        # Process query using PC-MLRA or demo mode
+        if pc_mlra is None:
+            response_text = demo_process_query(user_query)
+            proof_trace = None
+        else:
+            show_proof = data.get('show_proof', False)
+            response_text = pc_mlra.process_query(user_query)
+            
+            # Handle commands that return None
+            if response_text is None:
+                response_text = "Command executed. For detailed output, please use the console version."
+            
+            # Get proof trace if available
+            proof_trace = None
+            if hasattr(pc_mlra.assembler, 'last_proof_trace'):
+                proof = pc_mlra.assembler.last_proof_trace
+                if hasattr(proof, 'to_dict'):
+                    proof_trace = proof.to_dict()
         
         # Format response for HTML
         formatted_response = format_response_for_html(response_text)
@@ -191,7 +289,8 @@ def process_query():
             'content': response_text,
             'formatted_content': formatted_response,
             'timestamp': datetime.now().isoformat(),
-            'proof_trace': proof_trace
+            'proof_trace': proof_trace,
+            'mode': 'demo' if pc_mlra is None else 'full'
         }
         chat_histories[session_id].append(bot_message)
         
@@ -206,11 +305,13 @@ def process_query():
             'proof_trace': proof_trace,
             'status': 'success',
             'session_id': session_id,
-            'message_count': len(chat_histories[session_id])
+            'message_count': len(chat_histories[session_id]),
+            'mode': 'demo' if pc_mlra is None else 'full'
         })
         
     except Exception as e:
         app.logger.error(f"Error processing query: {e}")
+        traceback.print_exc()
         return jsonify({
             'error': str(e),
             'status': 'error'
@@ -249,6 +350,15 @@ def search_knowledge():
         return jsonify({'error': 'No search term provided'}), 400
     
     try:
+        if pc_mlra is None:
+            # Return demo search results
+            return jsonify({
+                'query': keyword,
+                'results': [],
+                'total': 0,
+                'note': 'PC-MLRA core not loaded. Search unavailable in demo mode.'
+            })
+        
         results = pc_mlra.kb.search_clauses_by_keyword(keyword)
         
         # Format results
@@ -302,6 +412,7 @@ if __name__ == '__main__':
     print("=" * 60)
     print(f"🌐 Server starting on port: {port}")
     print(f"🔧 Debug mode: {debug}")
+    print(f"🤖 PC-MLRA Core: {'✅ Available' if pc_mlra else '⚠️ Demo Mode'}")
     print("=" * 60)
     
-    app.run(host='0.0.0.0', port=port, debug=debug)
+    app.run(host='0.0.0.0', port=port, debug=debug, use_reloader=False)
