@@ -1,11 +1,2 @@
-# Create a comprehensive requirements file
-cat > requirements.txt << 'EOF'
-# Core dependencies
 Flask==2.3.3
 Flask-CORS==4.0.0
-requests==2.31.0
-
-# Development dependencies (optional)
-pytest==7.4.3
-black==23.11.0
-flake8==6.1.0
