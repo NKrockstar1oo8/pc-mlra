@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "system": "PC-MLRA Template Library",
+    "version": "1.0.0",
+    "total_templates": 28,
+    "last_updated": "2024-01-02"
+  },
+  "templates": {
+    "TEMPLATE_SINGLE_CLAUSE": {
+      "description": "Template for explaining a single legal clause",
+      "components": [
+        {
+          "type": "header",
+          "text": "{title}",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "exact_text",
+          "text": "**Exact Legal Text:**\n\"{exact_text}\"",
+          "condition": "show_exact_text"
+        },
+        {
+          "type": "paraphrase",
+          "text": "**In simpler terms:** {paraphrase}"
+        },
+        {
+          "type": "rights_list",
+          "text": "**Your Rights:**\n{rights_bulleted}",
+          "condition": "has_rights"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Healthcare Provider Responsibilities:**\n{obligations_bulleted}",
+          "condition": "has_obligations"
+        },
+        {
+          "type": "exceptions",
+          "text": "**Exceptions or Special Cases:**\n{exceptions_bulleted}",
+          "condition": "has_exceptions"
+        },
+        {
+          "type": "legal_references",
+          "text": "**Supporting Laws:**\n{legal_references_bulleted}",
+          "condition": "has_legal_references"
+        },
+        {
+          "type": "timeframe_note",
+          "text": "**Important Timeframes:** {timeframe_note}",
+          "condition": "has_timeframes"
+        }
+      ],
+      "variables": [
+        "title", "citation_format", "exact_text", "paraphrase",
+        "rights_bulleted", "obligations_bulleted", "exceptions_bulleted",
+        "legal_references_bulleted", "timeframe_note"
+      ]
+    },
+    "TEMPLATE_MULTIPLE_CLAUSES": {
+      "description": "Template for explaining multiple related clauses",
+      "components": [
+        {
+          "type": "header",
+          "text": "Multiple Rights Apply to Your Situation",
+          "style": "h2"
+        },
+        {
+          "type": "introduction",
+          "text": "Based on your query about '{query_keywords}', the following rights and obligations are relevant:"
+        },
+        {
+          "type": "clauses_list",
+          "text": "{clauses_list}"
+        },
+        {
+          "type": "summary",
+          "text": "**Summary:** {summary_text}"
+        }
+      ],
+      "variables": [
+        "query_keywords", "clauses_list", "summary_text"
+      ]
+    },
+    "TEMPLATE_RIGHT_TO_INFORMATION": {
+      "description": "Specialized template for Right to Information",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Information About Your Treatment",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "You have the right to receive clear information about:\n• Your diagnosis and condition\n• Proposed tests and treatments\n• Possible risks and complications\n• Expected costs and payment details\n• Identity of your healthcare providers"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Your Doctor/Hospital Must:**\n• Explain in language you understand\n• Provide cost information in writing\n• Give itemized bills upon request\n• Identify themselves properly"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Ask specific questions about your treatment\n2. Request written cost estimates\n3. Ask for explanation of any medical terms you don't understand\n4. Request identification of all healthcare providers"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_RECORDS": {
+      "description": "Specialized template for Right to Medical Records",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Access Your Medical Records",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "You have the right to get copies of your medical documents including:\n• Case papers and treatment records\n• Test results and investigation reports\n• Discharge summary\n• Itemized bills"
+        },
+        {
+          "type": "timeframe_note",
+          "text": "**Important Timeframes:**\n• During admission: Preferably within 24 hours\n• After discharge: Within 72 hours"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital Must:**\n• Provide records within specified time\n• Allow photocopying at reasonable cost\n• Give death summary to relatives if applicable"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Submit a written request for records\n2. Note the date of your request\n3. Follow up if records aren't provided within 72 hours\n4. Pay only reasonable photocopying charges"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_INFORMED_CONSENT": {
+      "description": "Specialized template for Informed Consent",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Informed Consent Before Procedures",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "For any risky or invasive procedure (surgery, chemotherapy, etc.), you must be:\n• Fully informed about risks and benefits\n• Given alternative options\n• Asked for written permission before proceeding"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Doctor Must:**\n• Explain main risks in understandable language\n• Obtain written consent before procedure\n• Provide consent forms with proper protocols"
+        },
+        {
+          "type": "exceptions",
+          "text": "**Exceptions (consent not required):**\n• Life-threatening emergencies when patient is unconscious\n• Certain legal requirements"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Ask questions until you fully understand\n2. Don't sign if you're unsure or pressured\n3. Request time to think if needed\n4. Keep a copy of signed consent forms"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_EMERGENCY_CARE": {
+      "description": "Specialized template for Emergency Care rights",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Emergency Medical Care",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "All hospitals (government and private) must provide emergency care:\n• Without demanding advance payment\n• Regardless of patient's ability to pay\n• Promptly and without delay"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital Must:**\n• Start emergency treatment immediately\n• Not ask for payment before stabilizing patient\n• Maintain quality and safety standards"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Go directly to nearest hospital in emergency\n2. Insist on immediate stabilization\n3. Report any hospital demanding advance payment\n4. Know this is protected by Supreme Court orders"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_PRIVACY": {
+      "description": "Specialized template for Privacy rights",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Privacy and Confidentiality",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "Your medical information must be kept private and confidential:\n• Doctors cannot share your health details without permission\n• Female patients can request female attendant during exams\n• Medical data must be securely stored"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Healthcare Providers Must:**\n• Keep patient information confidential\n• Ensure data security against leaks/theft\n• Provide female attendant if requested"
+        },
+        {
+          "type": "exceptions",
+          "text": "**Exceptions (when disclosure allowed):**\n• Required by law (court orders)\n• Public health emergencies\n• To protect others from serious harm"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Ask who has access to your medical information\n2. Request female attendant during examinations if needed\n3. Report any unauthorized sharing of your information\n4. Inquire about data security measures"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_NO_MATCH_FOUND": {
+      "description": "Template when no specific rights match the query",
+      "components": [
+        {
+          "type": "header",
+          "text": "Information About Your Query",
+          "style": "h2"
+        },
+        {
+          "type": "message",
+          "text": "I couldn't find specific legal rights that directly match your query about \"{user_query}\"."
+        },
+        {
+          "type": "suggestions",
+          "text": "**You might be interested in these general patient rights:**\n{related_rights_list}"
+        },
+        {
+          "type": "clarification_request",
+          "text": "**To help you better, could you:**\n• Be more specific about the situation\n• Mention which rights you're concerned about\n• Describe what happened in more detail"
+        }
+      ],
+      "variables": ["user_query", "related_rights_list"]
+    },
+    "TEMPLATE_AMBIGUOUS_QUERY": {
+      "description": "Template for ambiguous queries needing clarification",
+      "components": [
+        {
+          "type": "header",
+          "text": "Clarification Needed",
+          "style": "h2"
+        },
+        {
+          "type": "message",
+          "text": "I understand you're asking about \"{user_query}\", but I need more details to provide accurate information."
+        },
+        {
+          "type": "clarification_questions",
+          "text": "**Could you please specify:**\n{clarification_questions}"
+        },
+        {
+          "type": "examples",
+          "text": "**For example, you could ask:**\n• \"Can a hospital refuse to give my medical reports?\"\n• \"Do I have to pay advance for emergency treatment?\"\n• \"Can a doctor perform surgery without my permission?\""
+        }
+      ],
+      "variables": ["user_query", "clarification_questions"]
+    },
+    "TEMPLATE_DISCLAIMER": {
+      "description": "Standard disclaimer for all responses",
+      "components": [
+        {
+          "type": "divider",
+          "text": "---"
+        },
+        {
+          "type": "disclaimer",
+          "text": "**Disclaimer:** This information is based on established legal documents including the NHRC Patient Charter and IMC Ethics Code. It provides awareness of rights and obligations but does not constitute legal advice. For specific legal situations, consult a qualified legal professional."
+        },
+        {
+          "type": "proof_trace_link",
+          "text": "**Proof Trace:** This response cites exact legal sections. All information is deterministic with zero hallucination.",
+          "condition": "show_proof_trace"
+        }
+      ],
+      "variables": []
+    }
+  },
+  "component_templates": {
+    "clause_summary": {
+      "template": "**{title}** ({document} Section {section})\n{paraphrase}\n",
+      "variables": ["title", "document", "section", "paraphrase"]
+    },
+    "rights_bulleted": {
+      "template": "{rights}",
+      "variables": ["rights"],
+      "format_function": "format_bulleted_list"
+    },
+    "obligations_bulleted": {
+      "template": "{obligations}",
+      "variables": ["obligations"],
+      "format_function": "format_bulleted_list"
+    }
+  }
+}

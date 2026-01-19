@@ -1,0 +1,2750 @@
+{
+  "metadata": {
+    "system_name": "PC-MLRA Knowledge Base",
+    "version": "3.0.0",
+    "documents": [
+      "Charter of Patients' Rights by NHRC (2019)",
+      "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002"
+    ],
+    "total_clauses": 46,
+    "last_updated": "2026-01-19",
+    "description": "Complete knowledge base with 17 NHRC patient rights and 29 IMC doctor obligations"
+  },
+  "documents": {
+    "NHRC": {
+      "name": "Charter of Patients' Rights by NHRC (2019)",
+      "abbreviation": "NHRC",
+      "year": 2019,
+      "source": "National Human Rights Commission"
+    },
+    "IMC": {
+      "name": "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002",
+      "abbreviation": "IMC",
+      "year": 2002,
+      "last_amended": 2016,
+      "source": "Medical Council of India",
+      "description": "Professional ethics and conduct code for registered medical practitioners in India"
+    }
+  },
+  "clauses": [
+    {
+      "id": "NHRC-1",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "1",
+      "subsection": null,
+      "title": "Right to Information",
+      "exact_text": "Every patient has a right to adequate relevant information about the nature, cause of illness, provisional/confirmed diagnosis, proposed investigations and management, and possible complications. To be explained at their level of understanding in language known to them. The treating physician has a duty to ensure that this information is provided in simple and intelligible language to the patient to be communicated either personally by the physician, or by means of his/her qualified assistants. Every patient and his/her designated caretaker have the right to factual information regarding the expected cost of treatment based on evidence. The hospital management has a duty to communicate this information in writing to the patient and his/her designated caretaker. They should also be informed about any additional cost to be incurred due to change in the physical condition of the patient or line of treatment in writing. On completion of treatment, the patient has the right to receive an itemized bill, to receive an explanation for the bill(s) regardless of the source of payment or the mode of payment, and receive payment receipt(s) for any payment made. Patients and their caretakers also have a right to know the identity and professional status of various care providers who are providing service to him/her and to know which Doctor/Consultant is primarily responsible for his/her care. The hospital management has a duty to provide this information routinely to all patients and their caregivers in writing with an acknowledgement.",
+      "paraphrase": "Patients have the right to receive complete information about their diagnosis, treatment options, costs, and the identity of their healthcare providers in understandable language.",
+      "rights": [
+        "right_to_information",
+        "treatment_explanation",
+        "cost_information",
+        "provider_identity"
+      ],
+      "obligations": [
+        "doctor_explain_treatment",
+        "hospital_provide_cost_info",
+        "hospital_provide_provider_info"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_situations"
+      ],
+      "category": "access_information",
+      "keywords": [
+        "information",
+        "diagnosis",
+        "treatment",
+        "cost",
+        "bill",
+        "explain",
+        "doctor",
+        "identity",
+        "status",
+        "understand"
+      ],
+      "intent_match": [
+        "treatment_information",
+        "cost_information",
+        "doctor_identity",
+        "right_to_information"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMATION",
+      "citation_format": "NHRC Charter, Right 1",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "MCI Code of Ethics",
+        "Patients Charter by National Accreditation Board for Hospitals (NABH)",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-2",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "2",
+      "subsection": null,
+      "title": "Right to Records and Reports",
+      "exact_text": "Every patient or his caregiver has the right to access originals/copies of case papers, indoor patient records, investigation reports (during period of admission, preferably within 24 hours and after discharge, within 72 hours). This may be made available wherever applicable after paying appropriate fees for photocopying or allowed to be photocopied by patients at their cost. The relatives/caregivers of the patient have a right to get discharge summary or in case of death, death summary along with original copies of investigations. The hospital management has a duty to provide these records and reports and to instruct the responsible hospital staff to ensure provision of the same are strictly followed without fail.",
+      "paraphrase": "Patients can access their medical records and reports within specified timeframes, with discharge summaries provided upon request.",
+      "rights": [
+        "access_medical_records",
+        "obtain_documents",
+        "discharge_summary"
+      ],
+      "obligations": [
+        "hospital_provide_records",
+        "doctor_maintain_records",
+        "timely_provision"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "doctor",
+        "caregiver"
+      ],
+      "exceptions": [
+        "ongoing_legal_cases",
+        "psychiatric_records_in_certain_cases"
+      ],
+      "category": "access_information",
+      "keywords": [
+        "records",
+        "reports",
+        "medical file",
+        "documents",
+        "access",
+        "copy",
+        "discharge summary",
+        "case papers"
+      ],
+      "intent_match": [
+        "access_medical_records",
+        "medical_documents"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_RECORDS",
+      "citation_format": "NHRC Charter, Right 2",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "MCI Code of Ethics section 1.3.2",
+        "Central Information Commission judgment, Nisha Priya Bhatia Vs. Institute of HB&AS, GNCTD, 2014",
+        "The Consumer Protection Act, 1986"
+      ],
+      "timeframes": {
+        "during_admission": "preferably within 24 hours",
+        "after_discharge": "within 72 hours"
+      }
+    },
+    {
+      "id": "NHRC-3",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "3",
+      "subsection": null,
+      "title": "Right to Emergency Medical Care",
+      "exact_text": "As per Supreme Court, all hospitals both in the government and in the private sector are duty bound to provide basic Emergency Medical Care, and injured persons have a right to get Emergency Medical Care. Such care must be initiated without demanding payment/advance and basic care should be provided to the patient irrespective of paying capacity. It is the duty of the hospital management to ensure provision of such emergency care through its doctors and staff, rendered promptly without compromising on the quality and safety of the patients.",
+      "paraphrase": "All hospitals must provide emergency medical care immediately without asking for payment first, regardless of the patient's ability to pay.",
+      "rights": [
+        "emergency_care",
+        "immediate_treatment",
+        "free_emergency_care"
+      ],
+      "obligations": [
+        "hospital_provide_emergency_care",
+        "doctor_attend_emergency",
+        "no_advance_payment_required"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "doctor"
+      ],
+      "exceptions": [
+        "non-emergency_cases"
+      ],
+      "category": "quality_safety",
+      "keywords": [
+        "emergency",
+        "immediate",
+        "urgent",
+        "accident",
+        "critical",
+        "without payment",
+        "advance",
+        "basic care"
+      ],
+      "intent_match": [
+        "emergency_care",
+        "refused_emergency"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_EMERGENCY_CARE",
+      "citation_format": "NHRC Charter, Right 3",
+      "legal_references": [
+        "Supreme Court judgment Parmanand Katara v. Union of India (1989)",
+        "Judgment of National Consumer Disputes Redressal Commission Pravat Kumar Mukherjee v. Ruby General Hospital & Others (2005)",
+        "MCI Code of Ethics sections 2.1 and 2.4",
+        "Article 21 of the Constitution 'Right to Life'"
+      ]
+    },
+    {
+      "id": "NHRC-4",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "4",
+      "subsection": null,
+      "title": "Right to Informed Consent",
+      "exact_text": "Every patient has a right that informed consent must be sought prior to any potentially hazardous test/treatment (e.g. invasive investigation/surgery/chemotherapy) which carries certain risks. It is the duty of the hospital management to ensure that all concerned doctors are properly instructed to seek informed consent, that an appropriate policy is adopted and that consent forms with protocol for seeking informed consent are provided for patients in an obligatory manner. It is the duty of the primary treating doctor administering the potentially hazardous test/treatment to explain to the patient and caregivers the main risks that are involved in the procedure, and after giving this information, the doctor may proceed only if consent has been given in writing by the patient/caregiver or in the manner explained under Drugs and Cosmetic Act Rules 2016 on informed consent.",
+      "paraphrase": "Doctors must explain risks and get written permission before performing any risky tests or treatments.",
+      "rights": [
+        "informed_consent",
+        "risk_explanation",
+        "written_consent"
+      ],
+      "obligations": [
+        "doctor_explain_risks",
+        "obtain_written_consent",
+        "hospital_ensure_consent_protocol"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_life_threatening",
+        "patient_unconscious",
+        "mental_incapacity"
+      ],
+      "category": "consent_autonomy",
+      "keywords": [
+        "consent",
+        "permission",
+        "agree",
+        "risk",
+        "hazardous",
+        "surgery",
+        "operation",
+        "explain",
+        "procedure"
+      ],
+      "intent_match": [
+        "informed_consent",
+        "forced_treatment"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
+      "citation_format": "NHRC Charter, Right 4",
+      "legal_references": [
+        "MCI Code of Ethics section 7.16",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986",
+        "Drugs and Cosmetic Act 1940, Rules 2016 on Informed Consent"
+      ]
+    },
+    {
+      "id": "NHRC-5",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "5",
+      "subsection": null,
+      "title": "Right to Confidentiality, Human Dignity and Privacy",
+      "exact_text": "All patients have a right to privacy, and doctors have a duty to hold information about their health condition and treatment plan in strict confidentiality, unless it is essential in specific circumstances to communicate such information in the interest of protecting other or due to public health considerations. Female patients have the right to presence of another female person during physical examination by a male practitioner. It is the duty of the hospital management to ensure presence of such female attendants in case of female patients. The hospital management has a duty to ensure that its staff upholds the human dignity of every patient in all situations. All data concerning the patient should be kept under secured safe custody and insulated from data theft and leakage.",
+      "paraphrase": "Patient information must be kept private and secure. Female patients can request a female attendant during exams by male doctors.",
+      "rights": [
+        "privacy",
+        "confidentiality",
+        "dignity",
+        "female_attendant"
+      ],
+      "obligations": [
+        "doctor_maintain_confidentiality",
+        "hospital_ensure_privacy",
+        "provide_female_attendant"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital"
+      ],
+      "exceptions": [
+        "legal_requirements",
+        "public_health_emergencies",
+        "protecting_others"
+      ],
+      "category": "privacy_confidentiality",
+      "keywords": [
+        "privacy",
+        "confidential",
+        "secret",
+        "information",
+        "dignity",
+        "respect",
+        "female attendant",
+        "examination"
+      ],
+      "intent_match": [
+        "privacy_breach",
+        "confidentiality",
+        "dignity_violation",
+        "privacy_confidentiality",
+        "dignity_respect"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
+      "citation_format": "NHRC Charter, Right 5",
+      "legal_references": [
+        "MCI Code of Ethics sections 2.2, 7.14 and 7.17",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-6",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "6",
+      "subsection": null,
+      "title": "Right to Second Opinion",
+      "exact_text": "Every patient has the right to seek second opinion from an appropriate clinician of patients'/caregivers' choice. The hospital management has a duty to respect the patient's right to second opinion, and should provide to the patients caregivers all necessary records and information required for seeking such opinion without any extra cost or delay. The hospital management has a duty to ensure that any decision to seek such second opinion by the patient/caregivers must not adversely influence the quality of care being provided by the treating hospital as long as the patient is under care of that hospital. Any kind discriminatory practice adopted by the hospital or the service providers will be deemed as Human Rights' violation.",
+      "paraphrase": "Patients can get a second opinion from another doctor, and hospitals must provide necessary records without delay or extra charge.",
+      "rights": [
+        "second_opinion",
+        "medical_records_for_second_opinion"
+      ],
+      "obligations": [
+        "hospital_provide_records_for_second_opinion",
+        "respect_second_opinion_decision"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_critical_care"
+      ],
+      "category": "quality_safety",
+      "keywords": [
+        "second opinion",
+        "another doctor",
+        "consult",
+        "records",
+        "information",
+        "choice"
+      ],
+      "intent_match": [
+        "second_opinion",
+        "doctor_disagreement"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_SECOND_OPINION",
+      "citation_format": "NHRC Charter, Right 6",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-7",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "7",
+      "subsection": null,
+      "title": "Right to Transparency in Rates, and Care According to Prescribed Rates",
+      "exact_text": "Every patient and their caregivers have a right to information on the rates to be charged by the hospital for each type of service provided and facilities available on a prominent display board and a brochure. They have a right to receive an itemized detailed bill at the time of payment. It would be the duty of the Hospital/Clinical Establishment to display key rates at a conspicuous place in local as well as English language, and to make available the detailed schedule of rates in a booklet form to all patients/caregivers. Every patient has a right to obtain essential medicines as per India Pharmacopeia, devices and implants at rates fixed by the National Pharmaceutical Pricing Authority (NPPA) and other relevant authorities. Every patient has a right to receive health care services within the range of rates for procedures and services prescribed by Central and State Governments from time to time, wherever relevant. However, no patient can be denied choice in terms of medicines, devices and standard treatment guidelines based on the affordability of the patients' right to choice. Every hospital and clinical establishment has a duty to ensure that essential medicines under NLEM as per Government of India and World Health Organisation, devices, implants and services are provided to patients at rates that are not higher than the prescribed rates or the maximum retail price marked on the packaging.",
+      "paraphrase": "Hospitals must display their rates clearly, provide itemized bills, and charge only prescribed prices for essential medicines and services.",
+      "rights": [
+        "transparent_pricing",
+        "itemized_bill",
+        "regulated_prices",
+        "choice_of_medicines"
+      ],
+      "obligations": [
+        "display_rates",
+        "provide_itemized_bill",
+        "charge_prescribed_prices"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_care"
+      ],
+      "category": "access_information",
+      "keywords": [
+        "rates",
+        "prices",
+        "charges",
+        "bill",
+        "cost",
+        "transparent",
+        "display",
+        "medicine prices"
+      ],
+      "intent_match": [
+        "overcharging",
+        "transparent_pricing",
+        "bill_dispute"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_TRANSPARENT_PRICING",
+      "citation_format": "NHRC Charter, Right 7",
+      "legal_references": [
+        "MCI Code of Ethics section 1.8 regarding Payment of Professional Services",
+        "Section 9(i) and 9(ii) of Clinical establishments (Central Government) Rules 2012",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "Various Drug price control orders",
+        "The Consumer Protection Act, 1986",
+        "Drugs Price Control Order (DPCO) section 3 of the Essential Commodities Act, 1955"
+      ]
+    },
+    {
+      "id": "NHRC-8",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "8",
+      "subsection": null,
+      "title": "Right to Non-Discrimination",
+      "exact_text": "Every patient has the right to receive treatment without any discrimination based on his or her illnesses or conditions, including HIV status or other health condition, religion, caste, ethnicity, gender, age, sexual orientation, linguistic or geographical/social origins. The hospital management has a duty to ensure that no form of discriminatory behaviour or treatment takes place with any person under the hospital's care. The hospital management must regularly orient and instruct all its doctors and staff regarding the same.",
+      "paraphrase": "Patients cannot be discriminated against based on their health condition, religion, caste, gender, age, or any other personal characteristic.",
+      "rights": [
+        "non_discrimination",
+        "equal_treatment"
+      ],
+      "obligations": [
+        "hospital_prevent_discrimination",
+        "staff_training_on_non_discrimination"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "doctor",
+        "staff"
+      ],
+      "exceptions": [
+        "clinical_necessity"
+      ],
+      "category": "quality_safety",
+      "keywords": [
+        "discrimination",
+        "equal",
+        "fair",
+        "HIV",
+        "religion",
+        "caste",
+        "gender",
+        "age",
+        "sexual orientation"
+      ],
+      "intent_match": [
+        "discrimination",
+        "unequal_treatment",
+        "non_discrimination"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
+      "citation_format": "NHRC Charter, Right 8",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-9",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "9",
+      "subsection": null,
+      "title": "Right to Safety and Quality Care According to Standards",
+      "exact_text": "Patients have a right to safety and security in the hospital premises. They have a right to be provided with care in an environment having requisite cleanliness, infection control measures, safe drinking water as per BIS/FSSAI Standards and sanitation facilities. The hospital management has a duty to ensure safety of all patients in its premises including clean premises and provision for infection control. Patients have a right to receive quality health care according to currently accepted standards, norms and standard guidelines as per National Accreditation Board for Hospitals (NABH) or similar. They have a right to be attended to, treated and cared for with due skill, and in a professional manner in complete consonance with the principles of medical ethics. Patients and caretakers have a right to seek redressal in case of perceived medical negligence or damaged caused due to deliberate deficiency in service delivery. The hospital management and treating doctors have a duty to provide quality health care in accordance with current standards of care and standard treatment guidelines and to avoid medical negligence or deficiency in service delivery system in any form.",
+      "paraphrase": "Patients have the right to safe, clean facilities and quality medical care that meets established standards, with recourse in case of negligence.",
+      "rights": [
+        "safety",
+        "quality_care",
+        "clean_environment",
+        "redressal_for_negligence"
+      ],
+      "obligations": [
+        "hospital_ensure_safety",
+        "provide_quality_care",
+        "maintain_cleanliness",
+        "prevent_negligence"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "doctor",
+        "caregiver"
+      ],
+      "exceptions": [
+        "force_majeure",
+        "resource_constraints"
+      ],
+      "category": "quality_safety",
+      "keywords": [
+        "safety",
+        "quality",
+        "clean",
+        "hygiene",
+        "infection",
+        "negligence",
+        "standard",
+        "professional"
+      ],
+      "intent_match": [
+        "medical_negligence",
+        "unsafe_facilities",
+        "poor_hygiene"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_SAFETY_QUALITY",
+      "citation_format": "NHRC Charter, Right 9",
+      "legal_references": [
+        "Clinical establishments (Central Government) Rules 2012",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-10",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "10",
+      "subsection": null,
+      "title": "Right to Choose Alternative Treatment Options",
+      "exact_text": "Patients and their caregivers have a right to choose between alternative treatment/management options, if these are available, after considering all aspects of the situation. This includes the option of the patient refusing care after considering all available options, with responsibility for consequences being borne by the patient and his/her caregivers. In case a patient leaves a healthcare facility against medical advice on his/her own responsibility, then notwithstanding the impact that this may have on the patient's further treatment and condition, this decision itself should not affect the observance of various rights mentioned in this charter. The hospital management has a duty to provide information about such options to the patient as well as to respect the informed choice of the patient and caregivers in a proper recorded manner with due acknowledgement from the patient or the caregivers on the communication and the mode.",
+      "paraphrase": "Patients can choose between different treatment options or refuse treatment altogether, taking responsibility for their choice.",
+      "rights": [
+        "choice_of_treatment",
+        "refuse_treatment",
+        "against_medical_advice"
+      ],
+      "obligations": [
+        "doctor_explain_options",
+        "respect_patient_choice",
+        "document_refusal"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_life_threatening",
+        "mental_incapacity"
+      ],
+      "category": "consent_autonomy",
+      "keywords": [
+        "choice",
+        "alternative",
+        "options",
+        "refuse",
+        "against medical advice",
+        "AMA"
+      ],
+      "intent_match": [
+        "treatment_choice",
+        "refused_treatment"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_TREATMENT_CHOICE",
+      "citation_format": "NHRC Charter, Right 10",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-11",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "11",
+      "subsection": null,
+      "title": "Right to Choose Source for Obtaining Medicines or Tests",
+      "exact_text": "When any medicine is prescribed by a doctor or a hospital, the patients and their caregivers have the right to choose any registered pharmacy of their choice to purchase them. Similarly when a particular investigation is advised by a doctor or a hospital, the patient and his caregiver have a right to obtain this investigation from any registered diagnostic centre/laboratory having qualified personnel and accredited by National Accreditation Board for Laboratories (NABL). It is the duty of every treating physician/hospital management to inform the patient and his caregivers that they are free to access prescribed medicines/investigations from the pharmacy/diagnostic centre of their choice. The decision by the patient/caregiver to access pharmacy/diagnostic centre of their choice must not in any ways adversely influence the care being provided by the treating physician or hospital.",
+      "paraphrase": "Patients can buy medicines from any pharmacy and get tests done at any accredited lab of their choice, without affecting their medical care.",
+      "rights": [
+        "choice_of_pharmacy",
+        "choice_of_lab",
+        "information_about_choice"
+      ],
+      "obligations": [
+        "doctor_inform_about_choice",
+        "hospital_respect_choice"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_medications"
+      ],
+      "category": "consent_autonomy",
+      "keywords": [
+        "pharmacy",
+        "medicine",
+        "chemist",
+        "lab",
+        "test",
+        "diagnostic",
+        "choice",
+        "purchase"
+      ],
+      "intent_match": [
+        "pharmacy_choice",
+        "lab_choice",
+        "forced_purchase"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_CHOOSE_SOURCE",
+      "citation_format": "NHRC Charter, Right 11",
+      "legal_references": [
+        "Various judgments by the National Consumer Dispute Redressal Commission",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-12",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "12",
+      "subsection": null,
+      "title": "Right to Proper Referral and Transfer",
+      "exact_text": "A patient has the right to continuity of care, and the right to be duly registered at the first healthcare facility where treatment has been sought, as well as at any subsequent facilities where care is sought. When being transferred from one healthcare facility to another, the patient/caregiver must receive a complete explanation of the justification for the transfer, the alternative options for a transfer and it must be confirmed that the transfer is acceptable to the receiving facility. The patient and caregivers have the right to be informed by the hospital about any continuing healthcare requirements following discharge from the hospital. The hospital management has a duty to ensure proper referral and transfer of patients regarding such a shift in care. In regard to all referrals of patients, including referrals to other hospitals, specialists, laboratories or imaging services, the decision regarding facility to which referral is made must be guided entirely by the best interest of the patient. The referral process must not be influenced by any commercial consideration such as kickbacks, commissions, incentives, or other perverse business practices.",
+      "paraphrase": "Patients have the right to proper referrals based on medical need, not commercial interests, with clear explanations for transfers.",
+      "rights": [
+        "continuity_of_care",
+        "proper_referral",
+        "non_commercial_referral",
+        "transfer_information"
+      ],
+      "obligations": [
+        "doctor_refer_based_on_need",
+        "explain_transfer",
+        "avoid_commercial_referrals"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "emergency_transfers"
+      ],
+      "category": "quality_safety",
+      "keywords": [
+        "referral",
+        "transfer",
+        "continuity",
+        "care",
+        "commercial",
+        "kickback",
+        "commission"
+      ],
+      "intent_match": [
+        "forced_referral",
+        "commercial_referral",
+        "transfer_issues"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_PROPER_REFERRAL",
+      "citation_format": "NHRC Charter, Right 12",
+      "legal_references": [
+        "Medical Council of India code of ethics section 3.6",
+        "World Health Organisation – Referral Notes",
+        "Various IPHS documents"
+      ]
+    },
+    {
+      "id": "NHRC-13",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "13",
+      "subsection": null,
+      "title": "Right to Protection for Patients Involved in Clinical Trials",
+      "exact_text": "Every person/patient who is approached to participate in a clinical trial has a right to due protection in this context. All clinical trials must be conducted in compliance with the protocols and Good Clinical Practice Guidelines issued by Central Drugs Standard Control Organisation, Directorate General of Health Services, Govt. of India as well as all applicable statutory provisions of Amended Drugs and Cosmetics Act, 1940 and Rules, 1945, including observance of the following provisions related to patients rights: a) Participation of patients in clinical trials must always be based on informed consent, given after provision of all relevant information. The patient must be given a copy of the signed informed consent form, which provides him/her with a record containing basic information about the trial and also becomes documentary evidence to prove their participation in the trial. b) A participant's right to agree or decline consent to take part in a clinical trial must be respected and her/his refusal should not affect routine care. c) The patient should also be informed in writing about the name of the drug/intervention that is undergoing trial along with dates, dose and duration of administration. d) At all times, the privacy of a trial participant must be maintained and any information gathered from the participant must be kept strictly confidential. e) Trial participants who suffer any adverse impact during their participation in a trial are entitled to free medical management of adverse events, irrespective of relatedness to the clinical trial, which should be given for as long as required or till such time as it is established that the injury is not related to the clinical trial. In addition, financial or other assistance must be given to compensate them for any impairment or disability. In case of death, their dependents have the right to compensation. f) Ancillary care may be provided to clinical trial participants for non-study/trial related illnesses arising during the period of the trial. This could be in the form of medical care or reference to facilities, as may be appropriate. g) Institutional mechanisms must be established to allow for insurance coverage of trial related or unrelated illnesses (ancillary care) and award of compensation wherever deemed necessary by the concerned Ethics Committee. h) After the trial, participants should be assured of access to the best treatment methods that may have been proven by the study. Any doctor or hospital who is involved in a clinical trial has a duty to ensure that all these guidelines are followed in case of any persons/patients involved in such a trial.",
+      "paraphrase": "Clinical trial participants have extensive rights including informed consent, privacy, free treatment for adverse effects, compensation, and post-trial access to proven treatments.",
+      "rights": [
+        "clinical_trial_protection",
+        "informed_consent_for_trial",
+        "privacy_in_trial",
+        "compensation_for_adverse_effects",
+        "post_trial_access"
+      ],
+      "obligations": [
+        "doctor_follow_trial_guidelines",
+        "provide_informed_consent_for_trial",
+        "maintain_trial_privacy",
+        "provide_compensation"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital",
+        "researcher"
+      ],
+      "exceptions": [
+        "emergency_research_with_waiver"
+      ],
+      "category": "consent_autonomy",
+      "keywords": [
+        "clinical trial",
+        "research",
+        "experiment",
+        "consent",
+        "compensation",
+        "adverse effect",
+        "privacy"
+      ],
+      "intent_match": [
+        "clinical_trial_rights",
+        "trial_compensation"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION",
+      "citation_format": "NHRC Charter, Right 13",
+      "legal_references": [
+        "Protocols and Good Clinical Practice Guidelines issued by Central Drugs Standard Control Organisation",
+        "Amended Drugs and Cosmetics Act, 1940 and Rules, 1945 especially schedule Y",
+        "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, Indian Council of Medical Research, New Delhi, 2017",
+        "World Medical Assembly Declaration of Helsinki: Ethical Principles for Medical Research Involving Human Subjects"
+      ]
+    },
+    {
+      "id": "NHRC-14",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "14",
+      "subsection": null,
+      "title": "Right to Protection of Participants in Biomedical and Health Research",
+      "exact_text": "Every patient who is taking part in biomedical research shall be referred to as research participant and every research participant has a right to due protection in this context. Any research involving such participants should follow the National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, 2017 laid down by Indian council for Medical Research and should be carried out with prior approval of the Ethics Committee. Documented informed consent of the research participants should be taken. Additional safeguards should be taken in research involving vulnerable population. Right to dignity, right to privacy and confidentiality of individuals and communities should be protected. Research participants who suffer any direct physical, psychological, social, legal or economic harm as a result of their participation are entitled, after due assessment, to financial or other assistance to compensate them equitably for any temporary or permanent impairment or disability. The benefits accruing from research should be made accessible to individuals, communities and populations whenever relevant. Any doctor or hospital who is involved in biomedical and health research involving patients has a duty to ensure that all these guidelines are followed in case of any persons/patients involved in such research.",
+      "paraphrase": "Biomedical research participants have rights to ethical oversight, informed consent, privacy, and compensation for any harm suffered.",
+      "rights": [
+        "biomedical_research_protection",
+        "ethics_committee_approval",
+        "informed_consent_research",
+        "compensation_research_harm"
+      ],
+      "obligations": [
+        "researcher_follow_ethical_guidelines",
+        "obtain_ethics_approval",
+        "provide_informed_consent",
+        "compensate_for_harm"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "researcher",
+        "hospital"
+      ],
+      "exceptions": [
+        "retrospective_chart_reviews_with_waiver"
+      ],
+      "category": "consent_autonomy",
+      "keywords": [
+        "biomedical research",
+        "health research",
+        "ethics committee",
+        "informed consent",
+        "compensation",
+        "vulnerable"
+      ],
+      "intent_match": [
+        "research_rights",
+        "biomedical_research"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION",
+      "citation_format": "NHRC Charter, Right 14",
+      "legal_references": [
+        "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, Indian Council of Medical Research, New Delhi, 2017",
+        "World Medical Assembly Declaration of Helsinki: Ethical Principles for Medical Research Involving Human Subjects",
+        "Drugs & Cosmetic Act, Rules 2016 on Clinical Trials"
+      ]
+    },
+    {
+      "id": "NHRC-15",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "15",
+      "subsection": null,
+      "title": "Right to Take Discharge, or Receive Body of Deceased from Hospital",
+      "exact_text": "A patient has the right to take discharge and cannot be detained in a hospital, on procedural grounds such as dispute in payment of hospital charges. Similarly, caretakers have the right to the dead body of a patient who had been treated in a hospital and the dead body cannot be detailed on procedural grounds, including nonpayment/dispute regarding payment of hospital charges against wishes of the caretakers. The hospital management has a duty to observe these rights and not to indulge in wrongful confinement of any patient, or dead body of patient, treated in the hospital under any circumstances.",
+      "paraphrase": "Hospitals cannot detain patients or dead bodies over payment disputes.",
+      "rights": [
+        "right_to_discharge",
+        "right_to_dead_body",
+        "no_detention_over_payment"
+      ],
+      "obligations": [
+        "hospital_release_patient",
+        "hospital_release_dead_body",
+        "no_wrongful_confinement"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "caregiver",
+        "deceased_patient"
+      ],
+      "exceptions": [
+        "medical_necessity",
+        "legal_orders"
+      ],
+      "category": "access_information",
+      "keywords": [
+        "discharge",
+        "detain",
+        "body",
+        "dead",
+        "payment",
+        "bill",
+        "detention"
+      ],
+      "intent_match": [
+        "detained_for_payment",
+        "body_withheld"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_DISCHARGE_BODY",
+      "citation_format": "NHRC Charter, Right 15",
+      "legal_references": [
+        "Prohibition of wrongful confinement under Sec. 340-342 of IPC",
+        "Statements of Mumbai High Court",
+        "Consumer Protection Act 1986"
+      ]
+    },
+    {
+      "id": "NHRC-16",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "16",
+      "subsection": null,
+      "title": "Right to Patient Education",
+      "exact_text": "Patients have the right to receive education about major facts relevant to his/her condition and healthy living practices, their rights and responsibilities, officially supported health insurance schemes relevant to the patient, relevant entitlements in case of charitable hospitals, and how to seek redressal of grievances in the language the patients understand or seek the education. The hospital management and treating physician have a duty to provide such education to each patient according to standard procedure in the language the patients understand and communicate in a simple and easy to understand manner.",
+      "paraphrase": "Patients have the right to receive education about their condition, healthy living, insurance options, and grievance procedures in language they understand.",
+      "rights": [
+        "patient_education",
+        "health_education",
+        "grievance_procedure_info"
+      ],
+      "obligations": [
+        "doctor_provide_education",
+        "hospital_provide_education_in_vernacular"
+      ],
+      "actors": [
+        "patient",
+        "doctor",
+        "hospital"
+      ],
+      "exceptions": [
+        "emergency_care"
+      ],
+      "category": "access_information",
+      "keywords": [
+        "education",
+        "learn",
+        "teach",
+        "information",
+        "rights",
+        "responsibilities",
+        "insurance",
+        "grievance"
+      ],
+      "intent_match": [
+        "patient_education",
+        "health_information"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION",
+      "citation_format": "NHRC Charter, Right 16",
+      "legal_references": [
+        "The Consumer Protection Act, 1986",
+        "Standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-17",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "17",
+      "subsection": null,
+      "title": "Right to be Heard and Seek Redressal",
+      "exact_text": "Every patient and their caregivers have the right to give feedback, make comments, or lodge complaints about the health care they are receiving or had received from a doctor or hospital. This includes the right to be given information and advice on how to give feedback, make comments, or make a complaint in a simple and user-friendly manner. Patients and caregivers have the right to seek redressal in case they are aggrieved, on account of infringement of any of the above mentioned rights in this charter. This may be done by lodging a complaint with an official designated for this purpose by the hospital/healthcare provider and further with an official mechanism constituted by the government such as Patients' rights Tribunal Forum or Clinical establishments regulatory authority as the case may be. All complaints must be registered by providing a registration number and there should be a robust tracking and tracing mechanism to ascertain the status of the complaint resolution. The patient and caregivers have the right to a fair and prompt redressal of their grievances. Further, they have the right to receive in writing the outcome of the complaint within 15 days from the date of the receipt of the complaint. Every hospital and clinical establishment has the duty to set up an internal redressal mechanism as well as to fully comply and cooperate with official redressal mechanisms including making available all relevant information and taking action in full accordance with orders of the redressal body as per the Patient's Right Charter or as per the applicable existing laws.",
+      "paraphrase": "Patients can complain about healthcare services and have the right to a proper grievance redressal system with timely responses.",
+      "rights": [
+        "right_to_complain",
+        "grievance_redressal",
+        "feedback_mechanism",
+        "timely_response"
+      ],
+      "obligations": [
+        "hospital_setup_grievance_mechanism",
+        "register_complaints",
+        "respond_within_15_days"
+      ],
+      "actors": [
+        "patient",
+        "hospital",
+        "caregiver"
+      ],
+      "exceptions": [
+        "frivolous_complaints"
+      ],
+      "category": "redressal_complaint",
+      "keywords": [
+        "complaint",
+        "grievance",
+        "redressal",
+        "feedback",
+        "lodge",
+        "complain",
+        "mechanism"
+      ],
+      "intent_match": [
+        "how_to_complain",
+        "grievance_redressal",
+        "complaint_procedure"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_REDRESSAL",
+      "citation_format": "NHRC Charter, Right 17",
+      "legal_references": [
+        "The Consumer Protection Act, 1986",
+        "NHS - Charter of Patient Rights and Responsibilities"
+      ],
+      "response_time": "15 days"
+    },
+    {
+      "id": "IMC-1.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.1",
+      "subsection": null,
+      "title": "Upholding Professional Dignity and Honour",
+      "exact_text": "A physician shall uphold the dignity and honour of his profession.",
+      "paraphrase": "Doctors must maintain the dignity and honour of the medical profession.",
+      "rights": [
+        "professional_treatment",
+        "dignified_care"
+      ],
+      "obligations": [
+        "maintain_professional_dignity",
+        "uphold_professional_honour"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "dignity",
+        "honour",
+        "profession",
+        "uphold",
+        "professional"
+      ],
+      "intent_match": [
+        "doctor_professionalism",
+        "unethical_behavior"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.1"
+    },
+    {
+      "id": "IMC-1.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.2",
+      "subsection": null,
+      "title": "Maintaining Good Medical Practice",
+      "exact_text": "The Principal objective of the medical profession is to render service to humanity with full respect for the dignity of profession and man. Physicians should merit the confidence of patients entrusted to their care, rendering to each a full measure of service and devotion.",
+      "paraphrase": "The main goal of doctors is to serve humanity and earn patient trust through dedicated service.",
+      "rights": [
+        "quality_care",
+        "dedicated_service"
+      ],
+      "obligations": [
+        "serve_humanity_first",
+        "earn_patient_trust"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "service",
+        "humanity",
+        "dignity",
+        "confidence",
+        "trust",
+        "devotion"
+      ],
+      "intent_match": [
+        "doctor_professionalism",
+        "quality_care"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.2"
+    },
+    {
+      "id": "IMC-1.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.3",
+      "subsection": null,
+      "title": "Maintenance of Medical Records",
+      "exact_text": "Every physician shall maintain the medical records pertaining to his / her indoor patients for a period of 3 years from the date of commencement of the treatment in a standard proforma laid down by the Medical Council of India. If any request is made for medical records either by the patients / authorised attendant or legal authorities involved, the same may be duly acknowledged and documents shall be issued within the period of 72 hours.",
+      "paraphrase": "Doctors must keep inpatient medical records for 3 years and provide them within 72 hours when requested.",
+      "rights": [
+        "access_medical_records",
+        "timely_document_access"
+      ],
+      "obligations": [
+        "maintain_records_3_years",
+        "provide_records_72_hours"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "legal_authority"
+      ],
+      "exceptions": [],
+      "category": "medical_records",
+      "keywords": [
+        "medical records",
+        "3 years",
+        "72 hours",
+        "maintain",
+        "access"
+      ],
+      "intent_match": [
+        "medical_records",
+        "records_request"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_RECORDS",
+      "citation_format": "IMC Ethics Code, Section 1.3"
+    },
+    {
+      "id": "IMC-1.4",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.4",
+      "subsection": null,
+      "title": "Display of Registration Number",
+      "exact_text": "Every physician shall display the registration number accorded to him by the State Medical Council / Medical Council of India in his clinic and in all his prescriptions, certificates, money receipts given to his patients.",
+      "paraphrase": "Doctors must show their registration number at their clinic and on all prescriptions, certificates, and receipts.",
+      "rights": [
+        "transparent_credentials",
+        "identify_doctor"
+      ],
+      "obligations": [
+        "display_registration_number",
+        "transparent_identification"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "registration number",
+        "display",
+        "clinic",
+        "prescription",
+        "certificate",
+        "receipt"
+      ],
+      "intent_match": [
+        "doctor_identification",
+        "transparent_practice"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.4"
+    },
+    {
+      "id": "IMC-1.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.5",
+      "subsection": null,
+      "title": "Prescription with Generic Names",
+      "exact_text": "Every physician should prescribe drugs with generic names legibly and preferably in capital letters and he/she shall ensure that there is a rational prescription and use of drugs.",
+      "paraphrase": "Doctors should prescribe medicines using generic names clearly and ensure rational drug use.",
+      "rights": [
+        "affordable_medicines",
+        "transparent_prescription"
+      ],
+      "obligations": [
+        "prescribe_generic_names",
+        "rational_prescription"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "generic names",
+        "prescribe",
+        "drugs",
+        "medicines",
+        "rational prescription"
+      ],
+      "intent_match": [
+        "prescription_practices",
+        "medication_costs"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.5"
+    },
+    {
+      "id": "IMC-1.6",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.6",
+      "subsection": null,
+      "title": "Quality Assurance in Patient Care",
+      "exact_text": "Every physician should aid in safeguarding the profession against admission to it of those who are deficient in moral character or education. Physician shall not employ in connection with his professional practice any attendant who is neither registered nor enlisted under the Medical Acts in force.",
+      "paraphrase": "Doctors must help maintain professional standards and not employ unregistered medical staff.",
+      "rights": [
+        "qualified_care",
+        "professional_standards"
+      ],
+      "obligations": [
+        "safeguard_profession_standards",
+        "employ_registered_staff"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "quality assurance",
+        "moral character",
+        "education",
+        "registered staff",
+        "professional standards"
+      ],
+      "intent_match": [
+        "quality_care",
+        "staff_qualifications"
+      ],
+      "template_id": "TEMPLATE_QUALITY_CARE",
+      "citation_format": "IMC Ethics Code, Section 1.6"
+    },
+    {
+      "id": "IMC-1.7",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.7",
+      "subsection": null,
+      "title": "Exposure of Unethical Conduct",
+      "exact_text": "A physician should expose, without fear or favour, incompetent or corrupt, dishonest or unethical conduct on the part of members of the profession.",
+      "paraphrase": "Doctors should report incompetent, corrupt, dishonest, or unethical behavior by other doctors.",
+      "rights": [
+        "ethical_treatment",
+        "professional_accountability"
+      ],
+      "obligations": [
+        "report_unethical_conduct",
+        "maintain_professional_ethics"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "unethical conduct",
+        "expose",
+        "corrupt",
+        "dishonest",
+        "incompetent",
+        "report"
+      ],
+      "intent_match": [
+        "unethical_behavior",
+        "professional_misconduct"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.7"
+    },
+    {
+      "id": "IMC-1.8",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.8",
+      "subsection": null,
+      "title": "Fee Disclosure Before Treatment",
+      "exact_text": "A physician should announce his fees before rendering service and not after the operation or treatment is under way. Remuneration received for such services should be in the form and amount specifically announced to the patient at the time the service is rendered.",
+      "paraphrase": "Doctors must disclose fees before starting treatment, not after it begins.",
+      "rights": [
+        "transparent_pricing",
+        "advance_fee_knowledge"
+      ],
+      "obligations": [
+        "disclose_fees_before_treatment",
+        "no_fee_changes_during_treatment"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "fees_financial",
+      "keywords": [
+        "fees",
+        "announce",
+        "before treatment",
+        "remuneration",
+        "transparent"
+      ],
+      "intent_match": [
+        "medical_costs",
+        "fee_transparency"
+      ],
+      "template_id": "TEMPLATE_TRANSPARENT_PRICING",
+      "citation_format": "IMC Ethics Code, Section 1.8"
+    },
+    {
+      "id": "IMC-1.9",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "1.9",
+      "subsection": null,
+      "title": "Compliance with Laws and Regulations",
+      "exact_text": "The physician shall observe the laws of the country in regulating the practice of medicine and shall also not assist others to evade such laws. He should be cooperative in observance and enforcement of sanitary laws and regulations in the interest of public health.",
+      "paraphrase": "Doctors must follow all medical laws and help enforce public health regulations.",
+      "rights": [
+        "legal_compliance",
+        "public_health_protection"
+      ],
+      "obligations": [
+        "observe_medical_laws",
+        "cooperate_public_health"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "public"
+      ],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": [
+        "laws",
+        "regulations",
+        "compliance",
+        "public health",
+        "sanitary laws"
+      ],
+      "intent_match": [
+        "legal_compliance",
+        "public_health"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 1.9"
+    },
+    {
+      "id": "IMC-2.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "2.1",
+      "subsection": null,
+      "title": "Obligations to the Sick",
+      "exact_text": "Though a physician is not bound to treat each and every person asking his services, he should not only be ever ready to respond to the calls of the sick and the injured, but should be mindful of the high character of his mission and the responsibility he discharges in the course of his professional duties. In his treatment, he should never forget that the health and the lives of those entrusted to his care depend on his skill and attention. A physician should endeavour to add to the comfort of the sick by making his visits at the hour indicated to the patients. A physician advising a patient to seek service of another physician is acceptable, however, in case of emergency a physician must treat the patient. No physician shall arbitrarily refuse treatment to a patient. However for good reason, when a patient is suffering from an ailment which is not within the range of experience of the treating physician, the physician may refuse treatment and refer the patient to another physician.",
+      "paraphrase": "Doctors must treat emergencies and cannot arbitrarily refuse patients, but may refer cases outside their expertise.",
+      "rights": [
+        "emergency_care",
+        "non_discriminatory_treatment",
+        "appropriate_referral"
+      ],
+      "obligations": [
+        "treat_emergency_cases",
+        "no_arbitrary_refusal",
+        "refer_outside_expertise"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "outside_doctor_experience"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "emergency",
+        "must treat",
+        "refuse treatment",
+        "arbitrary refusal",
+        "refer",
+        "expertise"
+      ],
+      "intent_match": [
+        "emergency_care",
+        "treatment_refusal",
+        "doctor_referral"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_EMERGENCY_CARE",
+      "citation_format": "IMC Ethics Code, Section 2.1"
+    },
+    {
+      "id": "IMC-2.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "2.2",
+      "subsection": null,
+      "title": "Patience, Delicacy and Secrecy",
+      "exact_text": "Patience and delicacy should characterize the physician. Confidences concerning individual or domestic life entrusted by patients to a physician and defects in the disposition or character of patients observed during medical attendance should never be revealed unless their revelation is required by the laws of the State. Sometimes, however, a physician must determine whether his duty to society requires him to employ knowledge, obtained through confidence as a physician, to protect a healthy person against a communicable disease to which he is about to be exposed. In such instance, the physician should act as he would wish another to act toward one of his own family in like circumstances.",
+      "paraphrase": "Doctors must be patient, delicate, and keep patient information confidential unless required by law, except to protect others from communicable diseases.",
+      "rights": [
+        "privacy",
+        "confidentiality",
+        "medical_secrecy"
+      ],
+      "obligations": [
+        "maintain_patient_confidentiality",
+        "protect_patient_privacy",
+        "disclose_to_protect_public_health"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "public"
+      ],
+      "exceptions": [
+        "legal_requirement",
+        "public_health_protection"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "confidential",
+        "privacy",
+        "secrets",
+        "reveal",
+        "disclose",
+        "confidentiality",
+        "communicable disease",
+        "public health"
+      ],
+      "intent_match": [
+        "privacy_confidentiality",
+        "data_breach",
+        "disease_disclosure"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
+      "citation_format": "IMC Ethics Code, Section 2.2"
+    },
+    {
+      "id": "IMC-2.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "2.3",
+      "subsection": null,
+      "title": "Honest and Accurate Prognosis",
+      "exact_text": "The physician should neither exaggerate nor minimize the gravity of a patient's condition. He should ensure himself that the patient, his relatives or his responsible friends have such knowledge of the patient's condition as will serve the best interests of the patient and the family.",
+      "paraphrase": "Doctors must give honest and accurate information about the patient's condition to the patient and family.",
+      "rights": [
+        "accurate_information",
+        "honest_prognosis",
+        "family_knowledge"
+      ],
+      "obligations": [
+        "provide_accurate_prognosis",
+        "communicate_honestly",
+        "inform_family_appropriately"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "family"
+      ],
+      "exceptions": [],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "prognosis",
+        "condition",
+        "exaggerate",
+        "minimize",
+        "honest",
+        "accurate",
+        "family"
+      ],
+      "intent_match": [
+        "medical_information",
+        "prognosis",
+        "doctor_communication"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMATION",
+      "citation_format": "IMC Ethics Code, Section 2.3"
+    },
+    {
+      "id": "IMC-2.4",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "2.4",
+      "subsection": null,
+      "title": "The Patient Must Not Be Neglected",
+      "exact_text": "A physician is free to choose whom he will serve. He should, however, respond to any request for his assistance in an emergency. Once having undertaken a case, the physician should not neglect the patient, nor should he withdraw from the case without giving adequate notice to the patient and his family.",
+      "paraphrase": "Doctors must not abandon patients they have agreed to treat and must give proper notice before withdrawing, but must respond to emergencies.",
+      "rights": [
+        "continuity_of_care",
+        "non_abandonment",
+        "emergency_response"
+      ],
+      "obligations": [
+        "do_not_neglect_patient",
+        "give_notice_before_withdrawal",
+        "respond_to_emergencies"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "family"
+      ],
+      "exceptions": [
+        "emergency_situations",
+        "patient_transfer",
+        "mutual_agreement"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "neglect",
+        "withdraw",
+        "abandon",
+        "adequate notice",
+        "undertake case",
+        "emergency",
+        "respond"
+      ],
+      "intent_match": [
+        "patient_abandonment",
+        "continuity_care",
+        "doctor_withdrawal"
+      ],
+      "template_id": "TEMPLATE_CONTINUITY_OF_CARE",
+      "citation_format": "IMC Ethics Code, Section 2.4"
+    },
+    {
+      "id": "IMC-2.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "2.5",
+      "subsection": null,
+      "title": "Engagement for an Obstetric Case",
+      "exact_text": "When a physician who has been engaged to attend an obstetric case is absent and another is sent for and delivery accomplished, the acting physician is entitled to his professional fees, but should secure the patient's consent to resign on the arrival of the physician engaged.",
+      "paraphrase": "When a substitute doctor delivers a baby in the original doctor's absence, they deserve payment but should step aside when the original doctor arrives with patient's consent.",
+      "rights": [
+        "appropriate_payment",
+        "clear_handover",
+        "consent_for_change"
+      ],
+      "obligations": [
+        "entitled_fees_for_service",
+        "secure_consent_for_handover",
+        "respect_original_engagement"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "substitute_doctor"
+      ],
+      "exceptions": [],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "obstetric",
+        "delivery",
+        "fees",
+        "absent",
+        "substitute",
+        "consent",
+        "handover"
+      ],
+      "intent_match": [
+        "obstetric_care",
+        "doctor_substitution",
+        "delivery_fees"
+      ],
+      "template_id": "TEMPLATE_FEES_PAYMENT",
+      "citation_format": "IMC Ethics Code, Section 2.5"
+    },
+    {
+      "id": "IMC-3.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.1",
+      "subsection": null,
+      "title": "Avoiding Unnecessary Consultations",
+      "exact_text": "However in case of serious illness and in doubtful or difficult conditions, the physician should request consultation, but under any circumstances such consultation should be justifiable and in the interest of the patient only and not for any other consideration. Consulting pathologists /radiologists or asking for any other diagnostic Lab investigation should be done judiciously and not in a routine manner.",
+      "paraphrase": "Doctors should only request consultations and tests when medically necessary and in the patient's best interest, not routinely.",
+      "rights": [
+        "appropriate_consultation",
+        "patient_interest_first",
+        "judicious_testing"
+      ],
+      "obligations": [
+        "avoid_unnecessary_consultations",
+        "consult_for_patient_benefit",
+        "judicious_diagnostic_tests"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "consultation",
+        "unnecessary",
+        "serious illness",
+        "doubtful",
+        "patient interest",
+        "diagnostic tests",
+        "judicious"
+      ],
+      "intent_match": [
+        "unnecessary_consultation",
+        "unnecessary_tests",
+        "second_opinion"
+      ],
+      "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 3.1"
+    },
+    {
+      "id": "IMC-3.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.2",
+      "subsection": null,
+      "title": "Consultation for Patient's Benefit",
+      "exact_text": "In every consultation, the benefit to the patient is of foremost importance. All physicians engaged in the case should be frank with the patient and his attendants.",
+      "paraphrase": "All consultations must prioritize patient benefit, and doctors should be honest with the patient and family.",
+      "rights": [
+        "beneficial_consultation",
+        "honest_communication"
+      ],
+      "obligations": [
+        "prioritize_patient_benefit",
+        "be_frank_with_patient"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "family"
+      ],
+      "exceptions": [],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "consultation",
+        "patient benefit",
+        "frank",
+        "honest",
+        "foremost importance"
+      ],
+      "intent_match": [
+        "medical_consultation",
+        "doctor_communication"
+      ],
+      "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 3.2"
+    },
+    {
+      "id": "IMC-3.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.3",
+      "subsection": null,
+      "title": "Punctuality in Consultation",
+      "exact_text": "Utmost punctuality should be observed by a physician in making themselves available for consultations.",
+      "paraphrase": "Doctors must be punctual for consultations.",
+      "rights": [
+        "timely_consultation",
+        "respect_patient_time"
+      ],
+      "obligations": [
+        "be_punctual_for_consultations"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "emergency_delays"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "punctuality",
+        "consultation",
+        "on time",
+        "available"
+      ],
+      "intent_match": [
+        "doctor_punctuality",
+        "waiting_time"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 3.3"
+    },
+    {
+      "id": "IMC-3.4",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.4",
+      "subsection": null,
+      "title": "Statement to Patient After Consultation",
+      "exact_text": "All statements to the patient or his representatives should take place in the presence of the consulting physicians, except as otherwise agreed. The disclosure of the opinion to the patient or his relatives or friends shall rest with the medical attendant. Differences of opinion should not be divulged unnecessarily but when there is irreconcilable difference of opinion the circumstances should be frankly and impartially explained to the patient or his relatives or friends. It would be opened to them to seek further advice as they so desire.",
+      "paraphrase": "Consultation results should be discussed with all doctors present. Disagreements should be explained honestly, and patients can seek more opinions.",
+      "rights": [
+        "unified_medical_opinion",
+        "honest_disagreement_disclosure",
+        "right_to_further_advice"
+      ],
+      "obligations": [
+        "joint_statement_to_patient",
+        "explain_disagreements_honestly",
+        "allow_further_opinions"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "family"
+      ],
+      "exceptions": [
+        "mutual_agreement_otherwise"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "consultation",
+        "statement",
+        "disclosure",
+        "difference of opinion",
+        "frank",
+        "further advice"
+      ],
+      "intent_match": [
+        "consultation_results",
+        "doctor_disagreement",
+        "medical_opinion"
+      ],
+      "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 3.4"
+    },
+    {
+      "id": "IMC-3.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.5",
+      "subsection": null,
+      "title": "Treatment After Consultation",
+      "exact_text": "No decision should restrain the attending physician from making such subsequent variations in the treatment if any unexpected change occurs, but at the next consultation, reasons for the variations should be discussed/ explained. The same privilege, with its obligations, belongs to the consultant when sent for in an emergency during the absence of attending physician. The attending physician may prescribe medicine at any time for the patient, whereas the consultant may prescribe only in case of emergency or as an expert when called for.",
+      "paraphrase": "Main doctors can adjust treatment as needed but must explain changes later. Consulting doctors can only prescribe in emergencies or when specifically asked.",
+      "rights": [
+        "adaptive_treatment",
+        "explained_changes",
+        "emergency_prescribing_rights"
+      ],
+      "obligations": [
+        "adjust_treatment_as_needed",
+        "explain_treatment_changes",
+        "limited_prescribing_by_consultant"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "consultant"
+      ],
+      "exceptions": [
+        "emergency_situations"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "treatment",
+        "variations",
+        "consultation",
+        "emergency",
+        "prescribe",
+        "expert"
+      ],
+      "intent_match": [
+        "treatment_changes",
+        "consultant_prescribing",
+        "followup_consultation"
+      ],
+      "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 3.5"
+    },
+    {
+      "id": "IMC-3.6",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.6",
+      "subsection": null,
+      "title": "Patients Referred to Specialists",
+      "exact_text": "When a patient is referred to a specialist by the attending physician, a case summary of the patient should be given to the specialist, who should communicate his opinion in writing to the attending physician.",
+      "paraphrase": "When referring to specialists, doctors must provide a case summary and get a written opinion back.",
+      "rights": [
+        "proper_referral_documentation",
+        "written_specialist_opinion"
+      ],
+      "obligations": [
+        "provide_case_summary_for_referral",
+        "obtain_written_specialist_opinion"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "specialist"
+      ],
+      "exceptions": [
+        "emergency_referrals"
+      ],
+      "category": "doctor_patient_relationship",
+      "keywords": [
+        "referral",
+        "specialist",
+        "case summary",
+        "written opinion",
+        "communicate"
+      ],
+      "intent_match": [
+        "specialist_referral",
+        "doctor_referral",
+        "medical_referral"
+      ],
+      "template_id": "TEMPLATE_RIGHT_TO_PROPER_REFERRAL",
+      "citation_format": "IMC Ethics Code, Section 3.6"
+    },
+    {
+      "id": "IMC-3.7",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "3.7",
+      "subsection": null,
+      "title": "Fees and Other Charges",
+      "exact_text": "A physician shall clearly display his fees and other charges on the board of his chamber and/or the hospitals he is visiting. Prescription should also make clear if the Physician himself dispensed any medicine. A physician shall write his name and designation in full along with registration particulars in his prescription letter head.",
+      "paraphrase": "Doctors must display fees clearly, indicate if they dispense medicines, and include full name, designation, and registration details on prescriptions.",
+      "rights": [
+        "transparent_fee_display",
+        "clear_prescription_details",
+        "doctor_identification"
+      ],
+      "obligations": [
+        "display_fees_publicly",
+        "disclose_medicine_dispensing",
+        "include_full_details_on_prescriptions"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "fees_financial",
+      "keywords": [
+        "fees",
+        "display",
+        "charges",
+        "prescription",
+        "dispensing",
+        "name",
+        "designation",
+        "registration"
+      ],
+      "intent_match": [
+        "fee_display",
+        "transparent_pricing",
+        "prescription_details"
+      ],
+      "template_id": "TEMPLATE_TRANSPARENT_PRICING",
+      "citation_format": "IMC Ethics Code, Section 3.7"
+    },
+    {
+      "id": "IMC-4.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "4.1",
+      "subsection": null,
+      "title": "Dependence of Physicians on Each Other",
+      "exact_text": "A physician should consider it as a pleasure and privilege to render gratuitous service to all physicians and their immediate family dependants.",
+      "paraphrase": "Doctors should provide free service to other doctors and their immediate families.",
+      "rights": ["doctor_privileges"],
+      "obligations": ["free_service_to_doctors"],
+      "actors": ["doctor"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["gratuitous", "free service", "physicians", "doctors", "family"],
+      "intent_match": ["doctor_privileges", "professional_courtesy"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 4.1"
+    },
+    {
+      "id": "IMC-4.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "4.2",
+      "subsection": null,
+      "title": "Conduct in Consultation",
+      "exact_text": "In consultations, no insincerity, rivalry or envy should be indulged in. All due respect should be observed towards the physician in-charge of the case and no statement or remark be made, which would impair the confidence reposed in him. For this purpose no discussion should be carried on in the presence of the patient or his representatives.",
+      "paraphrase": "Doctors should respect each other during consultations, avoid undermining colleagues, and not discuss disagreements in front of patients.",
+      "rights": ["professional_respect", "confidential_consultation"],
+      "obligations": ["respect_treating_doctor", "no_insincerity_in_consultation", "no_discussion_before_patient"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["consultation", "insincerity", "rivalry", "envy", "respect", "confidence", "discussion", "patient"],
+      "intent_match": ["doctor_consultation", "professional_respect", "inter_doctor_relations"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 4.2"
+    },
+    {
+      "id": "IMC-4.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "4.3",
+      "subsection": null,
+      "title": "Consultant Not to Take Charge of the Case",
+      "exact_text": "When a physician has been called for consultation, the Consultant should normally not take charge of the case, especially on the solicitation of the patient or friends. The Consultant shall not criticize the referring physician. He/She shall discuss the diagnosis treatment plan with the referring physician.",
+      "paraphrase": "Consulting doctors should not take over cases, criticize referring doctors, and should discuss treatment plans with them.",
+      "rights": ["proper_consultation_boundaries", "respect_for_referring_doctor"],
+      "obligations": ["not_take_over_case", "no_criticism_of_referring_doctor", "discuss_with_referring_doctor"],
+      "actors": ["doctor", "consultant", "patient"],
+      "exceptions": ["mutual_agreement", "emergency_takeover"],
+      "category": "professional_conduct",
+      "keywords": ["consultant", "take charge", "solicitation", "criticize", "referring physician", "discuss", "diagnosis"],
+      "intent_match": ["consultant_conduct", "doctor_takeover", "inter_doctor_criticism"],
+      "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 4.3"
+    },
+    {
+      "id": "IMC-4.4",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "4.4",
+      "subsection": null,
+      "title": "Appointment of Substitute",
+      "exact_text": "Whenever a physician requests another physician to attend his patients during his temporary absence from his practice, professional courtesy requires the acceptance of such appointment only when he has the capacity to discharge the additional responsibility along with his/her other duties. The physician acting under such an appointment should give the utmost consideration to the interests and reputation of the absent physician and all such patients should be restored to the care of the latter upon his/her return.",
+      "paraphrase": "Substitute doctors should only accept if capable, protect the absent doctor's reputation, and return patients when the original doctor returns.",
+      "rights": ["appropriate_substitute_care", "patient_continuity"],
+      "obligations": ["accept_substitute_only_if_capable", "protect_absent_doctor_reputation", "return_patients_to_original_doctor"],
+      "actors": ["doctor", "substitute_doctor", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["substitute", "temporary absence", "professional courtesy", "capacity", "reputation", "restore", "return"],
+      "intent_match": ["doctor_substitute", "temporary_coverage", "professional_courtesy"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 4.4"
+    },
+    {
+      "id": "IMC-4.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "4.5",
+      "subsection": null,
+      "title": "Visiting Another Physician's Case",
+      "exact_text": "When it becomes the duty of a physician occupying an official position to see and report upon an illness or injury, he should communicate to the physician in attendance so as to give him an option of being present. The medical officer/physician occupying an official position should avoid remarks upon the diagnosis or the treatment that has been adopted.",
+      "paraphrase": "Official doctors visiting other doctors' patients should notify them and avoid criticizing their diagnosis or treatment.",
+      "rights": ["notification_for_official_visits", "respect_for_treating_doctor"],
+      "obligations": ["notify_treating_doctor", "avoid_criticism_of_treatment"],
+      "actors": ["doctor", "official_doctor", "patient"],
+      "exceptions": ["emergency_official_duty"],
+      "category": "professional_conduct",
+      "keywords": ["official position", "visit", "communicate", "option to be present", "avoid remarks", "diagnosis", "treatment"],
+      "intent_match": ["official_doctor_visit", "inter_doctor_visits", "medical_inspection"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 4.5"
+    },
+    {
+      "id": "IMC-5.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "5.1",
+      "subsection": null,
+      "title": "Physicians as Citizens",
+      "exact_text": "Physicians, as good citizens, possessed of special training should disseminate advice on public health issues. They should play their part in enforcing the laws of the community and in sustaining the institutions that advance the interests of humanity. They should particularly co-operate with the authorities in the administration of sanitary/public health laws and regulations.",
+      "paraphrase": "Doctors, as informed citizens, should provide public health advice, help enforce laws, and cooperate with health authorities.",
+      "rights": ["public_health_leadership", "community_contribution"],
+      "obligations": ["disseminate_public_health_advice", "enforce_community_laws", "cooperate_with_health_authorities"],
+      "actors": ["doctor", "public", "health_authorities"],
+      "exceptions": [],
+      "category": "public_health",
+      "keywords": ["citizens", "public health", "advice", "enforce laws", "community", "cooperate", "sanitary laws"],
+      "intent_match": ["doctor_citizen_role", "public_health_advice", "community_health"],
+      "template_id": "TEMPLATE_PUBLIC_HEALTH",
+      "citation_format": "IMC Ethics Code, Section 5.1"
+    },
+    {
+      "id": "IMC-5.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "5.2",
+      "subsection": null,
+      "title": "Public and Community Health",
+      "exact_text": "Physicians, especially those engaged in public health work, should enlighten the public concerning quarantine regulations and measures for the prevention of epidemic and communicable diseases. At all times the physician should notify the constituted public health authorities of every case of communicable disease under his care, in accordance with the laws, rules and regulations of the health authorities. When an epidemic occurs a physician should not abandon his duty for fear of contracting the disease himself.",
+      "paraphrase": "Doctors must educate about disease prevention, report communicable diseases, and not abandon duty during epidemics.",
+      "rights": ["public_health_protection", "epidemic_response"],
+      "obligations": ["educate_public_health", "report_communicable_diseases", "no_abandonment_during_epidemics"],
+      "actors": ["doctor", "public", "health_authorities"],
+      "exceptions": [],
+      "category": "public_health",
+      "keywords": ["public health", "quarantine", "epidemic", "communicable diseases", "report", "notify", "abandon duty", "epidemic"],
+      "intent_match": ["public_health", "disease_reporting", "epidemic_duty"],
+      "template_id": "TEMPLATE_PUBLIC_HEALTH",
+      "citation_format": "IMC Ethics Code, Section 5.2"
+    },
+    {
+      "id": "IMC-5.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "5.3",
+      "subsection": null,
+      "title": "Pharmacists and Nurses Recognition",
+      "exact_text": "Physicians should recognize and promote the practice of different paramedical services such as, pharmacy and nursing as professions and should seek their cooperation wherever required.",
+      "paraphrase": "Doctors should respect pharmacists and nurses as professionals and seek their cooperation.",
+      "rights": ["paramedical_professional_recognition", "interprofessional_cooperation"],
+      "obligations": ["recognize_paramedical_professions", "seek_paramedical_cooperation"],
+      "actors": ["doctor", "pharmacist", "nurse"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["pharmacists", "nurses", "paramedical", "professions", "cooperation", "recognize", "promote"],
+      "intent_match": ["doctor_paramedical_relations", "pharmacist_cooperation", "nurse_recognition"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 5.3"
+    },
+    {
+      "id": "IMC-6.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.1",
+      "subsection": "6.1.1",
+      "title": "Restrictions on Medical Advertising",
+      "exact_text": "Soliciting of patients directly or indirectly, by a physician, by a group of physicians or by institutions or organisations is unethical. A physician shall not make use of him / her (or his / her name) as subject of any form or manner of advertising or publicity through any mode either alone or in conjunction with others.",
+      "paraphrase": "Doctors cannot advertise or solicit patients directly or indirectly.",
+      "rights": [
+        "professional_advertising_standards"
+      ],
+      "obligations": [
+        "no_patient_solicitation",
+        "no_self_advertisement"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [
+        "formal_announcements_allowed"
+      ],
+      "category": "advertising_ethics",
+      "keywords": [
+        "advertising",
+        "soliciting",
+        "patients",
+        "publicity",
+        "unethical",
+        "promotion"
+      ],
+      "intent_match": [
+        "doctor_advertising",
+        "unethical_promotion"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.1.1"
+    },
+    {
+      "id": "IMC-6.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.2",
+      "subsection": null,
+      "title": "Patents and Copyrights Ethics",
+      "exact_text": "A physician may patent surgical instruments, appliances and medicine or Copyright applications, methods and procedures. However, it shall be unethical if the benefits of such patents or copyrights are not made available in situations where the interest of large population is involved.",
+      "paraphrase": "Doctors can patent medical inventions but must make them available when public interest is involved.",
+      "rights": [
+        "public_access_medical_advancements"
+      ],
+      "obligations": [
+        "share_patents_for_public_interest"
+      ],
+      "actors": [
+        "doctor",
+        "public"
+      ],
+      "exceptions": [],
+      "category": "advertising_ethics",
+      "keywords": [
+        "patent",
+        "copyright",
+        "surgical instruments",
+        "medicine",
+        "public interest",
+        "unethical"
+      ],
+      "intent_match": [
+        "medical_patents",
+        "intellectual_property"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.2"
+    },
+    {
+      "id": "IMC-6.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.3",
+      "subsection": null,
+      "title": "Restrictions on Drug Dispensing",
+      "exact_text": "A physician should not run an open shop for sale of medicine for dispensing prescriptions prescribed by doctors other than himself or for sale of medical or surgical appliances. It is not unethical for a physician to prescribe or supply drugs, remedies or appliances as long as there is no exploitation of the patient.",
+      "paraphrase": "Doctors shouldn't run shops selling medicines prescribed by other doctors, but can prescribe or supply medicines if not exploiting patients.",
+      "rights": [
+        "non_exploitative_prescribing",
+        "appropriate_drug_supply"
+      ],
+      "obligations": [
+        "no_open_shop_for_others_prescriptions",
+        "avoid_patient_exploitation"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "self_prescribed_medicines"
+      ],
+      "category": "fees_financial",
+      "keywords": [
+        "open shop",
+        "dispensing",
+        "medicine",
+        "prescription",
+        "exploitation",
+        "appliances"
+      ],
+      "intent_match": [
+        "drug_dispensing",
+        "pharmacy_practices"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.3"
+    },
+    {
+      "id": "IMC-6.4.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.4",
+      "subsection": "6.4.1",
+      "title": "Prohibition of Commissions and Kickbacks",
+      "exact_text": "A physician shall not give, solicit, or receive nor shall he offer to give solicit or receive, any gift, gratuity, commission or bonus in consideration of or return for the referring, recommending or procuring of any patient for medical, surgical or other treatment.",
+      "paraphrase": "Doctors cannot give or receive gifts, commissions, or bonuses for patient referrals.",
+      "rights": [
+        "unbiased_referrals",
+        "no_commercial_influence"
+      ],
+      "obligations": [
+        "no_commission_kickbacks",
+        "no_referral_incentives"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [],
+      "category": "fees_financial",
+      "keywords": [
+        "commission",
+        "kickback",
+        "gift",
+        "gratuity",
+        "bonus",
+        "referral",
+        "solicit"
+      ],
+      "intent_match": [
+        "kickback_commission",
+        "unethical_referral"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.4.1"
+    },
+    {
+      "id": "IMC-6.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.5",
+      "subsection": null,
+      "title": "Prohibition of Secret Remedies",
+      "exact_text": "The prescribing or dispensing by a physician of secret remedial agents of which he does not know the composition, or the manufacture or promotion of their use is unethical and as such prohibited.",
+      "paraphrase": "Doctors cannot prescribe or promote secret remedies whose composition they don't know.",
+      "rights": [
+        "transparent_treatment",
+        "known_medication_composition"
+      ],
+      "obligations": [
+        "no_secret_remedies",
+        "know_medication_composition"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [],
+      "category": "advertising_ethics",
+      "keywords": [
+        "secret remedies",
+        "composition",
+        "unknown",
+        "promotion",
+        "unethical",
+        "prohibited"
+      ],
+      "intent_match": [
+        "secret_medicines",
+        "unproven_treatments"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.5"
+    },
+    {
+      "id": "IMC-6.6",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.6",
+      "subsection": null,
+      "title": "Prohibition of Participation in Torture",
+      "exact_text": "The physician shall not aid or abet torture nor shall he be a party to either infliction of mental or physical trauma or concealment of torture inflicted by some other person or agency in clear violation of human rights.",
+      "paraphrase": "Doctors cannot help with torture or hide evidence of torture.",
+      "rights": [
+        "protection_from_torture",
+        "human_rights_protection"
+      ],
+      "obligations": [
+        "no_torture_participation",
+        "no_torture_concealment"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [],
+      "category": "human_rights",
+      "keywords": [
+        "torture",
+        "human rights",
+        "trauma",
+        "mental",
+        "physical",
+        "concealment"
+      ],
+      "intent_match": [
+        "torture_participation",
+        "human_rights_violation"
+      ],
+      "template_id": "TEMPLATE_HUMAN_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 6.6"
+    },
+    {
+      "id": "IMC-6.7",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.7",
+      "subsection": null,
+      "title": "Euthanasia Regulations",
+      "exact_text": "Practicing euthanasia shall constitute unethical conduct. However on specific occasion, the question of withdrawing supporting devices to sustain cardio- pulmonary function even after brain death, shall be decided only by a team of doctors and not merely by the treating physician alone.",
+      "paraphrase": "Euthanasia is unethical, but withdrawing life support after brain death must be decided by a medical team.",
+      "rights": [
+        "end_of_life_dignity",
+        "team_decision_life_support"
+      ],
+      "obligations": [
+        "no_euthanasia",
+        "team_decision_for_life_support"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "medical_team"
+      ],
+      "exceptions": [
+        "brain_death_cases"
+      ],
+      "category": "human_rights",
+      "keywords": [
+        "euthanasia",
+        "unethical",
+        "life support",
+        "brain death",
+        "team decision",
+        "withdrawing"
+      ],
+      "intent_match": [
+        "euthanasia",
+        "end_of_life_care"
+      ],
+      "template_id": "TEMPLATE_END_OF_LIFE_CARE",
+      "citation_format": "IMC Ethics Code, Section 6.7"
+    },
+    {
+      "id": "IMC-6.8",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.8",
+      "subsection": null,
+      "title": "Pharmaceutical Industry Code of Conduct",
+      "exact_text": "In dealing with Pharmaceutical and allied health sector industry, a medical practitioner shall not receive any gift, travel facilities, hospitality, or cash from pharmaceutical companies. A medical practitioner shall not endorse any drug or product of the industry publicly.",
+      "paraphrase": "Doctors cannot accept gifts, travel, hospitality, or cash from drug companies or endorse their products.",
+      "rights": [
+        "unbiased_prescribing",
+        "no_industry_influence"
+      ],
+      "obligations": [
+        "no_pharma_gifts",
+        "no_pharma_endorsements"
+      ],
+      "actors": [
+        "doctor",
+        "pharmaceutical_company"
+      ],
+      "exceptions": [
+        "approved_research_funding"
+      ],
+      "category": "human_rights",
+      "keywords": [
+        "pharmaceutical",
+        "gifts",
+        "travel",
+        "hospitality",
+        "cash",
+        "endorse",
+        "industry"
+      ],
+      "intent_match": [
+        "pharma_gifts",
+        "industry_influence"
+      ],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.8"
+    },
+    {
+      "id": "IMC-6.8.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "6.8",
+      "subsection": "1",
+      "title": "Detailed Pharmaceutical Industry Code - Gifts",
+      "exact_text": "Gifts: A medical practitioner shall not receive any gift from any pharmaceutical or allied health care industry and their sales people or representatives. Gifts more than Rs. 1,000/- upto Rs. 5,000/-: Censure. Gifts more than Rs. 5,000/- upto Rs. 10,000/-: Removal from Indian Medical Register or State Medical Register for 3 months. Gifts more than Rs. 10,000/- to Rs. 50,000/-: Removal for 6 months. Gifts more than Rs. 50,000/- to Rs. 1,00,000/-: Removal for 1 year. Gifts more than Rs. 1,00,000/-: Removal for more than 1 year.",
+      "paraphrase": "Doctors cannot accept gifts from pharmaceutical companies. Penalties range from censure to removal from medical register based on gift value.",
+      "rights": ["unbiased_prescribing", "no_commercial_influence"],
+      "obligations": ["no_pharma_gifts", "report_violations"],
+      "actors": ["doctor", "pharmaceutical_company"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["gifts", "pharmaceutical", "penalty", "censure", "removal", "register"],
+      "intent_match": ["pharma_gifts", "industry_influence"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 6.8.1"
+    },
+    {
+      "id": "IMC-7.1",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.1",
+      "subsection": null,
+      "title": "Violation of Regulations",
+      "exact_text": "If he/she commits any violation of these Regulations.",
+      "paraphrase": "Violating any of the IMC regulations constitutes professional misconduct.",
+      "rights": ["ethical_treatment", "professional_standards"],
+      "obligations": ["comply_with_imc_regulations"],
+      "actors": ["doctor"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["violation", "regulations", "misconduct"],
+      "intent_match": ["regulation_violation", "professional_misconduct"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.1"
+    },
+    {
+      "id": "IMC-7.2",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.2",
+      "subsection": null,
+      "title": "Failure to Maintain Medical Records",
+      "exact_text": "If he/she does not maintain the medical records of his/her indoor patients for a period of three years as per regulation 1.3 and refuses to provide the same within 72 hours when the patient or his/her authorised representative makes a request for it as per the regulation 1.3.2.",
+      "paraphrase": "Not keeping medical records for 3 years or refusing to provide them within 72 hours when requested is misconduct.",
+      "rights": ["access_medical_records", "timely_document_access"],
+      "obligations": ["maintain_records_3_years", "provide_records_72_hours"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "medical_records",
+      "keywords": ["medical records", "3 years", "72 hours", "refuse", "provide"],
+      "intent_match": ["medical_records", "records_request", "record_denial"],
+      "template_id": "TEMPLATE_RIGHT_TO_RECORDS",
+      "citation_format": "IMC Ethics Code, Section 7.2"
+    },
+    {
+      "id": "IMC-7.3",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.3",
+      "subsection": null,
+      "title": "Failure to Display Registration Number",
+      "exact_text": "If he/she does not display the registration number accorded to him/her by the State Medical Council or the Medical Council of India in his clinic, prescriptions and certificates etc. issued by him or violates the provisions of regulation 1.4.2.",
+      "paraphrase": "Not displaying registration number or violating display rules is misconduct.",
+      "rights": ["transparent_credentials", "identify_doctor"],
+      "obligations": ["display_registration_number", "transparent_identification"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["registration number", "display", "clinic", "prescription", "certificate"],
+      "intent_match": ["doctor_identification", "registration_display"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.3"
+    },
+    {
+      "id": "IMC-7.4",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.4",
+      "subsection": null,
+      "title": "Adultery or Improper Conduct",
+      "exact_text": "Abuse of professional position by committing adultery or improper conduct with a patient or by maintaining an improper association with a patient will render a Physician liable for disciplinary action as provided under the Indian Medical Council Act, 1956 or the concerned State Medical Council Act.",
+      "paraphrase": "Committing adultery or having improper relationships with patients is professional misconduct.",
+      "rights": ["professional_boundaries", "ethical_relationship"],
+      "obligations": ["maintain_professional_boundaries", "avoid_improper_relationships"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["adultery", "improper conduct", "association", "relationship", "professional position"],
+      "intent_match": ["doctor_misconduct", "unethical_relationships"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.4"
+    },
+    {
+      "id": "IMC-7.5",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.5",
+      "subsection": null,
+      "title": "Criminal Conviction",
+      "exact_text": "Conviction by a Court of Law for offences involving moral turpitude / Criminal acts.",
+      "paraphrase": "Being convicted of crimes involving moral turpitude is professional misconduct.",
+      "rights": ["ethical_practitioner"],
+      "obligations": ["maintain_criminal_record_clean"],
+      "actors": ["doctor"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["conviction", "court", "criminal", "moral turpitude", "offences"],
+      "intent_match": ["criminal_conviction", "doctor_criminal_record"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.5"
+    },
+    {
+      "id": "IMC-7.6",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.6",
+      "subsection": null,
+      "title": "Prohibition of Sex Determination for Foeticide",
+      "exact_text": "On no account sex determination test shall be undertaken with the intent to terminate the life of a female foetus developing in her mother's womb, unless there are other absolute indications for termination of pregnancy as specified in the Medical Termination of Pregnancy Act, 1971.",
+      "paraphrase": "Sex determination tests cannot be done to abort female fetuses unless there are valid medical reasons.",
+      "rights": [
+        "protection_from_female_foeticide",
+        "gender_equality"
+      ],
+      "obligations": [
+        "no_sex_determination_for_foeticide"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "medical_termination_reasons"
+      ],
+      "category": "human_rights",
+      "keywords": [
+        "sex determination",
+        "female foetus",
+        "termination",
+        "abortion",
+        "foeticide",
+        "prohibited"
+      ],
+      "intent_match": [
+        "sex_determination",
+        "female_foeticide"
+      ],
+      "template_id": "TEMPLATE_HUMAN_RIGHTS",
+      "citation_format": "IMC Ethics Code, Section 7.6"
+    },
+    {
+      "id": "IMC-7.7",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.7",
+      "subsection": null,
+      "title": "Improper Signing of Professional Certificates",
+      "exact_text": "Registered medical practitioners are in certain cases bound by law to give, or may from time to time be called upon or requested to give certificates, notification, reports and other documents of similar character signed by them in their professional capacity for subsequent use in the courts or for administrative purposes etc. Such documents, among others, include the ones given at Appendix 4. Any registered practitioner who is shown to have signed or given under his name and authority any such certificate, notification, report or document of a similar character which is untrue, misleading or improper, is liable to have his name deleted from the Register.",
+      "paraphrase": "Signing false, misleading, or improper medical certificates or reports can result in removal from the medical register.",
+      "rights": ["accurate_documentation", "truthful_certification"],
+      "obligations": ["sign_only_truthful_documents", "verify_certificate_accuracy"],
+      "actors": ["doctor", "patient", "legal_authorities"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["certificates", "reports", "documents", "untrue", "misleading", "improper", "sign", "register"],
+      "intent_match": ["false_certificates", "medical_documentation", "fraudulent_reports"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.7"
+    },
+    {
+      "id": "IMC-7.8",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.8",
+      "subsection": null,
+      "title": "Contravention of Drugs and Cosmetics Act",
+      "exact_text": "A registered medical practitioner shall not contravene the provisions of the Drugs and Cosmetics Act and regulations made there under. Accordingly, a) Prescribing steroids/psychotropic drugs when there is no absolute medical indication; b) Selling Schedule H & L drugs and poisons to the public except to his patient; in contravention of the above provisions shall constitute gross professional misconduct on the part of the physician.",
+      "paraphrase": "Violating drugs laws, like prescribing steroids without need or selling restricted drugs to non-patients, is gross misconduct.",
+      "rights": ["safe_medication_practices", "regulated_drug_prescribing"],
+      "obligations": ["follow_drug_laws", "prescribe_appropriately", "restrict_drug_sales"],
+      "actors": ["doctor", "patient", "public"],
+      "exceptions": ["valid_medical_indication"],
+      "category": "professional_conduct",
+      "keywords": ["Drugs and Cosmetics Act", "steroids", "psychotropic drugs", "Schedule H", "Schedule L", "poisons", "sell", "prescribe"],
+      "intent_match": ["drug_law_violation", "improper_prescribing", "illegal_drug_sales"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.8"
+    },
+    {
+      "id": "IMC-7.9",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.9",
+      "subsection": null,
+      "title": "Performing or Enabling Illegal Abortions",
+      "exact_text": "Performing or enabling unqualified person to perform an abortion or any illegal operation for which there is no medical, surgical or psychological indication.",
+      "paraphrase": "Doing illegal abortions or letting unqualified people do them without medical reason is misconduct.",
+      "rights": ["legal_medical_procedures", "qualified_practitioners"],
+      "obligations": ["perform_only_legal_abortions", "use_only_qualified_personnel"],
+      "actors": ["doctor", "patient"],
+      "exceptions": ["legal_medical_termination"],
+      "category": "professional_conduct",
+      "keywords": ["abortion", "illegal operation", "unqualified person", "medical indication", "enable", "perform"],
+      "intent_match": ["illegal_abortion", "unqualified_practitioner", "medical_termination"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.9"
+    },
+    {
+      "id": "IMC-7.10",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.10",
+      "subsection": null,
+      "title": "Issuing Certificates to Unqualified Persons",
+      "exact_text": "A registered medical practitioner shall not issue certificates of efficiency in modern medicine to unqualified or non-medical person.",
+      "paraphrase": "Doctors cannot give modern medicine certificates to people without medical qualifications.",
+      "rights": ["qualified_medical_practice"],
+      "obligations": ["issue_certificates_only_to_qualified"],
+      "actors": ["doctor"],
+      "exceptions": ["training_bona_fide_students"],
+      "category": "professional_conduct",
+      "keywords": ["certificates", "efficiency", "modern medicine", "unqualified", "non-medical"],
+      "intent_match": ["false_certification", "unqualified_certificates"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.10"
+    },
+    {
+      "id": "IMC-7.11",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.11",
+      "subsection": null,
+      "title": "Restrictions on Lay Press Articles",
+      "exact_text": "A physician should not contribute to the lay press articles and give interviews regarding diseases and treatments which may have the effect of advertising himself or soliciting practices; but is open to write to the lay press under his own name on matters of public health, hygienic living or to deliver public lectures, give talks on the radio/TV/internet chat etc. for the same purpose and serve on the panel of doctors etc. provided that there shall be no solicitation of patients.",
+      "paraphrase": "Doctors can write about public health but not in ways that advertise themselves or attract patients.",
+      "rights": ["public_health_education", "ethical_communication"],
+      "obligations": ["avoid_self_advertising", "no_patient_solicitation", "ethical_public_communication"],
+      "actors": ["doctor", "public"],
+      "exceptions": ["public_health_education"],
+      "category": "advertising_ethics",
+      "keywords": ["lay press", "articles", "interviews", "advertising", "soliciting", "public health", "hygienic", "lectures"],
+      "intent_match": ["doctor_advertising", "media_appearances", "public_health_communication"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.11"
+    },
+    {
+      "id": "IMC-7.12",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.12",
+      "subsection": null,
+      "title": "Advertising Medical Institutions",
+      "exact_text": "An institution run by a physician for a particular purpose such as a maternity home, nursing home, private hospital, rehabilitation centre or any type of training institution etc. may be advertised in the lay press, but such advertisements should not contain anything more than the name of the institution, type of patients admitted, type of training and other facilities offered and the fees.",
+      "paraphrase": "Medical institutions can advertise basic details like name, services, and fees, but nothing more.",
+      "rights": ["transparent_institutional_info"],
+      "obligations": ["limited_institutional_advertising", "disclose_basic_details"],
+      "actors": ["doctor", "hospital", "public"],
+      "exceptions": [],
+      "category": "advertising_ethics",
+      "keywords": ["institution", "advertise", "lay press", "name", "patients", "training", "facilities", "fees"],
+      "intent_match": ["hospital_advertising", "institutional_promotion"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.12"
+    },
+    {
+      "id": "IMC-7.13",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.13",
+      "subsection": null,
+      "title": "Proper Sign Board and Prescription Contents",
+      "exact_text": "It is improper for a physician to use an unusually large sign board and write on it anything other than his name, qualifications obtained from a University or a statutory body, titles and name of his speciality, registration number including the name of the State Medical Council under which registered. The same should be the contents of his prescription papers. It is improper to affix a sign-board on a chemist's shop or in places where he does not reside or work.",
+      "paraphrase": "Sign boards and prescriptions should only show name, qualifications, specialty, and registration details. No advertising on chemists' shops.",
+      "rights": ["transparent_credentials", "professional_identification"],
+      "obligations": ["restrict_sign_board_content", "proper_prescription_details", "no_sign_on_chemist_shops"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "advertising_ethics",
+      "keywords": ["sign board", "prescription", "name", "qualifications", "specialty", "registration number", "chemist shop"],
+      "intent_match": ["doctor_signage", "prescription_format", "professional_identification"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.13"
+    },
+    {
+      "id": "IMC-7.14",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.14",
+      "subsection": null,
+      "title": "Confidentiality of Patient Secrets",
+      "exact_text": "The registered medical practitioner shall not disclose the secrets of a patient that have been learnt in the exercise of his/her profession except: i) in a court of law under orders of the Presiding Judge; ii) in circumstances where there is a serious and identified risk to a specific person and/or community; and iii) notifiable diseases. In case of communicable/notifiable diseases, concerned public health authorities should be informed immediately.",
+      "paraphrase": "Doctors must keep patient information confidential except when required by court order, to prevent serious harm to others, or for notifiable diseases.",
+      "rights": ["privacy", "confidentiality", "data_protection"],
+      "obligations": ["maintain_patient_confidentiality", "disclose_only_when_required_by_law", "report_notifiable_diseases"],
+      "actors": ["doctor", "patient", "court", "public_health_authorities"],
+      "exceptions": ["court_order", "public_safety_risk", "notifiable_diseases"],
+      "category": "doctor_patient_relationship",
+      "keywords": ["secrets", "confidentiality", "disclose", "court", "risk", "notifiable diseases", "communicable", "public health"],
+      "intent_match": ["patient_confidentiality", "data_breach", "disease_reporting"],
+      "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
+      "citation_format": "IMC Ethics Code, Section 7.14"
+    },
+    {
+      "id": "IMC-7.15",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.15",
+      "subsection": null,
+      "title": "No Religious Refusal for Medical Procedures",
+      "exact_text": "The registered medical practitioner shall not refuse on religious grounds alone to give assistance in or conduct of sterility, birth control, circumcision and medical termination of Pregnancy when there is medical indication, unless the medical practitioner feels himself/herself incompetent to do so.",
+      "paraphrase": "Doctors cannot refuse to perform sterilization, birth control, circumcision, or medically indicated abortions based solely on religious reasons.",
+      "rights": ["access_to_healthcare", "non_discriminatory_care", "reproductive_rights"],
+      "obligations": ["no_religious_refusal", "provide_medically_indicated_care", "treat_all_patients_equally"],
+      "actors": ["doctor", "patient"],
+      "exceptions": ["lack_of_competence", "non_medical_grounds"],
+      "category": "doctor_patient_relationship",
+      "keywords": ["religious grounds", "refuse", "sterility", "birth control", "circumcision", "medical termination", "abortion", "MTP"],
+      "intent_match": ["religious_discrimination", "access_to_procedures", "reproductive_healthcare"],
+      "template_id": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
+      "citation_format": "IMC Ethics Code, Section 7.15"
+    },
+    {
+      "id": "IMC-7.16",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.16",
+      "subsection": null,
+      "title": "Written Consent for Surgery",
+      "exact_text": "Before performing an operation the physician should obtain in writing the consent from the husband or wife, parent or guardian in the case of minor, or the patient himself as the case may be. In an operation which may result in sterility the consent of both husband and wife is needed.",
+      "paraphrase": "Written consent is required before surgery. For operations that may cause sterility, both spouses must consent.",
+      "rights": ["informed_consent", "autonomy", "spousal_agreement_for_sterilization"],
+      "obligations": ["obtain_written_consent", "explain_risks_before_surgery", "get_both_spouses_consent_for_sterility"],
+      "actors": ["doctor", "patient", "spouse", "guardian", "parent"],
+      "exceptions": ["emergency_life_saving_surgery", "patient_incapacity"],
+      "category": "doctor_patient_relationship",
+      "keywords": ["consent", "written", "operation", "surgery", "sterility", "husband", "wife", "spouse", "minor", "guardian"],
+      "intent_match": ["surgical_consent", "informed_consent", "sterilization_consent"],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
+      "citation_format": "IMC Ethics Code, Section 7.16"
+    },
+    {
+      "id": "IMC-7.17",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.17",
+      "subsection": null,
+      "title": "Patient Privacy in Publications",
+      "exact_text": "A registered medical practitioner shall not publish photographs or case reports of his/her patients without their permission, in any medical or other journal in a manner by which their identity could be made out. If the identity is not to be disclosed, the consent is not needed.",
+      "paraphrase": "Doctors need patient permission to publish identifiable photos or case reports. Anonymous publications don't require consent.",
+      "rights": ["privacy", "control_over_medical_information", "dignity"],
+      "obligations": ["protect_patient_identity", "obtain_consent_for_publications", "ensure_anonymity_if_no_consent"],
+      "actors": ["doctor", "patient"],
+      "exceptions": ["anonymous_publications", "de_identified_data"],
+      "category": "doctor_patient_relationship",
+      "keywords": ["publish", "photographs", "case reports", "permission", "consent", "identity", "anonymous", "journal"],
+      "intent_match": ["medical_publications", "patient_privacy", "case_study_ethics"],
+      "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
+      "citation_format": "IMC Ethics Code, Section 7.17"
+    },
+    {
+      "id": "IMC-7.18",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.18",
+      "subsection": null,
+      "title": "Responsibility for Nursing Home Operations",
+      "exact_text": "In the case of running of a nursing home by a physician and employing assistants to help him/her, the ultimate responsibility rests on the physician.",
+      "paraphrase": "Doctors running nursing homes are ultimately responsible for all operations and staff actions.",
+      "rights": ["accountable_healthcare", "responsible_management"],
+      "obligations": ["supervise_nursing_home_operations", "take_ultimate_responsibility"],
+      "actors": ["doctor", "staff", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["nursing home", "responsibility", "ultimate", "assistants", "running", "employing"],
+      "intent_match": ["nursing_home_responsibility", "doctor_liability", "healthcare_facility_management"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.18"
+    },
+    {
+      "id": "IMC-7.19",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.19",
+      "subsection": null,
+      "title": "Prohibition of Using Touts or Agents",
+      "exact_text": "A physician shall not use touts or agents for procuring patients.",
+      "paraphrase": "Doctors cannot use middlemen or agents to get patients.",
+      "rights": ["ethical_patient_acquisition"],
+      "obligations": ["no_use_of_touts", "no_patient_procurement_agents"],
+      "actors": ["doctor"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["touts", "agents", "procuring", "patients", "middlemen"],
+      "intent_match": ["patient_solicitation", "unethical_marketing", "doctor_advertising"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.19"
+    },
+    {
+      "id": "IMC-7.20",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.20",
+      "subsection": null,
+      "title": "Claiming Specialization Without Qualification",
+      "exact_text": "A physician shall not claim to be specialist unless he has a special qualification in that branch.",
+      "paraphrase": "Doctors cannot claim to be specialists without proper qualifications in that field.",
+      "rights": ["accurate_credentials", "qualified_specialists"],
+      "obligations": ["claim_specialization_only_with_qualification", "truthful_representation"],
+      "actors": ["doctor", "patient"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["specialist", "claim", "special qualification", "branch", "credentials"],
+      "intent_match": ["false_specialization", "doctor_credentials", "misrepresentation"],
+      "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
+      "citation_format": "IMC Ethics Code, Section 7.20"
+    },
+    {
+      "id": "IMC-7.21",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.21",
+      "subsection": null,
+      "title": "Informed Consent for IVF and Artificial Insemination",
+      "exact_text": "No act of invitro fertilization or artificial insemination shall be undertaken without the informed consent of the female patient and her spouse as well as the donor. Such consent shall be obtained in writing only after the patient is provided, at her own level of comprehension, with sufficient information about the purpose, methods, risks, inconveniences, disappointments of the procedure and possible risks and hazards.",
+      "paraphrase": "IVF and artificial insemination require written informed consent from the female patient, her spouse, and the donor after full disclosure of risks and procedures.",
+      "rights": ["informed_consent", "reproductive_autonomy", "full_disclosure"],
+      "obligations": ["obtain_written_consent_ivf", "disclose_all_risks_procedures", "ensure_comprehension"],
+      "actors": ["doctor", "patient", "spouse", "donor"],
+      "exceptions": [],
+      "category": "doctor_patient_relationship",
+      "keywords": ["invitro fertilization", "IVF", "artificial insemination", "informed consent", "spouse", "donor", "risks", "hazards", "disappointments"],
+      "intent_match": ["ivf_consent", "assisted_reproduction", "reproductive_ethics"],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
+      "citation_format": "IMC Ethics Code, Section 7.21"
+    },
+    {
+      "id": "IMC-7.22",
+      "document": "IMC",
+      "document_abbr": "IMC",
+      "section": "7.22",
+      "subsection": null,
+      "title": "Ethical Clinical Drug Trials",
+      "exact_text": "Clinical drug trials or other research involving patients or volunteers as per the guidelines of ICMR can be undertaken, provided ethical considerations are borne in mind. Violation of existing ICMR guidelines in this regard shall constitute misconduct. Consent taken from the patient for trial of drug or therapy which is not as per the guidelines shall also be construed as misconduct.",
+      "paraphrase": "Clinical trials must follow ICMR guidelines. Violating guidelines or getting improper consent is misconduct.",
+      "rights": ["ethical_research", "proper_consent", "research_protection"],
+      "obligations": ["follow_icmr_guidelines", "obtain_proper_consent", "ensure_ethical_research"],
+      "actors": ["doctor", "patient", "researcher"],
+      "exceptions": [],
+      "category": "professional_conduct",
+      "keywords": ["clinical trials", "drug trials", "research", "ICMR", "guidelines", "ethical", "consent", "misconduct"],
+      "intent_match": ["clinical_trials", "research_ethics", "patient_research_rights"],
+      "template_id": "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION",
+      "citation_format": "IMC Ethics Code, Section 7.22"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "right_to_information",
+      "to": "doctor_explain_treatment",
+      "type": "creates_obligation",
+      "description": "Patient's right to information creates doctor's obligation to explain treatment"
+    },
+    {
+      "from": "access_medical_records",
+      "to": "hospital_provide_records",
+      "type": "creates_obligation",
+      "description": "Patient's right to access records creates hospital's obligation to provide them"
+    },
+    {
+      "from": "informed_consent",
+      "to": "doctor_explain_risks",
+      "type": "creates_obligation",
+      "description": "Patient's right to informed consent creates doctor's obligation to explain risks"
+    },
+    {
+      "from": "privacy",
+      "to": "doctor_maintain_confidentiality",
+      "type": "creates_obligation",
+      "description": "Patient's right to privacy creates doctor's obligation to maintain confidentiality"
+    },
+    {
+      "from": "safety",
+      "to": "hospital_ensure_safety",
+      "type": "creates_obligation",
+      "description": "Patient's right to safety creates hospital's obligation to ensure safe premises"
+    },
+    {
+      "from": "right_to_complain",
+      "to": "hospital_setup_grievance_mechanism",
+      "type": "creates_obligation",
+      "description": "Patient's right to complain creates hospital's obligation to setup grievance mechanism"
+    },
+    {
+      "from": "professional_treatment",
+      "to": "maintain_professional_dignity",
+      "type": "creates_obligation",
+      "description": "Patient's right to professional treatment creates doctor's obligation to maintain dignity"
+    },
+    {
+      "from": "emergency_care",
+      "to": "treat_emergency_cases",
+      "type": "creates_obligation",
+      "description": "Patient's right to emergency care creates doctor's obligation to treat emergencies"
+    },
+    {
+      "from": "access_medical_records",
+      "to": "provide_records_72_hours",
+      "type": "creates_obligation",
+      "description": "Patient's right to access medical records creates doctor's obligation to provide within 72 hours"
+    },
+    {
+      "from": "privacy",
+      "to": "maintain_patient_confidentiality",
+      "type": "creates_obligation",
+      "description": "Patient's right to privacy creates doctor's obligation to maintain confidentiality"
+    },
+    {
+      "from": "informed_consent",
+      "to": "doctor_obtain_written_consent",
+      "type": "creates_obligation",
+      "description": "Patient's right to informed consent creates doctor's obligation to obtain written consent"
+    }
+  ]
+}

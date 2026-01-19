@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-MLRA Chat - Medical Rights Advisor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .chat-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .chat-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .toggle-switch input[type="checkbox"] {
+            width: 40px;
+            height: 20px;
+            appearance: none;
+            background: #ccc;
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .toggle-switch input[type="checkbox"]:checked {
+            background: #3498db;
+        }
+        
+        .toggle-switch input[type="checkbox"]::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch input[type="checkbox"]:checked::before {
+            transform: translateX(20px);
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .examples-section {
+            margin-bottom: 25px;
+        }
+        
+        .examples-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .example-btn {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .example-btn:hover {
+            background: #f0f7ff;
+            border-color: #3498db;
+            transform: translateX(5px);
+        }
+        
+        .stats-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .stats-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .stat-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .chat-history {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
+            min-height: 500px;
+            max-height: 600px;
+        }
+        
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.user {
+            text-align: right;
+        }
+        
+        .message.bot {
+            text-align: left;
+        }
+        
+        .message-content {
+            display: inline-block;
+            max-width: 75%;
+            padding: 15px 20px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            position: relative;
+        }
+        
+        .user .message-content {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .message-sender {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .message-sender i {
+            font-size: 0.9rem;
+        }
+        
+        .user .message-sender {
+            justify-content: flex-end;
+        }
+        
+        .proof-btn {
+            margin-top: 10px;
+            padding: 6px 12px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #3498db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .proof-btn:hover {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+        
+        .proof-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .proof-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .proof-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .proof-close:hover {
+            background: #f5f5f5;
+        }
+        
+        .proof-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .proof-section h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .proof-section pre {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        
+        .chat-input {
+            padding: 20px;
+            background: white;
+        }
+        
+        .input-container {
+            display: flex;
+            gap: 12px;
+        }
+        
+        textarea {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 60px;
+            max-height: 150px;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .input-hint {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            background: white;
+            border-radius: 0 0 15px 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .chat-info {
+                flex-direction: column;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-comments"></i> PC-MLRA Chat Advisor</h1>
+                <div class="chat-info">
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="proofToggle" checked>
+                        <label for="proofToggle">Show Legal Proof</label>
+                    </div>
+                    <div class="chat-controls">
+                        <button class="btn btn-secondary" id="clearChat">
+                            <i class="fas fa-trash"></i> Clear Chat
+                        </button>
+                        <button class="btn btn-secondary" id="showStats">
+                            <i class="fas fa-chart-bar"></i> Stats
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="examples-section">
+                    <h3><i class="fas fa-lightbulb"></i> Example Questions</h3>
+                    <div id="exampleQuestions">
+                        <!-- Example questions will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <h3><i class="fas fa-chart-pie"></i> Quick Stats</h3>
+                    <div id="quickStats">
+                        <!-- Quick stats will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div class="chat-history" id="chatHistory">
+                    <!-- Messages will be added here -->
+                    <div class="message bot">
+                        <div class="message-sender">
+                            <i class="fas fa-robot"></i> PC-MLRA Advisor
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your Proof-Carrying Medical Legal Rights Advisor.</p>
+                            <p>I can help you understand:</p>
+                            <ul>
+                                <li>Patient rights under the NHRC Charter</li>
+                                <li>Doctor obligations under IMC Ethics Code</li>
+                                <li>Hospital responsibilities and regulations</li>
+                                <li>Legal protections and recourse options</li>
+                            </ul>
+                            <p><strong>Every response includes legal proof and exact citations.</strong></p>
+                            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                <strong>Disclaimer:</strong> I provide information about rights, not legal advice.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <div class="input-container">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="Type your question about medical rights here... (e.g., Can I get my medical records? What if a doctor was rude?)" 
+                            rows="3"
+                        ></textarea>
+                        <button class="btn-primary" id="sendButton">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                    </div>
+                    <div class="input-hint">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Press Shift+Enter for new line, Enter to send</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 PC-MLRA - Proof-Carrying Medical Legal Rights Advisor | Zero Hallucination Guaranteed</p>
+        </footer>
+    </div>
+    
+    <!-- Proof Modal -->
+    <div class="proof-modal" id="proofModal">
+        <div class="proof-content">
+            <button class="proof-close" id="closeProof">&times;</button>
+            <h2><i class="fas fa-file-contract"></i> Legal Proof & Citations</h2>
+            <div id="proofDetails">
+                <p>Proof details will appear here when you view proof for a response.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const chatHistory = document.getElementById('chatHistory');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const proofToggle = document.getElementById('proofToggle');
+        const clearChatButton = document.getElementById('clearChat');
+        const showStatsButton = document.getElementById('showStats');
+        const proofModal = document.getElementById('proofModal');
+        const closeProofButton = document.getElementById('closeProof');
+        const proofDetails = document.getElementById('proofDetails');
+        const exampleQuestionsDiv = document.getElementById('exampleQuestions');
+        const quickStatsDiv = document.getElementById('quickStats');
+        
+        // State
+        let currentProofData = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadExampleQuestions();
+            loadQuickStats();
+            loadChatHistory();
+            
+            // Auto-resize textarea
+            userInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+            
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Send message on Enter (but allow Shift+Enter for new line)
+            userInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            // Clear chat history
+            clearChatButton.addEventListener('click', clearChatHistory);
+            
+            // Show stats
+            showStatsButton.addEventListener('click', showSystemStats);
+            
+            // Close proof modal
+            closeProofButton.addEventListener('click', () => {
+                proofModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            proofModal.addEventListener('click', (e) => {
+                if (e.target === proofModal) {
+                    proofModal.style.display = 'none';
+                }
+            });
+        });
+        
+        async function loadExampleQuestions() {
+            try {
+                const response = await fetch('/api/examples');
+                const data = await response.json();
+                
+                if (data.examples) {
+                    exampleQuestionsDiv.innerHTML = '';
+                    data.examples.forEach(question => {
+                        const button = document.createElement('button');
+                        button.className = 'example-btn';
+                        button.textContent = question;
+                        button.addEventListener('click', () => {
+                            userInput.value = question;
+                            userInput.focus();
+                        });
+                        exampleQuestionsDiv.appendChild(button);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading examples:', error);
+            }
+        }
+        
+        async function loadQuickStats() {
+            try {
+                const response = await fetch('/api/system/stats');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    quickStatsDiv.innerHTML = `
+                        <div class="stat-item">
+                            <div class="stat-label">Total Clauses</div>
+                            <div class="stat-value">${data.total_clauses || 0}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Categories</div>
+                            <div class="stat-value">${Object.keys(data.categories || {}).length}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Documents</div>
+                            <div class="stat-value">${data.documents ? data.documents.length : 2}</div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading quick stats:', error);
+            }
+        }
+        
+        async function loadChatHistory() {
+            try {
+                const response = await fetch('/api/history');
+                const data = await response.json();
+                
+                if (data.history && data.history.length > 0) {
+                    // Clear initial welcome message
+                    chatHistory.innerHTML = '';
+                    
+                    // Add history messages
+                    data.history.forEach(message => {
+                        addMessageToChat(message.type, message.content, message.formatted_content, message.proof_trace);
+                    });
+                }
+                
+                // Scroll to bottom
+                scrollToBottom();
+            } catch (error) {
+                console.error('Error loading chat history:', error);
+            }
+        }
+        
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+            
+            // Add user message to chat immediately
+            addMessageToChat('user', message, null, null);
+            
+            // Clear input
+            userInput.value = '';
+            userInput.style.height = 'auto';
+            userInput.focus();
+            
+            // Send to server
+            await processWithPCMLRA(message);
+            
+            // Scroll to bottom
+            scrollToBottom();
+        }
+        
+        async function processWithPCMLRA(message) {
+            const showProof = proofToggle.checked;
+            
+            // Show loading indicator
+            const loadingId = 'loading-' + Date.now();
+            addMessageToChat('bot', 'Processing your query...', '<p><i class="fas fa-spinner fa-spin"></i> Processing your query...</p>', null, loadingId);
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: message,
+                        show_proof: showProof
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Remove loading message
+                const loadingElement = document.getElementById(loadingId);
+                if (loadingElement) {
+                    loadingElement.remove();
+                }
+                
+                if (response.ok) {
+                    // Add response to chat
+                    const messageId = 'msg-' + Date.now();
+                    addMessageToChat('bot', data.response, data.formatted_response, data.proof_trace, messageId);
+                    
+                    // Update quick stats
+                    loadQuickStats();
+                } else {
+                    addMessageToChat('bot', `Error: ${data.error || 'Failed to process query'}`, `<p>Error: ${data.error || 'Failed to process query'}</p>`, null);
+                }
+            } catch (error) {
+                // Remove loading message
+                const loadingElement = document.getElementById(loadingId);
+                if (loadingElement) {
+                    loadingElement.remove();
+                }
+                
+                addMessageToChat('bot', `Network error: ${error.message}`, `<p>Network error: ${error.message}</p>`, null);
+            }
+        }
+        
+        function addMessageToChat(sender, content, formattedContent, proofTrace, id = null) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            if (id) {
+                messageDiv.id = id;
+            }
+            
+            const senderDiv = document.createElement('div');
+            senderDiv.className = 'message-sender';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            
+            if (sender === 'bot') {
+                senderDiv.innerHTML = '<i class="fas fa-robot"></i> PC-MLRA Advisor';
+                contentDiv.innerHTML = formattedContent || content;
+                
+                // Add proof button if proof trace exists
+                if (proofTrace) {
+                    const proofButton = document.createElement('button');
+                    proofButton.className = 'proof-btn';
+                    proofButton.innerHTML = '<i class="fas fa-file-contract"></i> View Legal Proof';
+                    proofButton.onclick = () => showProofModal(proofTrace);
+                    contentDiv.appendChild(proofButton);
+                }
+            } else {
+                senderDiv.innerHTML = '<i class="fas fa-user"></i> You';
+                contentDiv.innerHTML = `<p>${content}</p>`;
+            }
+            
+            messageDiv.appendChild(senderDiv);
+            messageDiv.appendChild(contentDiv);
+            chatHistory.appendChild(messageDiv);
+            
+            return messageDiv;
+        }
+        
+        function showProofModal(proofTrace) {
+            currentProofData = proofTrace;
+            
+            let proofHtml = '';
+            
+            if (proofTrace && proofTrace.matched_clauses && proofTrace.matched_clauses.length > 0) {
+                proofHtml += '<div class="proof-section">';
+                proofHtml += '<h4>Legal Clauses Used</h4>';
+                proofTrace.matched_clauses.forEach(clause => {
+                    proofHtml += `
+                        <div style="margin-bottom: 10px; padding: 10px; background: white; border-radius: 6px;">
+                            <strong>${clause.title || clause.id}</strong><br>
+                            <small style="color: #666;">${clause.citation || ''}</small>
+                        </div>
+                    `;
+                });
+                proofHtml += '</div>';
+            }
+            
+            if (proofTrace && proofTrace.matched_intents && proofTrace.matched_intents.length > 0) {
+                proofHtml += '<div class="proof-section">';
+                proofHtml += '<h4>Intent Matching</h4>';
+                proofHtml += '<pre>' + JSON.stringify(proofTrace.matched_intents, null, 2) + '</pre>';
+                proofHtml += '</div>';
+            }
+            
+            if (proofTrace && proofTrace.template_used) {
+                proofHtml += '<div class="proof-section">';
+                proofHtml += '<h4>Response Template</h4>';
+                proofHtml += `<p><strong>Template:</strong> ${proofTrace.template_used}</p>`;
+                if (proofTrace.variables_count) {
+                    proofHtml += `<p><strong>Variables Used:</strong> ${proofTrace.variables_count}</p>`;
+                }
+                proofHtml += '</div>';
+            }
+            
+            proofDetails.innerHTML = proofHtml || '<p>No detailed proof trace available.</p>';
+            proofModal.style.display = 'flex';
+        }
+        
+        async function clearChatHistory() {
+            if (confirm('Clear all chat history?')) {
+                try {
+                    await fetch('/api/history/clear', {
+                        method: 'POST'
+                    });
+                    
+                    // Clear local display
+                    chatHistory.innerHTML = `
+                        <div class="message bot">
+                            <div class="message-sender">
+                                <i class="fas fa-robot"></i> PC-MLRA Advisor
+                            </div>
+                            <div class="message-content">
+                                <p>Chat history cleared. How can I help you today?</p>
+                            </div>
+                        </div>
+                    `;
+                } catch (error) {
+                    console.error('Error clearing chat history:', error);
+                }
+            }
+        }
+        
+        async function showSystemStats() {
+            try {
+                const response = await fetch('/api/system/stats');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    let statsHtml = '<div class="proof-section">';
+                    statsHtml += '<h4>System Statistics</h4>';
+                    statsHtml += `<p><strong>System:</strong> ${data.system_name}</p>`;
+                    statsHtml += `<p><strong>Version:</strong> ${data.version}</p>`;
+                    statsHtml += `<p><strong>Total Clauses:</strong> ${data.total_clauses}</p>`;
+                    
+                    if (data.categories) {
+                        statsHtml += '<h5 style="margin-top: 15px;">Clauses by Category:</h5>';
+                        for (const [category, count] of Object.entries(data.categories)) {
+                            statsHtml += `<p><strong>${category}:</strong> ${count}</p>`;
+                        }
+                    }
+                    
+                    statsHtml += '</div>';
+                    
+                    proofDetails.innerHTML = statsHtml;
+                    proofModal.style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error showing system stats:', error);
+            }
+        }
+        
+        function scrollToBottom() {
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+    </script>
+</body>
+</html>

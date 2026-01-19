@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-MLRA - Medical Legal Rights Advisor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.7;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 50px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .cta-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .cta-section p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+        }
+        
+        .stats-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .stats-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #856404;
+        }
+        
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .cta-section {
+                padding: 30px 20px;
+            }
+            
+            .btn-primary {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PC-MLRA</h1>
+            <div class="subtitle">Proof-Carrying Medical Legal Rights Advisor</div>
+            <div class="tagline">
+                A deterministic, zero-hallucination system for medical rights awareness. 
+                Every response carries legal proof and exact citations.
+            </div>
+        </header>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>Zero Hallucination</h3>
+                <p>Guaranteed factual accuracy. No AI-generated content - only verified legal clauses from NHRC Charter and IMC Ethics Code.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Proof-Carrying Responses</h3>
+                <p>Every answer includes exact citations to legal documents. See the proof behind every statement.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Bidirectional Awareness</h3>
+                <p>Understand both patient rights AND doctor obligations. Balanced information for all stakeholders.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚫</div>
+                <h3>Non-Advisory Policy</h3>
+                <p>We inform about rights, never advise on actions. You make informed decisions based on legal facts.</p>
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <h2>Knowledge Base Statistics</h2>
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats will be loaded dynamically -->
+                <div class="stat-item">
+                    <div class="stat-number">...</div>
+                    <div class="stat-label">Loading...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Ready to Understand Your Medical Rights?</h2>
+            <p>
+                Ask questions in plain English about patient rights, doctor obligations, hospital responsibilities, 
+                and legal protections. Get accurate, citation-backed responses with zero hallucinations.
+            </p>
+            <a href="/chat" class="btn-primary">Start Chatting with PC-MLRA</a>
+        </div>
+        
+        <div class="disclaimer">
+            <h3>⚠️ Important Disclaimer</h3>
+            <p>
+                PC-MLRA provides information about medical rights and obligations based on NHRC Patient Charter (2019) 
+                and IMC Ethics Regulations (2002). This system does not provide legal advice. The information provided 
+                is for educational and awareness purposes only. Always consult with qualified legal professionals for 
+                specific legal matters or if you need legal advice.
+            </p>
+        </div>
+        
+        <footer>
+            <p>© 2024 PC-MLRA - Proof-Carrying Medical Legal Rights Advisor</p>
+            <p>Version 1.0.0 | Deterministic Information System | Zero Hallucination Guaranteed</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Load system statistics
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/system/stats');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    const statsGrid = document.getElementById('statsGrid');
+                    statsGrid.innerHTML = `
+                        <div class="stat-item">
+                            <div class="stat-number">${data.total_clauses || 0}</div>
+                            <div class="stat-label">Legal Clauses</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">${data.documents ? data.documents.length : 2}</div>
+                            <div class="stat-label">Source Documents</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">${Object.keys(data.categories || {}).length}</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Accuracy Guarantee</div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+        
+        // Load stats when page loads
+        document.addEventListener('DOMContentLoaded', loadStats);
+    </script>
+</body>
+</html>

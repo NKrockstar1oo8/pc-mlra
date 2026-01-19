@@ -1,0 +1,46 @@
+{
+  "integration_summary": {
+    "date": "2026-01-19 23:09:37",
+    "original_nhrc_clauses": 46,
+    "added_imc_clauses": 29,
+    "total_clauses_after_integration": 46,
+    "documents": [
+      {
+        "name": "NHRC Patient Charter",
+        "clauses_count": 46,
+        "type": "patient_rights"
+      },
+      {
+        "name": "IMC Ethics Code",
+        "clauses_count": 29,
+        "type": "doctor_obligations"
+      }
+    ],
+    "categories_added": [
+      {
+        "name": "Professional Conduct",
+        "clauses": 7
+      },
+      {
+        "name": "Doctor-Patient Relationship",
+        "clauses": 8
+      },
+      {
+        "name": "Medical Records & Certificates",
+        "clauses": 3
+      },
+      {
+        "name": "Fees & Financial Ethics",
+        "clauses": 4
+      },
+      {
+        "name": "Advertising & Professional Ethics",
+        "clauses": 3
+      },
+      {
+        "name": "Human Rights & Special Cases",
+        "clauses": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "metadata": {
+    "system_name": "PC-MLRA Knowledge Base",
+    "version": "2.0.0",
+    "documents": [
+      "Charter of Patients' Rights by NHRC (2019)",
+      "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002"
+    ],
+    "total_clauses": 46,
+    "last_updated": "2024-01-02"
+  },
+  "documents": {
+    "NHRC": {
+      "name": "Charter of Patients' Rights by NHRC (2019)",
+      "abbreviation": "NHRC",
+      "year": 2019,
+      "source": "National Human Rights Commission"
+    },
+    "IMC": {
+      "name": "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002",
+      "abbreviation": "IMC",
+      "year": 2002,
+      "last_amended": 2016,
+      "source": "Medical Council of India"
+    }
+  },
+  "clauses": [
+    {
+      "id": "NHRC-1",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "1",
+      "subsection": null,
+      "title": "Right to Information",
+      "exact_text": "Every patient has a right to adequate relevant information about the nature, cause of illness, provisional/confirmed diagnosis, proposed investigations and management, and possible complications. To be explained at their level of understanding in language known to them. The treating physician has a duty to ensure that this information is provided in simple and intelligible language to the patient to be communicated either personally by the physician, or by means of his/her qualified assistants. Every patient and his/her designated caretaker have the right to factual information regarding the expected cost of treatment based on evidence. The hospital management has a duty to communicate this information in writing to the patient and his/her designated caretaker. They should also be informed about any additional cost to be incurred due to change in the physical condition of the patient or line of treatment in writing. On completion of treatment, the patient has the right to receive an itemized bill, to receive an explanation for the bill(s) regardless of the source of payment or the mode of payment, and receive payment receipt(s) for any payment made. Patients and their caretakers also have a right to know the identity and professional status of various care providers who are providing service to him/her and to know which Doctor/Consultant is primarily responsible for his/her care. The hospital management has a duty to provide this information routinely to all patients and their caregivers in writing with an acknowledgement.",
+      "paraphrase": "Patients have the right to receive complete information about their diagnosis, treatment options, costs, and the identity of their healthcare providers in understandable language.",
+      "rights": ["right_to_information", "treatment_explanation", "cost_information", "provider_identity"],
+      "obligations": ["doctor_explain_treatment", "hospital_provide_cost_info", "hospital_provide_provider_info"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_situations"],
+      "category": "access_information",
+      "keywords": ["information", "diagnosis", "treatment", "cost", "bill", "explain", "doctor", "identity", "status", "understand"],
+      "intent_match": ["treatment_information", "cost_information", "doctor_identity"],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMATION",
+      "citation_format": "NHRC Charter, Right 1",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "MCI Code of Ethics",
+        "Patients Charter by National Accreditation Board for Hospitals (NABH)",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-2",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "2",
+      "subsection": null,
+      "title": "Right to Records and Reports",
+      "exact_text": "Every patient or his caregiver has the right to access originals/copies of case papers, indoor patient records, investigation reports (during period of admission, preferably within 24 hours and after discharge, within 72 hours). This may be made available wherever applicable after paying appropriate fees for photocopying or allowed to be photocopied by patients at their cost. The relatives/caregivers of the patient have a right to get discharge summary or in case of death, death summary along with original copies of investigations. The hospital management has a duty to provide these records and reports and to instruct the responsible hospital staff to ensure provision of the same are strictly followed without fail.",
+      "paraphrase": "Patients can access their medical records and reports within specified timeframes, with discharge summaries provided upon request.",
+      "rights": ["access_medical_records", "obtain_documents", "discharge_summary"],
+      "obligations": ["hospital_provide_records", "doctor_maintain_records", "timely_provision"],
+      "actors": ["patient", "hospital", "doctor", "caregiver"],
+      "exceptions": ["ongoing_legal_cases", "psychiatric_records_in_certain_cases"],
+      "category": "access_information",
+      "keywords": ["records", "reports", "medical file", "documents", "access", "copy", "discharge summary", "case papers"],
+      "intent_match": ["access_medical_records", "medical_documents"],
+      "template_id": "TEMPLATE_RIGHT_TO_RECORDS",
+      "citation_format": "NHRC Charter, Right 2",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "MCI Code of Ethics section 1.3.2",
+        "Central Information Commission judgment, Nisha Priya Bhatia Vs. Institute of HB&AS, GNCTD, 2014",
+        "The Consumer Protection Act, 1986"
+      ],
+      "timeframes": {
+        "during_admission": "preferably within 24 hours",
+        "after_discharge": "within 72 hours"
+      }
+    },
+    {
+      "id": "NHRC-3",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "3",
+      "subsection": null,
+      "title": "Right to Emergency Medical Care",
+      "exact_text": "As per Supreme Court, all hospitals both in the government and in the private sector are duty bound to provide basic Emergency Medical Care, and injured persons have a right to get Emergency Medical Care. Such care must be initiated without demanding payment/advance and basic care should be provided to the patient irrespective of paying capacity. It is the duty of the hospital management to ensure provision of such emergency care through its doctors and staff, rendered promptly without compromising on the quality and safety of the patients.",
+      "paraphrase": "All hospitals must provide emergency medical care immediately without asking for payment first, regardless of the patient's ability to pay.",
+      "rights": ["emergency_care", "immediate_treatment", "free_emergency_care"],
+      "obligations": ["hospital_provide_emergency_care", "doctor_attend_emergency", "no_advance_payment_required"],
+      "actors": ["patient", "hospital", "doctor"],
+      "exceptions": ["non-emergency_cases"],
+      "category": "quality_safety",
+      "keywords": ["emergency", "immediate", "urgent", "accident", "critical", "without payment", "advance", "basic care"],
+      "intent_match": ["emergency_care", "refused_emergency"],
+      "template_id": "TEMPLATE_RIGHT_TO_EMERGENCY_CARE",
+      "citation_format": "NHRC Charter, Right 3",
+      "legal_references": [
+        "Supreme Court judgment Parmanand Katara v. Union of India (1989)",
+        "Judgment of National Consumer Disputes Redressal Commission Pravat Kumar Mukherjee v. Ruby General Hospital & Others (2005)",
+        "MCI Code of Ethics sections 2.1 and 2.4",
+        "Article 21 of the Constitution 'Right to Life'"
+      ]
+    },
+    {
+      "id": "NHRC-4",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "4",
+      "subsection": null,
+      "title": "Right to Informed Consent",
+      "exact_text": "Every patient has a right that informed consent must be sought prior to any potentially hazardous test/treatment (e.g. invasive investigation/surgery/chemotherapy) which carries certain risks. It is the duty of the hospital management to ensure that all concerned doctors are properly instructed to seek informed consent, that an appropriate policy is adopted and that consent forms with protocol for seeking informed consent are provided for patients in an obligatory manner. It is the duty of the primary treating doctor administering the potentially hazardous test/treatment to explain to the patient and caregivers the main risks that are involved in the procedure, and after giving this information, the doctor may proceed only if consent has been given in writing by the patient/caregiver or in the manner explained under Drugs and Cosmetic Act Rules 2016 on informed consent.",
+      "paraphrase": "Doctors must explain risks and get written permission before performing any risky tests or treatments.",
+      "rights": ["informed_consent", "risk_explanation", "written_consent"],
+      "obligations": ["doctor_explain_risks", "obtain_written_consent", "hospital_ensure_consent_protocol"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_life_threatening", "patient_unconscious", "mental_incapacity"],
+      "category": "consent_autonomy",
+      "keywords": ["consent", "permission", "agree", "risk", "hazardous", "surgery", "operation", "explain", "procedure"],
+      "intent_match": ["informed_consent", "forced_treatment"],
+      "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
+      "citation_format": "NHRC Charter, Right 4",
+      "legal_references": [
+        "MCI Code of Ethics section 7.16",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986",
+        "Drugs and Cosmetic Act 1940, Rules 2016 on Informed Consent"
+      ]
+    },
+    {
+      "id": "NHRC-5",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "5",
+      "subsection": null,
+      "title": "Right to Confidentiality, Human Dignity and Privacy",
+      "exact_text": "All patients have a right to privacy, and doctors have a duty to hold information about their health condition and treatment plan in strict confidentiality, unless it is essential in specific circumstances to communicate such information in the interest of protecting other or due to public health considerations. Female patients have the right to presence of another female person during physical examination by a male practitioner. It is the duty of the hospital management to ensure presence of such female attendants in case of female patients. The hospital management has a duty to ensure that its staff upholds the human dignity of every patient in all situations. All data concerning the patient should be kept under secured safe custody and insulated from data theft and leakage.",
+      "paraphrase": "Patient information must be kept private and secure. Female patients can request a female attendant during exams by male doctors.",
+      "rights": ["privacy", "confidentiality", "dignity", "female_attendant"],
+      "obligations": ["doctor_maintain_confidentiality", "hospital_ensure_privacy", "provide_female_attendant"],
+      "actors": ["patient", "doctor", "hospital"],
+      "exceptions": ["legal_requirements", "public_health_emergencies", "protecting_others"],
+      "category": "privacy_confidentiality",
+      "keywords": ["privacy", "confidential", "secret", "information", "dignity", "respect", "female attendant", "examination"],
+      "intent_match": ["privacy_breach", "confidentiality", "dignity_violation"],
+      "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
+      "citation_format": "NHRC Charter, Right 5",
+      "legal_references": [
+        "MCI Code of Ethics sections 2.2, 7.14 and 7.17",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-6",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "6",
+      "subsection": null,
+      "title": "Right to Second Opinion",
+      "exact_text": "Every patient has the right to seek second opinion from an appropriate clinician of patients'/caregivers' choice. The hospital management has a duty to respect the patient's right to second opinion, and should provide to the patients caregivers all necessary records and information required for seeking such opinion without any extra cost or delay. The hospital management has a duty to ensure that any decision to seek such second opinion by the patient/caregivers must not adversely influence the quality of care being provided by the treating hospital as long as the patient is under care of that hospital. Any kind discriminatory practice adopted by the hospital or the service providers will be deemed as Human Rights' violation.",
+      "paraphrase": "Patients can get a second opinion from another doctor, and hospitals must provide necessary records without delay or extra charge.",
+      "rights": ["second_opinion", "medical_records_for_second_opinion"],
+      "obligations": ["hospital_provide_records_for_second_opinion", "respect_second_opinion_decision"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_critical_care"],
+      "category": "quality_safety",
+      "keywords": ["second opinion", "another doctor", "consult", "records", "information", "choice"],
+      "intent_match": ["second_opinion", "doctor_disagreement"],
+      "template_id": "TEMPLATE_RIGHT_TO_SECOND_OPINION",
+      "citation_format": "NHRC Charter, Right 6",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-7",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "7",
+      "subsection": null,
+      "title": "Right to Transparency in Rates, and Care According to Prescribed Rates",
+      "exact_text": "Every patient and their caregivers have a right to information on the rates to be charged by the hospital for each type of service provided and facilities available on a prominent display board and a brochure. They have a right to receive an itemized detailed bill at the time of payment. It would be the duty of the Hospital/Clinical Establishment to display key rates at a conspicuous place in local as well as English language, and to make available the detailed schedule of rates in a booklet form to all patients/caregivers. Every patient has a right to obtain essential medicines as per India Pharmacopeia, devices and implants at rates fixed by the National Pharmaceutical Pricing Authority (NPPA) and other relevant authorities. Every patient has a right to receive health care services within the range of rates for procedures and services prescribed by Central and State Governments from time to time, wherever relevant. However, no patient can be denied choice in terms of medicines, devices and standard treatment guidelines based on the affordability of the patients' right to choice. Every hospital and clinical establishment has a duty to ensure that essential medicines under NLEM as per Government of India and World Health Organisation, devices, implants and services are provided to patients at rates that are not higher than the prescribed rates or the maximum retail price marked on the packaging.",
+      "paraphrase": "Hospitals must display their rates clearly, provide itemized bills, and charge only prescribed prices for essential medicines and services.",
+      "rights": ["transparent_pricing", "itemized_bill", "regulated_prices", "choice_of_medicines"],
+      "obligations": ["display_rates", "provide_itemized_bill", "charge_prescribed_prices"],
+      "actors": ["patient", "hospital", "caregiver"],
+      "exceptions": ["emergency_care"],
+      "category": "access_information",
+      "keywords": ["rates", "prices", "charges", "bill", "cost", "transparent", "display", "medicine prices"],
+      "intent_match": ["overcharging", "transparent_pricing", "bill_dispute"],
+      "template_id": "TEMPLATE_RIGHT_TO_TRANSPARENT_PRICING",
+      "citation_format": "NHRC Charter, Right 7",
+      "legal_references": [
+        "MCI Code of Ethics section 1.8 regarding Payment of Professional Services",
+        "Section 9(i) and 9(ii) of Clinical establishments (Central Government) Rules 2012",
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "Various Drug price control orders",
+        "The Consumer Protection Act, 1986",
+        "Drugs Price Control Order (DPCO) section 3 of the Essential Commodities Act, 1955"
+      ]
+    },
+    {
+      "id": "NHRC-8",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "8",
+      "subsection": null,
+      "title": "Right to Non-Discrimination",
+      "exact_text": "Every patient has the right to receive treatment without any discrimination based on his or her illnesses or conditions, including HIV status or other health condition, religion, caste, ethnicity, gender, age, sexual orientation, linguistic or geographical/social origins. The hospital management has a duty to ensure that no form of discriminatory behaviour or treatment takes place with any person under the hospital's care. The hospital management must regularly orient and instruct all its doctors and staff regarding the same.",
+      "paraphrase": "Patients cannot be discriminated against based on their health condition, religion, caste, gender, age, or any other personal characteristic.",
+      "rights": ["non_discrimination", "equal_treatment"],
+      "obligations": ["hospital_prevent_discrimination", "staff_training_on_non_discrimination"],
+      "actors": ["patient", "hospital", "doctor", "staff"],
+      "exceptions": ["clinical_necessity"],
+      "category": "quality_safety",
+      "keywords": ["discrimination", "equal", "fair", "HIV", "religion", "caste", "gender", "age", "sexual orientation"],
+      "intent_match": ["discrimination", "unequal_treatment"],
+      "template_id": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
+      "citation_format": "NHRC Charter, Right 8",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-9",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "9",
+      "subsection": null,
+      "title": "Right to Safety and Quality Care According to Standards",
+      "exact_text": "Patients have a right to safety and security in the hospital premises. They have a right to be provided with care in an environment having requisite cleanliness, infection control measures, safe drinking water as per BIS/FSSAI Standards and sanitation facilities. The hospital management has a duty to ensure safety of all patients in its premises including clean premises and provision for infection control. Patients have a right to receive quality health care according to currently accepted standards, norms and standard guidelines as per National Accreditation Board for Hospitals (NABH) or similar. They have a right to be attended to, treated and cared for with due skill, and in a professional manner in complete consonance with the principles of medical ethics. Patients and caretakers have a right to seek redressal in case of perceived medical negligence or damaged caused due to deliberate deficiency in service delivery. The hospital management and treating doctors have a duty to provide quality health care in accordance with current standards of care and standard treatment guidelines and to avoid medical negligence or deficiency in service delivery system in any form.",
+      "paraphrase": "Patients have the right to safe, clean facilities and quality medical care that meets established standards, with recourse in case of negligence.",
+      "rights": ["safety", "quality_care", "clean_environment", "redressal_for_negligence"],
+      "obligations": ["hospital_ensure_safety", "provide_quality_care", "maintain_cleanliness", "prevent_negligence"],
+      "actors": ["patient", "hospital", "doctor", "caregiver"],
+      "exceptions": ["force_majeure", "resource_constraints"],
+      "category": "quality_safety",
+      "keywords": ["safety", "quality", "clean", "hygiene", "infection", "negligence", "standard", "professional"],
+      "intent_match": ["medical_negligence", "unsafe_facilities", "poor_hygiene"],
+      "template_id": "TEMPLATE_RIGHT_TO_SAFETY_QUALITY",
+      "citation_format": "NHRC Charter, Right 9",
+      "legal_references": [
+        "Clinical establishments (Central Government) Rules 2012",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-10",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "10",
+      "subsection": null,
+      "title": "Right to Choose Alternative Treatment Options",
+      "exact_text": "Patients and their caregivers have a right to choose between alternative treatment/management options, if these are available, after considering all aspects of the situation. This includes the option of the patient refusing care after considering all available options, with responsibility for consequences being borne by the patient and his/her caregivers. In case a patient leaves a healthcare facility against medical advice on his/her own responsibility, then notwithstanding the impact that this may have on the patient's further treatment and condition, this decision itself should not affect the observance of various rights mentioned in this charter. The hospital management has a duty to provide information about such options to the patient as well as to respect the informed choice of the patient and caregivers in a proper recorded manner with due acknowledgement from the patient or the caregivers on the communication and the mode.",
+      "paraphrase": "Patients can choose between different treatment options or refuse treatment altogether, taking responsibility for their choice.",
+      "rights": ["choice_of_treatment", "refuse_treatment", "against_medical_advice"],
+      "obligations": ["doctor_explain_options", "respect_patient_choice", "document_refusal"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_life_threatening", "mental_incapacity"],
+      "category": "consent_autonomy",
+      "keywords": ["choice", "alternative", "options", "refuse", "against medical advice", "AMA"],
+      "intent_match": ["treatment_choice", "refused_treatment"],
+      "template_id": "TEMPLATE_RIGHT_TO_TREATMENT_CHOICE",
+      "citation_format": "NHRC Charter, Right 10",
+      "legal_references": [
+        "Annexure 8 of standards for Hospital level 1 by National Clinical Establishments Council",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-11",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "11",
+      "subsection": null,
+      "title": "Right to Choose Source for Obtaining Medicines or Tests",
+      "exact_text": "When any medicine is prescribed by a doctor or a hospital, the patients and their caregivers have the right to choose any registered pharmacy of their choice to purchase them. Similarly when a particular investigation is advised by a doctor or a hospital, the patient and his caregiver have a right to obtain this investigation from any registered diagnostic centre/laboratory having qualified personnel and accredited by National Accreditation Board for Laboratories (NABL). It is the duty of every treating physician/hospital management to inform the patient and his caregivers that they are free to access prescribed medicines/investigations from the pharmacy/diagnostic centre of their choice. The decision by the patient/caregiver to access pharmacy/diagnostic centre of their choice must not in any ways adversely influence the care being provided by the treating physician or hospital.",
+      "paraphrase": "Patients can buy medicines from any pharmacy and get tests done at any accredited lab of their choice, without affecting their medical care.",
+      "rights": ["choice_of_pharmacy", "choice_of_lab", "information_about_choice"],
+      "obligations": ["doctor_inform_about_choice", "hospital_respect_choice"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_medications"],
+      "category": "consent_autonomy",
+      "keywords": ["pharmacy", "medicine", "chemist", "lab", "test", "diagnostic", "choice", "purchase"],
+      "intent_match": ["pharmacy_choice", "lab_choice", "forced_purchase"],
+      "template_id": "TEMPLATE_RIGHT_TO_CHOOSE_SOURCE",
+      "citation_format": "NHRC Charter, Right 11",
+      "legal_references": [
+        "Various judgments by the National Consumer Dispute Redressal Commission",
+        "The Consumer Protection Act, 1986"
+      ]
+    },
+    {
+      "id": "NHRC-12",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "12",
+      "subsection": null,
+      "title": "Right to Proper Referral and Transfer",
+      "exact_text": "A patient has the right to continuity of care, and the right to be duly registered at the first healthcare facility where treatment has been sought, as well as at any subsequent facilities where care is sought. When being transferred from one healthcare facility to another, the patient/caregiver must receive a complete explanation of the justification for the transfer, the alternative options for a transfer and it must be confirmed that the transfer is acceptable to the receiving facility. The patient and caregivers have the right to be informed by the hospital about any continuing healthcare requirements following discharge from the hospital. The hospital management has a duty to ensure proper referral and transfer of patients regarding such a shift in care. In regard to all referrals of patients, including referrals to other hospitals, specialists, laboratories or imaging services, the decision regarding facility to which referral is made must be guided entirely by the best interest of the patient. The referral process must not be influenced by any commercial consideration such as kickbacks, commissions, incentives, or other perverse business practices.",
+      "paraphrase": "Patients have the right to proper referrals based on medical need, not commercial interests, with clear explanations for transfers.",
+      "rights": ["continuity_of_care", "proper_referral", "non_commercial_referral", "transfer_information"],
+      "obligations": ["doctor_refer_based_on_need", "explain_transfer", "avoid_commercial_referrals"],
+      "actors": ["patient", "doctor", "hospital", "caregiver"],
+      "exceptions": ["emergency_transfers"],
+      "category": "quality_safety",
+      "keywords": ["referral", "transfer", "continuity", "care", "commercial", "kickback", "commission"],
+      "intent_match": ["forced_referral", "commercial_referral", "transfer_issues"],
+      "template_id": "TEMPLATE_RIGHT_TO_PROPER_REFERRAL",
+      "citation_format": "NHRC Charter, Right 12",
+      "legal_references": [
+        "Medical Council of India code of ethics section 3.6",
+        "World Health Organisation – Referral Notes",
+        "Various IPHS documents"
+      ]
+    },
+    {
+      "id": "NHRC-13",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "13",
+      "subsection": null,
+      "title": "Right to Protection for Patients Involved in Clinical Trials",
+      "exact_text": "Every person/patient who is approached to participate in a clinical trial has a right to due protection in this context. All clinical trials must be conducted in compliance with the protocols and Good Clinical Practice Guidelines issued by Central Drugs Standard Control Organisation, Directorate General of Health Services, Govt. of India as well as all applicable statutory provisions of Amended Drugs and Cosmetics Act, 1940 and Rules, 1945, including observance of the following provisions related to patients rights: a) Participation of patients in clinical trials must always be based on informed consent, given after provision of all relevant information. The patient must be given a copy of the signed informed consent form, which provides him/her with a record containing basic information about the trial and also becomes documentary evidence to prove their participation in the trial. b) A participant's right to agree or decline consent to take part in a clinical trial must be respected and her/his refusal should not affect routine care. c) The patient should also be informed in writing about the name of the drug/intervention that is undergoing trial along with dates, dose and duration of administration. d) At all times, the privacy of a trial participant must be maintained and any information gathered from the participant must be kept strictly confidential. e) Trial participants who suffer any adverse impact during their participation in a trial are entitled to free medical management of adverse events, irrespective of relatedness to the clinical trial, which should be given for as long as required or till such time as it is established that the injury is not related to the clinical trial. In addition, financial or other assistance must be given to compensate them for any impairment or disability. In case of death, their dependents have the right to compensation. f) Ancillary care may be provided to clinical trial participants for non-study/trial related illnesses arising during the period of the trial. This could be in the form of medical care or reference to facilities, as may be appropriate. g) Institutional mechanisms must be established to allow for insurance coverage of trial related or unrelated illnesses (ancillary care) and award of compensation wherever deemed necessary by the concerned Ethics Committee. h) After the trial, participants should be assured of access to the best treatment methods that may have been proven by the study. Any doctor or hospital who is involved in a clinical trial has a duty to ensure that all these guidelines are followed in case of any persons/patients involved in such a trial.",
+      "paraphrase": "Clinical trial participants have extensive rights including informed consent, privacy, free treatment for adverse effects, compensation, and post-trial access to proven treatments.",
+      "rights": ["clinical_trial_protection", "informed_consent_for_trial", "privacy_in_trial", "compensation_for_adverse_effects", "post_trial_access"],
+      "obligations": ["doctor_follow_trial_guidelines", "provide_informed_consent_for_trial", "maintain_trial_privacy", "provide_compensation"],
+      "actors": ["patient", "doctor", "hospital", "researcher"],
+      "exceptions": ["emergency_research_with_waiver"],
+      "category": "consent_autonomy",
+      "keywords": ["clinical trial", "research", "experiment", "consent", "compensation", "adverse effect", "privacy"],
+      "intent_match": ["clinical_trial_rights", "trial_compensation"],
+      "template_id": "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION",
+      "citation_format": "NHRC Charter, Right 13",
+      "legal_references": [
+        "Protocols and Good Clinical Practice Guidelines issued by Central Drugs Standard Control Organisation",
+        "Amended Drugs and Cosmetics Act, 1940 and Rules, 1945 especially schedule Y",
+        "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, Indian Council of Medical Research, New Delhi, 2017",
+        "World Medical Assembly Declaration of Helsinki: Ethical Principles for Medical Research Involving Human Subjects"
+      ]
+    },
+    {
+      "id": "NHRC-14",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "14",
+      "subsection": null,
+      "title": "Right to Protection of Participants in Biomedical and Health Research",
+      "exact_text": "Every patient who is taking part in biomedical research shall be referred to as research participant and every research participant has a right to due protection in this context. Any research involving such participants should follow the National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, 2017 laid down by Indian council for Medical Research and should be carried out with prior approval of the Ethics Committee. Documented informed consent of the research participants should be taken. Additional safeguards should be taken in research involving vulnerable population. Right to dignity, right to privacy and confidentiality of individuals and communities should be protected. Research participants who suffer any direct physical, psychological, social, legal or economic harm as a result of their participation are entitled, after due assessment, to financial or other assistance to compensate them equitably for any temporary or permanent impairment or disability. The benefits accruing from research should be made accessible to individuals, communities and populations whenever relevant. Any doctor or hospital who is involved in biomedical and health research involving patients has a duty to ensure that all these guidelines are followed in case of any persons/patients involved in such research.",
+      "paraphrase": "Biomedical research participants have rights to ethical oversight, informed consent, privacy, and compensation for any harm suffered.",
+      "rights": ["biomedical_research_protection", "ethics_committee_approval", "informed_consent_research", "compensation_research_harm"],
+      "obligations": ["researcher_follow_ethical_guidelines", "obtain_ethics_approval", "provide_informed_consent", "compensate_for_harm"],
+      "actors": ["patient", "doctor", "researcher", "hospital"],
+      "exceptions": ["retrospective_chart_reviews_with_waiver"],
+      "category": "consent_autonomy",
+      "keywords": ["biomedical research", "health research", "ethics committee", "informed consent", "compensation", "vulnerable"],
+      "intent_match": ["research_rights", "biomedical_research"],
+      "template_id": "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION",
+      "citation_format": "NHRC Charter, Right 14",
+      "legal_references": [
+        "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, Indian Council of Medical Research, New Delhi, 2017",
+        "World Medical Assembly Declaration of Helsinki: Ethical Principles for Medical Research Involving Human Subjects",
+        "Drugs & Cosmetic Act, Rules 2016 on Clinical Trials"
+      ]
+    },
+    {
+      "id": "NHRC-15",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "15",
+      "subsection": null,
+      "title": "Right to Take Discharge, or Receive Body of Deceased from Hospital",
+      "exact_text": "A patient has the right to take discharge and cannot be detained in a hospital, on procedural grounds such as dispute in payment of hospital charges. Similarly, caretakers have the right to the dead body of a patient who had been treated in a hospital and the dead body cannot be detailed on procedural grounds, including nonpayment/dispute regarding payment of hospital charges against wishes of the caretakers. The hospital management has a duty to observe these rights and not to indulge in wrongful confinement of any patient, or dead body of patient, treated in the hospital under any circumstances.",
+      "paraphrase": "Hospitals cannot detain patients or dead bodies over payment disputes.",
+      "rights": ["right_to_discharge", "right_to_dead_body", "no_detention_over_payment"],
+      "obligations": ["hospital_release_patient", "hospital_release_dead_body", "no_wrongful_confinement"],
+      "actors": ["patient", "hospital", "caregiver", "deceased_patient"],
+      "exceptions": ["medical_necessity", "legal_orders"],
+      "category": "access_information",
+      "keywords": ["discharge", "detain", "body", "dead", "payment", "bill", "detention"],
+      "intent_match": ["detained_for_payment", "body_withheld"],
+      "template_id": "TEMPLATE_RIGHT_TO_DISCHARGE_BODY",
+      "citation_format": "NHRC Charter, Right 15",
+      "legal_references": [
+        "Prohibition of wrongful confinement under Sec. 340-342 of IPC",
+        "Statements of Mumbai High Court",
+        "Consumer Protection Act 1986"
+      ]
+    },
+    {
+      "id": "NHRC-16",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "16",
+      "subsection": null,
+      "title": "Right to Patient Education",
+      "exact_text": "Patients have the right to receive education about major facts relevant to his/her condition and healthy living practices, their rights and responsibilities, officially supported health insurance schemes relevant to the patient, relevant entitlements in case of charitable hospitals, and how to seek redressal of grievances in the language the patients understand or seek the education. The hospital management and treating physician have a duty to provide such education to each patient according to standard procedure in the language the patients understand and communicate in a simple and easy to understand manner.",
+      "paraphrase": "Patients have the right to receive education about their condition, healthy living, insurance options, and grievance procedures in language they understand.",
+      "rights": ["patient_education", "health_education", "grievance_procedure_info"],
+      "obligations": ["doctor_provide_education", "hospital_provide_education_in_vernacular"],
+      "actors": ["patient", "doctor", "hospital"],
+      "exceptions": ["emergency_care"],
+      "category": "access_information",
+      "keywords": ["education", "learn", "teach", "information", "rights", "responsibilities", "insurance", "grievance"],
+      "intent_match": ["patient_education", "health_information"],
+      "template_id": "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION",
+      "citation_format": "NHRC Charter, Right 16",
+      "legal_references": [
+        "The Consumer Protection Act, 1986",
+        "Standards for Hospital level 1 by National Clinical Establishments Council"
+      ]
+    },
+    {
+      "id": "NHRC-17",
+      "document": "NHRC",
+      "document_abbr": "NHRC",
+      "section": "17",
+      "subsection": null,
+      "title": "Right to be Heard and Seek Redressal",
+      "exact_text": "Every patient and their caregivers have the right to give feedback, make comments, or lodge complaints about the health care they are receiving or had received from a doctor or hospital. This includes the right to be given information and advice on how to give feedback, make comments, or make a complaint in a simple and user-friendly manner. Patients and caregivers have the right to seek redressal in case they are aggrieved, on account of infringement of any of the above mentioned rights in this charter. This may be done by lodging a complaint with an official designated for this purpose by the hospital/healthcare provider and further with an official mechanism constituted by the government such as Patients' rights Tribunal Forum or Clinical establishments regulatory authority as the case may be. All complaints must be registered by providing a registration number and there should be a robust tracking and tracing mechanism to ascertain the status of the complaint resolution. The patient and caregivers have the right to a fair and prompt redressal of their grievances. Further, they have the right to receive in writing the outcome of the complaint within 15 days from the date of the receipt of the complaint. Every hospital and clinical establishment has the duty to set up an internal redressal mechanism as well as to fully comply and cooperate with official redressal mechanisms including making available all relevant information and taking action in full accordance with orders of the redressal body as per the Patient's Right Charter or as per the applicable existing laws.",
+      "paraphrase": "Patients can complain about healthcare services and have the right to a proper grievance redressal system with timely responses.",
+      "rights": ["right_to_complain", "grievance_redressal", "feedback_mechanism", "timely_response"],
+      "obligations": ["hospital_setup_grievance_mechanism", "register_complaints", "respond_within_15_days"],
+      "actors": ["patient", "hospital", "caregiver"],
+      "exceptions": ["frivolous_complaints"],
+      "category": "redressal_complaint",
+      "keywords": ["complaint", "grievance", "redressal", "feedback", "lodge", "complain", "mechanism"],
+      "intent_match": ["how_to_complain", "grievance_redressal", "complaint_procedure"],
+      "template_id": "TEMPLATE_RIGHT_TO_REDRESSAL",
+      "citation_format": "NHRC Charter, Right 17",
+      "legal_references": [
+        "The Consumer Protection Act, 1986",
+        "NHS - Charter of Patient Rights and Responsibilities"
+      ],
+      "response_time": "15 days"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "right_to_information",
+      "to": "doctor_explain_treatment",
+      "type": "creates_obligation",
+      "description": "Patient's right to information creates doctor's obligation to explain treatment"
+    },
+    {
+      "from": "access_medical_records",
+      "to": "hospital_provide_records",
+      "type": "creates_obligation",
+      "description": "Patient's right to access records creates hospital's obligation to provide them"
+    },
+    {
+      "from": "informed_consent",
+      "to": "doctor_explain_risks",
+      "type": "creates_obligation",
+      "description": "Patient's right to informed consent creates doctor's obligation to explain risks"
+    },
+    {
+      "from": "privacy",
+      "to": "doctor_maintain_confidentiality",
+      "type": "creates_obligation",
+      "description": "Patient's right to privacy creates doctor's obligation to maintain confidentiality"
+    },
+    {
+      "from": "safety",
+      "to": "hospital_ensure_safety",
+      "type": "creates_obligation",
+      "description": "Patient's right to safety creates hospital's obligation to ensure safe premises"
+    },
+    {
+      "from": "right_to_complain",
+      "to": "hospital_setup_grievance_mechanism",
+      "type": "creates_obligation",
+      "description": "Patient's right to complain creates hospital's obligation to setup grievance mechanism"
+    }
+  ]
+}
