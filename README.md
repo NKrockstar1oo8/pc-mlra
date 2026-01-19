@@ -1,4 +1,3 @@
-````md
 # PC-MLRA  
 ## Proof-Carrying Medical Legal Rights Advisor
 
@@ -85,7 +84,6 @@ python src/main.py
 > list rights
 > search emergency
 ```
-
 ---
 
 ## 🏗️ Architecture Overview
@@ -96,9 +94,6 @@ python src/main.py
 │   (HTML / JS)   │    │   (REST API)    │    │   (Python)      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
-
----
-
 ## ⚙️ Core Components
 
 1. **KnowledgeBase**
