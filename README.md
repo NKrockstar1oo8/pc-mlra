@@ -1,180 +1,243 @@
-# PC-MLRA: Proof-Carrying Medical Legal Rights Advisor
+---
 
-A deterministic, zero-hallucination system for medical rights awareness. Every response carries legal proof and exact citations from NHRC Patient Charter (2019) and IMC Ethics Regulations (2002).
+````md
+# PC-MLRA  
+## Proof-Carrying Medical Legal Rights Advisor
 
-## 🎯 Features
+A **deterministic, zero-hallucination** system for **medical rights awareness**.  
+Every response is **proof-carrying**, backed by **exact legal citations** from:
 
-- **✅ Zero Hallucination:** Template-based system, no AI-generated content
-- **✅ Proof-Carrying:** Every response includes exact legal citations
-- **✅ Deterministic:** Same query → same response every time
-- **✅ Bidirectional:** Covers both patient rights AND doctor obligations
-- **✅ Web Interface:** Full Flask web application with chat interface
-- **✅ Console App:** Command-line interface for testing
+- **NHRC Patient Charter (2019)**
+- **IMC Ethics Regulations (2002)**
+
+This system is designed for **academic evaluation, demonstrations, and awareness**, not legal advice.
+
+---
+
+## 🎯 Key Features
+
+- ✅ **Zero Hallucination**  
+  Fully template-based responses. No generative AI content.
+
+- ✅ **Proof-Carrying Responses**  
+  Every answer includes exact legal clauses and citations.
+
+- ✅ **Deterministic Behavior**  
+  Same input → same output, every time.
+
+- ✅ **Bidirectional Coverage**  
+  Covers **patient rights** and **doctor obligations**.
+
+- ✅ **Web Interface**  
+  Flask-based web application with chat UI.
+
+- ✅ **Console Application**  
+  CLI interface for testing and debugging.
+
+---
 
 ## 📊 System Statistics
 
-- **Knowledge Base:** 77 legal clauses, 46 rights/obligations
-- **Source Documents:** NHRC Patient Charter 2019 + IMC Ethics Regulations 2002
-- **Response Templates:** 28 templates for different query types
-- **Intent Classification:** 20+ medical rights intents
+- **Legal Clauses:** 77  
+- **Rights & Obligations:** 46  
+- **Response Templates:** 28  
+- **Medical Rights Intents:** 20+  
+- **Source Documents:**  
+  - NHRC Patient Charter (2019)  
+  - IMC Ethics Regulations (2002)
+
+---
 
 ## 🚀 Quick Start
 
-### Local Development
+### 🔧 Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/pc-mlra.git
 cd pc-mlra
 
-# Install dependencies
+# Install Flask dependencies
 pip install -r requirements_flask.txt
 
 # Run the web application
 python run.py
+````
 
-# Open browser to: http://localhost:5000
+Open your browser at:
 
-===================================================================
+```
+http://localhost:5000
+```
 
---------------------
-Console Application
---------------------
+---
+
+## 🖥️ Console Application
+
+```bash
 # Run the console interface
 python src/main.py
+```
 
-# Try these commands:
-# > Can I get my medical reports?
-# > stats
-# > list rights
-# > search emergency
+### Example Commands
 
-----------------
-🏗️ Architecture
-----------------
+```text
+> Can I get my medical reports?
+> stats
+> list rights
+> search emergency
+```
+
+---
+
+## 🏗️ Architecture Overview
+
+```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Web Browser   │◄──►│   Flask Server  │◄──►│   PC-MLRA Core  │
-│   (HTML/JS)     │    │   (REST API)    │    │   (Python)      │
+│   Web Browser   │◄──►│  Flask Server   │◄──►│   PC-MLRA Core   │
+│   (HTML / JS)   │    │   (REST API)    │    │   (Python)      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
-----------------
-Core Components
-----------------
-1. KnowledgeBase - Loads and queries structured legal clauses
+---
 
-2. IntentClassifier - Rule-based intent classification
+## ⚙️ Core Components
 
-3. TemplateEngine - Template-based natural language generation
+1. **KnowledgeBase**
+   Loads and queries structured legal clauses.
 
-4. esponseAssembler - Generates proof-carrying responses
+2. **IntentClassifier**
+   Rule-based intent detection.
 
-5. ProofTrace - Tracks legal citations for every response
+3. **TemplateEngine**
+   Deterministic template-based response generation.
 
------------------
-🌐 Web Interface
------------------
-Endpoints
+4. **ResponseAssembler**
+   Generates proof-carrying answers.
 
-GET / - Home page with system statistics
+5. **ProofTrace**
+   Tracks and attaches legal citations to every response.
 
-GET /chat - Interactive chat interface
+---
 
-GET /api/health - Health check
+## 🌐 Web Interface
 
-GET /api/system/stats - System statistics
+### Available Endpoints
 
-POST /api/query - Process medical rights queries
+```text
+GET  /                     → Home page with system statistics
+GET  /chat                 → Interactive chat interface
+GET  /api/health            → Health check
+GET  /api/system/stats      → System statistics
+POST /api/query             → Process medical rights queries
+GET  /api/examples          → Example questions
+```
 
-GET /api/examples - Get example questions
+---
 
----------
-Features
----------
-✅ Session-based chat history
+## ✨ Web Features
 
-✅ Legal proof display toggle
+* ✅ Session-based chat history
+* ✅ Toggleable legal proof display
+* ✅ Example questions sidebar
+* ✅ Real-time system statistics
+* ✅ Responsive UI design
 
-✅ Example questions sidebar
+---
 
-✅ Real-time statistics
+## 📁 Project Structure
 
-✅ Responsive design
-
----------------------
-📁 Project Structure
----------------------
+```
 pc-mlra/
 ├── src/                    # Core system components
-├── data/                   # Knowledge base and templates
-├── templates/              # HTML templates for web interface
-├── app.py                  # Flask web application
+├── data/                   # Knowledge base & templates
+├── templates/              # HTML templates (Flask)
+├── app.py                  # Flask application
 ├── run.py                  # Server runner
 ├── requirements.txt        # Core dependencies
-└── requirements_flask.txt  # Flask dependencies
+├── requirements_flask.txt  # Flask dependencies
+└── README.md
+```
 
------------
-🧪 Testing
------------
-# Run comprehensive tests
+---
+
+## 🧪 Testing
+
+```bash
+# Run complete system tests
 python test_system_complete.py
 
 # Test console application
 python test_console.py
 
-# Test web endpoints
+# Test web API endpoints
 python test_endpoints.py
+```
 
----------------------------------
-🔧 Deployment : Local Deployment
----------------------------------
-# Method 1: Using runner script
+---
+
+## 🔧 Deployment (Local)
+
+```bash
+# Method 1: Runner script
 python run.py
 
-# Method 2: Direct Flask app
+# Method 2: Direct Flask execution
 python app.py
 
-# Method 3: Startup script
+# Method 3: Startup shell script
 ./start_pc_mlra.sh
+```
 
--------------------------
-Cloud Deployment Options
--------------------------
-1. Render.com (Free tier available)
+---
 
-2. Railway.app (Easy deployment)
+## ☁️ Cloud Deployment Options
 
-3. PythonAnywhere (Free Python hosting)
+* Render.com (Free tier)
+* Railway.app
+* PythonAnywhere
+* Heroku (with Procfile)
+* AWS / GCP / Azure (Production)
 
-4. Heroku (With proper Procfile)
+---
 
-5. AWS/GCP/Azure (For production)
+## ⚖️ Legal Disclaimer
 
-====================
-📄 Legal Disclaimer
-====================
-PC-MLRA provides information about medical rights and obligations based on NHRC Patient Charter (2019) and IMC Ethics Regulations (2002). This system does not provide legal advice. The information provided is for educational and awareness purposes only. Always consult with qualified legal professionals for specific legal matters.
+PC-MLRA provides **informational content only** based on:
 
-===========
-📝 License
-===========
-MIT License - See LICENSE file for details.
+* NHRC Patient Charter (2019)
+* IMC Ethics Regulations (2002)
 
-----------------
-👥 Contributing
-----------------
+This system **does NOT provide legal advice**.
+It is intended solely for **education and awareness**.
+For legal matters, consult a **qualified legal professional**.
+
+---
+
+## 📝 License
+
+MIT License
+See the `LICENSE` file for details.
+
+---
+
+## 👥 Contributing
+
 1. Fork the repository
-
 2. Create a feature branch
-
 3. Make your changes
-
-4. Add tests
-
+4. Add or update tests
 5. Submit a pull request
 
-==========
-📧 Contact
-==========
-For questions or support, please open an issue on GitHub.
+---
 
-Built with ❤️ for medical rights awareness | Zero Hallucination Guaranteed
+## 📧 Support
+
+For issues or questions, please open a **GitHub Issue**.
+
+---
+
+Built with ❤️ for **Medical Rights Awareness**
+**Zero Hallucination. Fully Deterministic. Proof-Carrying by Design.**
+
+```
