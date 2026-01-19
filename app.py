@@ -294,13 +294,14 @@ def get_example_queries():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
+    
+    # Production settings
     debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
     
-    print(f"\n📡 Server starting on port {port}")
-    print(f"🌐 Web Interface: http://localhost:{port}")
-    print(f"🔗 API Health:    http://localhost:{port}/api/health")
-    print(f"💬 Chat Interface: http://localhost:{port}/chat")
-    print("\nPress Ctrl+C to stop the server")
+    print(f"\n📡 PC-MLRA Web Application")
+    print("=" * 60)
+    print(f"🌐 Server starting on port: {port}")
+    print(f"🔧 Debug mode: {debug}")
     print("=" * 60)
     
     app.run(host='0.0.0.0', port=port, debug=debug)
