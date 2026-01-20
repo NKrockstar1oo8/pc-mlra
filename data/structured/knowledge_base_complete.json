@@ -6,9 +6,9 @@
       "Charter of Patients' Rights by NHRC (2019)",
       "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002"
     ],
-    "total_clauses": 46,
-    "last_updated": "2026-01-19",
-    "description": "Complete knowledge base with 17 NHRC patient rights and 29 IMC doctor obligations"
+    "total_clauses": 77,
+    "last_updated": "2026-01-20",
+    "description": "Complete knowledge base with 17 NHRC patient rights and 60 IMC doctor obligations"
   },
   "documents": {
     "NHRC": {
@@ -653,7 +653,7 @@
       "citation_format": "NHRC Charter, Right 12",
       "legal_references": [
         "Medical Council of India code of ethics section 3.6",
-        "World Health Organisation – Referral Notes",
+        "World Health Organisation \u2013 Referral Notes",
         "Various IPHS documents"
       ]
     },
@@ -1769,13 +1769,28 @@
       "title": "Dependence of Physicians on Each Other",
       "exact_text": "A physician should consider it as a pleasure and privilege to render gratuitous service to all physicians and their immediate family dependants.",
       "paraphrase": "Doctors should provide free service to other doctors and their immediate families.",
-      "rights": ["doctor_privileges"],
-      "obligations": ["free_service_to_doctors"],
-      "actors": ["doctor"],
+      "rights": [
+        "doctor_privileges"
+      ],
+      "obligations": [
+        "free_service_to_doctors"
+      ],
+      "actors": [
+        "doctor"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["gratuitous", "free service", "physicians", "doctors", "family"],
-      "intent_match": ["doctor_privileges", "professional_courtesy"],
+      "keywords": [
+        "gratuitous",
+        "free service",
+        "physicians",
+        "doctors",
+        "family"
+      ],
+      "intent_match": [
+        "doctor_privileges",
+        "professional_courtesy"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 4.1"
     },
@@ -1788,13 +1803,36 @@
       "title": "Conduct in Consultation",
       "exact_text": "In consultations, no insincerity, rivalry or envy should be indulged in. All due respect should be observed towards the physician in-charge of the case and no statement or remark be made, which would impair the confidence reposed in him. For this purpose no discussion should be carried on in the presence of the patient or his representatives.",
       "paraphrase": "Doctors should respect each other during consultations, avoid undermining colleagues, and not discuss disagreements in front of patients.",
-      "rights": ["professional_respect", "confidential_consultation"],
-      "obligations": ["respect_treating_doctor", "no_insincerity_in_consultation", "no_discussion_before_patient"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "professional_respect",
+        "confidential_consultation"
+      ],
+      "obligations": [
+        "respect_treating_doctor",
+        "no_insincerity_in_consultation",
+        "no_discussion_before_patient"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["consultation", "insincerity", "rivalry", "envy", "respect", "confidence", "discussion", "patient"],
-      "intent_match": ["doctor_consultation", "professional_respect", "inter_doctor_relations"],
+      "keywords": [
+        "consultation",
+        "insincerity",
+        "rivalry",
+        "envy",
+        "respect",
+        "confidence",
+        "discussion",
+        "patient"
+      ],
+      "intent_match": [
+        "doctor_consultation",
+        "professional_respect",
+        "inter_doctor_relations"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 4.2"
     },
@@ -1807,13 +1845,39 @@
       "title": "Consultant Not to Take Charge of the Case",
       "exact_text": "When a physician has been called for consultation, the Consultant should normally not take charge of the case, especially on the solicitation of the patient or friends. The Consultant shall not criticize the referring physician. He/She shall discuss the diagnosis treatment plan with the referring physician.",
       "paraphrase": "Consulting doctors should not take over cases, criticize referring doctors, and should discuss treatment plans with them.",
-      "rights": ["proper_consultation_boundaries", "respect_for_referring_doctor"],
-      "obligations": ["not_take_over_case", "no_criticism_of_referring_doctor", "discuss_with_referring_doctor"],
-      "actors": ["doctor", "consultant", "patient"],
-      "exceptions": ["mutual_agreement", "emergency_takeover"],
+      "rights": [
+        "proper_consultation_boundaries",
+        "respect_for_referring_doctor"
+      ],
+      "obligations": [
+        "not_take_over_case",
+        "no_criticism_of_referring_doctor",
+        "discuss_with_referring_doctor"
+      ],
+      "actors": [
+        "doctor",
+        "consultant",
+        "patient"
+      ],
+      "exceptions": [
+        "mutual_agreement",
+        "emergency_takeover"
+      ],
       "category": "professional_conduct",
-      "keywords": ["consultant", "take charge", "solicitation", "criticize", "referring physician", "discuss", "diagnosis"],
-      "intent_match": ["consultant_conduct", "doctor_takeover", "inter_doctor_criticism"],
+      "keywords": [
+        "consultant",
+        "take charge",
+        "solicitation",
+        "criticize",
+        "referring physician",
+        "discuss",
+        "diagnosis"
+      ],
+      "intent_match": [
+        "consultant_conduct",
+        "doctor_takeover",
+        "inter_doctor_criticism"
+      ],
       "template_id": "TEMPLATE_CONSULTATION_RIGHTS",
       "citation_format": "IMC Ethics Code, Section 4.3"
     },
@@ -1826,13 +1890,36 @@
       "title": "Appointment of Substitute",
       "exact_text": "Whenever a physician requests another physician to attend his patients during his temporary absence from his practice, professional courtesy requires the acceptance of such appointment only when he has the capacity to discharge the additional responsibility along with his/her other duties. The physician acting under such an appointment should give the utmost consideration to the interests and reputation of the absent physician and all such patients should be restored to the care of the latter upon his/her return.",
       "paraphrase": "Substitute doctors should only accept if capable, protect the absent doctor's reputation, and return patients when the original doctor returns.",
-      "rights": ["appropriate_substitute_care", "patient_continuity"],
-      "obligations": ["accept_substitute_only_if_capable", "protect_absent_doctor_reputation", "return_patients_to_original_doctor"],
-      "actors": ["doctor", "substitute_doctor", "patient"],
+      "rights": [
+        "appropriate_substitute_care",
+        "patient_continuity"
+      ],
+      "obligations": [
+        "accept_substitute_only_if_capable",
+        "protect_absent_doctor_reputation",
+        "return_patients_to_original_doctor"
+      ],
+      "actors": [
+        "doctor",
+        "substitute_doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["substitute", "temporary absence", "professional courtesy", "capacity", "reputation", "restore", "return"],
-      "intent_match": ["doctor_substitute", "temporary_coverage", "professional_courtesy"],
+      "keywords": [
+        "substitute",
+        "temporary absence",
+        "professional courtesy",
+        "capacity",
+        "reputation",
+        "restore",
+        "return"
+      ],
+      "intent_match": [
+        "doctor_substitute",
+        "temporary_coverage",
+        "professional_courtesy"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 4.4"
     },
@@ -1845,13 +1932,37 @@
       "title": "Visiting Another Physician's Case",
       "exact_text": "When it becomes the duty of a physician occupying an official position to see and report upon an illness or injury, he should communicate to the physician in attendance so as to give him an option of being present. The medical officer/physician occupying an official position should avoid remarks upon the diagnosis or the treatment that has been adopted.",
       "paraphrase": "Official doctors visiting other doctors' patients should notify them and avoid criticizing their diagnosis or treatment.",
-      "rights": ["notification_for_official_visits", "respect_for_treating_doctor"],
-      "obligations": ["notify_treating_doctor", "avoid_criticism_of_treatment"],
-      "actors": ["doctor", "official_doctor", "patient"],
-      "exceptions": ["emergency_official_duty"],
+      "rights": [
+        "notification_for_official_visits",
+        "respect_for_treating_doctor"
+      ],
+      "obligations": [
+        "notify_treating_doctor",
+        "avoid_criticism_of_treatment"
+      ],
+      "actors": [
+        "doctor",
+        "official_doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "emergency_official_duty"
+      ],
       "category": "professional_conduct",
-      "keywords": ["official position", "visit", "communicate", "option to be present", "avoid remarks", "diagnosis", "treatment"],
-      "intent_match": ["official_doctor_visit", "inter_doctor_visits", "medical_inspection"],
+      "keywords": [
+        "official position",
+        "visit",
+        "communicate",
+        "option to be present",
+        "avoid remarks",
+        "diagnosis",
+        "treatment"
+      ],
+      "intent_match": [
+        "official_doctor_visit",
+        "inter_doctor_visits",
+        "medical_inspection"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 4.5"
     },
@@ -1864,13 +1975,36 @@
       "title": "Physicians as Citizens",
       "exact_text": "Physicians, as good citizens, possessed of special training should disseminate advice on public health issues. They should play their part in enforcing the laws of the community and in sustaining the institutions that advance the interests of humanity. They should particularly co-operate with the authorities in the administration of sanitary/public health laws and regulations.",
       "paraphrase": "Doctors, as informed citizens, should provide public health advice, help enforce laws, and cooperate with health authorities.",
-      "rights": ["public_health_leadership", "community_contribution"],
-      "obligations": ["disseminate_public_health_advice", "enforce_community_laws", "cooperate_with_health_authorities"],
-      "actors": ["doctor", "public", "health_authorities"],
+      "rights": [
+        "public_health_leadership",
+        "community_contribution"
+      ],
+      "obligations": [
+        "disseminate_public_health_advice",
+        "enforce_community_laws",
+        "cooperate_with_health_authorities"
+      ],
+      "actors": [
+        "doctor",
+        "public",
+        "health_authorities"
+      ],
       "exceptions": [],
       "category": "public_health",
-      "keywords": ["citizens", "public health", "advice", "enforce laws", "community", "cooperate", "sanitary laws"],
-      "intent_match": ["doctor_citizen_role", "public_health_advice", "community_health"],
+      "keywords": [
+        "citizens",
+        "public health",
+        "advice",
+        "enforce laws",
+        "community",
+        "cooperate",
+        "sanitary laws"
+      ],
+      "intent_match": [
+        "doctor_citizen_role",
+        "public_health_advice",
+        "community_health"
+      ],
       "template_id": "TEMPLATE_PUBLIC_HEALTH",
       "citation_format": "IMC Ethics Code, Section 5.1"
     },
@@ -1883,13 +2017,37 @@
       "title": "Public and Community Health",
       "exact_text": "Physicians, especially those engaged in public health work, should enlighten the public concerning quarantine regulations and measures for the prevention of epidemic and communicable diseases. At all times the physician should notify the constituted public health authorities of every case of communicable disease under his care, in accordance with the laws, rules and regulations of the health authorities. When an epidemic occurs a physician should not abandon his duty for fear of contracting the disease himself.",
       "paraphrase": "Doctors must educate about disease prevention, report communicable diseases, and not abandon duty during epidemics.",
-      "rights": ["public_health_protection", "epidemic_response"],
-      "obligations": ["educate_public_health", "report_communicable_diseases", "no_abandonment_during_epidemics"],
-      "actors": ["doctor", "public", "health_authorities"],
+      "rights": [
+        "public_health_protection",
+        "epidemic_response"
+      ],
+      "obligations": [
+        "educate_public_health",
+        "report_communicable_diseases",
+        "no_abandonment_during_epidemics"
+      ],
+      "actors": [
+        "doctor",
+        "public",
+        "health_authorities"
+      ],
       "exceptions": [],
       "category": "public_health",
-      "keywords": ["public health", "quarantine", "epidemic", "communicable diseases", "report", "notify", "abandon duty", "epidemic"],
-      "intent_match": ["public_health", "disease_reporting", "epidemic_duty"],
+      "keywords": [
+        "public health",
+        "quarantine",
+        "epidemic",
+        "communicable diseases",
+        "report",
+        "notify",
+        "abandon duty",
+        "epidemic"
+      ],
+      "intent_match": [
+        "public_health",
+        "disease_reporting",
+        "epidemic_duty"
+      ],
       "template_id": "TEMPLATE_PUBLIC_HEALTH",
       "citation_format": "IMC Ethics Code, Section 5.2"
     },
@@ -1902,13 +2060,35 @@
       "title": "Pharmacists and Nurses Recognition",
       "exact_text": "Physicians should recognize and promote the practice of different paramedical services such as, pharmacy and nursing as professions and should seek their cooperation wherever required.",
       "paraphrase": "Doctors should respect pharmacists and nurses as professionals and seek their cooperation.",
-      "rights": ["paramedical_professional_recognition", "interprofessional_cooperation"],
-      "obligations": ["recognize_paramedical_professions", "seek_paramedical_cooperation"],
-      "actors": ["doctor", "pharmacist", "nurse"],
+      "rights": [
+        "paramedical_professional_recognition",
+        "interprofessional_cooperation"
+      ],
+      "obligations": [
+        "recognize_paramedical_professions",
+        "seek_paramedical_cooperation"
+      ],
+      "actors": [
+        "doctor",
+        "pharmacist",
+        "nurse"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["pharmacists", "nurses", "paramedical", "professions", "cooperation", "recognize", "promote"],
-      "intent_match": ["doctor_paramedical_relations", "pharmacist_cooperation", "nurse_recognition"],
+      "keywords": [
+        "pharmacists",
+        "nurses",
+        "paramedical",
+        "professions",
+        "cooperation",
+        "recognize",
+        "promote"
+      ],
+      "intent_match": [
+        "doctor_paramedical_relations",
+        "pharmacist_cooperation",
+        "nurse_recognition"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 5.3"
     },
@@ -2230,13 +2410,32 @@
       "title": "Detailed Pharmaceutical Industry Code - Gifts",
       "exact_text": "Gifts: A medical practitioner shall not receive any gift from any pharmaceutical or allied health care industry and their sales people or representatives. Gifts more than Rs. 1,000/- upto Rs. 5,000/-: Censure. Gifts more than Rs. 5,000/- upto Rs. 10,000/-: Removal from Indian Medical Register or State Medical Register for 3 months. Gifts more than Rs. 10,000/- to Rs. 50,000/-: Removal for 6 months. Gifts more than Rs. 50,000/- to Rs. 1,00,000/-: Removal for 1 year. Gifts more than Rs. 1,00,000/-: Removal for more than 1 year.",
       "paraphrase": "Doctors cannot accept gifts from pharmaceutical companies. Penalties range from censure to removal from medical register based on gift value.",
-      "rights": ["unbiased_prescribing", "no_commercial_influence"],
-      "obligations": ["no_pharma_gifts", "report_violations"],
-      "actors": ["doctor", "pharmaceutical_company"],
+      "rights": [
+        "unbiased_prescribing",
+        "no_commercial_influence"
+      ],
+      "obligations": [
+        "no_pharma_gifts",
+        "report_violations"
+      ],
+      "actors": [
+        "doctor",
+        "pharmaceutical_company"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["gifts", "pharmaceutical", "penalty", "censure", "removal", "register"],
-      "intent_match": ["pharma_gifts", "industry_influence"],
+      "keywords": [
+        "gifts",
+        "pharmaceutical",
+        "penalty",
+        "censure",
+        "removal",
+        "register"
+      ],
+      "intent_match": [
+        "pharma_gifts",
+        "industry_influence"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 6.8.1"
     },
@@ -2249,13 +2448,27 @@
       "title": "Violation of Regulations",
       "exact_text": "If he/she commits any violation of these Regulations.",
       "paraphrase": "Violating any of the IMC regulations constitutes professional misconduct.",
-      "rights": ["ethical_treatment", "professional_standards"],
-      "obligations": ["comply_with_imc_regulations"],
-      "actors": ["doctor"],
+      "rights": [
+        "ethical_treatment",
+        "professional_standards"
+      ],
+      "obligations": [
+        "comply_with_imc_regulations"
+      ],
+      "actors": [
+        "doctor"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["violation", "regulations", "misconduct"],
-      "intent_match": ["regulation_violation", "professional_misconduct"],
+      "keywords": [
+        "violation",
+        "regulations",
+        "misconduct"
+      ],
+      "intent_match": [
+        "regulation_violation",
+        "professional_misconduct"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.1"
     },
@@ -2268,13 +2481,32 @@
       "title": "Failure to Maintain Medical Records",
       "exact_text": "If he/she does not maintain the medical records of his/her indoor patients for a period of three years as per regulation 1.3 and refuses to provide the same within 72 hours when the patient or his/her authorised representative makes a request for it as per the regulation 1.3.2.",
       "paraphrase": "Not keeping medical records for 3 years or refusing to provide them within 72 hours when requested is misconduct.",
-      "rights": ["access_medical_records", "timely_document_access"],
-      "obligations": ["maintain_records_3_years", "provide_records_72_hours"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "access_medical_records",
+        "timely_document_access"
+      ],
+      "obligations": [
+        "maintain_records_3_years",
+        "provide_records_72_hours"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "medical_records",
-      "keywords": ["medical records", "3 years", "72 hours", "refuse", "provide"],
-      "intent_match": ["medical_records", "records_request", "record_denial"],
+      "keywords": [
+        "medical records",
+        "3 years",
+        "72 hours",
+        "refuse",
+        "provide"
+      ],
+      "intent_match": [
+        "medical_records",
+        "records_request",
+        "record_denial"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_RECORDS",
       "citation_format": "IMC Ethics Code, Section 7.2"
     },
@@ -2287,13 +2519,31 @@
       "title": "Failure to Display Registration Number",
       "exact_text": "If he/she does not display the registration number accorded to him/her by the State Medical Council or the Medical Council of India in his clinic, prescriptions and certificates etc. issued by him or violates the provisions of regulation 1.4.2.",
       "paraphrase": "Not displaying registration number or violating display rules is misconduct.",
-      "rights": ["transparent_credentials", "identify_doctor"],
-      "obligations": ["display_registration_number", "transparent_identification"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "transparent_credentials",
+        "identify_doctor"
+      ],
+      "obligations": [
+        "display_registration_number",
+        "transparent_identification"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["registration number", "display", "clinic", "prescription", "certificate"],
-      "intent_match": ["doctor_identification", "registration_display"],
+      "keywords": [
+        "registration number",
+        "display",
+        "clinic",
+        "prescription",
+        "certificate"
+      ],
+      "intent_match": [
+        "doctor_identification",
+        "registration_display"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.3"
     },
@@ -2306,13 +2556,31 @@
       "title": "Adultery or Improper Conduct",
       "exact_text": "Abuse of professional position by committing adultery or improper conduct with a patient or by maintaining an improper association with a patient will render a Physician liable for disciplinary action as provided under the Indian Medical Council Act, 1956 or the concerned State Medical Council Act.",
       "paraphrase": "Committing adultery or having improper relationships with patients is professional misconduct.",
-      "rights": ["professional_boundaries", "ethical_relationship"],
-      "obligations": ["maintain_professional_boundaries", "avoid_improper_relationships"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "professional_boundaries",
+        "ethical_relationship"
+      ],
+      "obligations": [
+        "maintain_professional_boundaries",
+        "avoid_improper_relationships"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["adultery", "improper conduct", "association", "relationship", "professional position"],
-      "intent_match": ["doctor_misconduct", "unethical_relationships"],
+      "keywords": [
+        "adultery",
+        "improper conduct",
+        "association",
+        "relationship",
+        "professional position"
+      ],
+      "intent_match": [
+        "doctor_misconduct",
+        "unethical_relationships"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.4"
     },
@@ -2325,13 +2593,28 @@
       "title": "Criminal Conviction",
       "exact_text": "Conviction by a Court of Law for offences involving moral turpitude / Criminal acts.",
       "paraphrase": "Being convicted of crimes involving moral turpitude is professional misconduct.",
-      "rights": ["ethical_practitioner"],
-      "obligations": ["maintain_criminal_record_clean"],
-      "actors": ["doctor"],
+      "rights": [
+        "ethical_practitioner"
+      ],
+      "obligations": [
+        "maintain_criminal_record_clean"
+      ],
+      "actors": [
+        "doctor"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["conviction", "court", "criminal", "moral turpitude", "offences"],
-      "intent_match": ["criminal_conviction", "doctor_criminal_record"],
+      "keywords": [
+        "conviction",
+        "court",
+        "criminal",
+        "moral turpitude",
+        "offences"
+      ],
+      "intent_match": [
+        "criminal_conviction",
+        "doctor_criminal_record"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.5"
     },
@@ -2383,13 +2666,36 @@
       "title": "Improper Signing of Professional Certificates",
       "exact_text": "Registered medical practitioners are in certain cases bound by law to give, or may from time to time be called upon or requested to give certificates, notification, reports and other documents of similar character signed by them in their professional capacity for subsequent use in the courts or for administrative purposes etc. Such documents, among others, include the ones given at Appendix 4. Any registered practitioner who is shown to have signed or given under his name and authority any such certificate, notification, report or document of a similar character which is untrue, misleading or improper, is liable to have his name deleted from the Register.",
       "paraphrase": "Signing false, misleading, or improper medical certificates or reports can result in removal from the medical register.",
-      "rights": ["accurate_documentation", "truthful_certification"],
-      "obligations": ["sign_only_truthful_documents", "verify_certificate_accuracy"],
-      "actors": ["doctor", "patient", "legal_authorities"],
+      "rights": [
+        "accurate_documentation",
+        "truthful_certification"
+      ],
+      "obligations": [
+        "sign_only_truthful_documents",
+        "verify_certificate_accuracy"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "legal_authorities"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["certificates", "reports", "documents", "untrue", "misleading", "improper", "sign", "register"],
-      "intent_match": ["false_certificates", "medical_documentation", "fraudulent_reports"],
+      "keywords": [
+        "certificates",
+        "reports",
+        "documents",
+        "untrue",
+        "misleading",
+        "improper",
+        "sign",
+        "register"
+      ],
+      "intent_match": [
+        "false_certificates",
+        "medical_documentation",
+        "fraudulent_reports"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.7"
     },
@@ -2402,13 +2708,39 @@
       "title": "Contravention of Drugs and Cosmetics Act",
       "exact_text": "A registered medical practitioner shall not contravene the provisions of the Drugs and Cosmetics Act and regulations made there under. Accordingly, a) Prescribing steroids/psychotropic drugs when there is no absolute medical indication; b) Selling Schedule H & L drugs and poisons to the public except to his patient; in contravention of the above provisions shall constitute gross professional misconduct on the part of the physician.",
       "paraphrase": "Violating drugs laws, like prescribing steroids without need or selling restricted drugs to non-patients, is gross misconduct.",
-      "rights": ["safe_medication_practices", "regulated_drug_prescribing"],
-      "obligations": ["follow_drug_laws", "prescribe_appropriately", "restrict_drug_sales"],
-      "actors": ["doctor", "patient", "public"],
-      "exceptions": ["valid_medical_indication"],
+      "rights": [
+        "safe_medication_practices",
+        "regulated_drug_prescribing"
+      ],
+      "obligations": [
+        "follow_drug_laws",
+        "prescribe_appropriately",
+        "restrict_drug_sales"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "public"
+      ],
+      "exceptions": [
+        "valid_medical_indication"
+      ],
       "category": "professional_conduct",
-      "keywords": ["Drugs and Cosmetics Act", "steroids", "psychotropic drugs", "Schedule H", "Schedule L", "poisons", "sell", "prescribe"],
-      "intent_match": ["drug_law_violation", "improper_prescribing", "illegal_drug_sales"],
+      "keywords": [
+        "Drugs and Cosmetics Act",
+        "steroids",
+        "psychotropic drugs",
+        "Schedule H",
+        "Schedule L",
+        "poisons",
+        "sell",
+        "prescribe"
+      ],
+      "intent_match": [
+        "drug_law_violation",
+        "improper_prescribing",
+        "illegal_drug_sales"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.8"
     },
@@ -2421,13 +2753,35 @@
       "title": "Performing or Enabling Illegal Abortions",
       "exact_text": "Performing or enabling unqualified person to perform an abortion or any illegal operation for which there is no medical, surgical or psychological indication.",
       "paraphrase": "Doing illegal abortions or letting unqualified people do them without medical reason is misconduct.",
-      "rights": ["legal_medical_procedures", "qualified_practitioners"],
-      "obligations": ["perform_only_legal_abortions", "use_only_qualified_personnel"],
-      "actors": ["doctor", "patient"],
-      "exceptions": ["legal_medical_termination"],
+      "rights": [
+        "legal_medical_procedures",
+        "qualified_practitioners"
+      ],
+      "obligations": [
+        "perform_only_legal_abortions",
+        "use_only_qualified_personnel"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "legal_medical_termination"
+      ],
       "category": "professional_conduct",
-      "keywords": ["abortion", "illegal operation", "unqualified person", "medical indication", "enable", "perform"],
-      "intent_match": ["illegal_abortion", "unqualified_practitioner", "medical_termination"],
+      "keywords": [
+        "abortion",
+        "illegal operation",
+        "unqualified person",
+        "medical indication",
+        "enable",
+        "perform"
+      ],
+      "intent_match": [
+        "illegal_abortion",
+        "unqualified_practitioner",
+        "medical_termination"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.9"
     },
@@ -2440,13 +2794,30 @@
       "title": "Issuing Certificates to Unqualified Persons",
       "exact_text": "A registered medical practitioner shall not issue certificates of efficiency in modern medicine to unqualified or non-medical person.",
       "paraphrase": "Doctors cannot give modern medicine certificates to people without medical qualifications.",
-      "rights": ["qualified_medical_practice"],
-      "obligations": ["issue_certificates_only_to_qualified"],
-      "actors": ["doctor"],
-      "exceptions": ["training_bona_fide_students"],
+      "rights": [
+        "qualified_medical_practice"
+      ],
+      "obligations": [
+        "issue_certificates_only_to_qualified"
+      ],
+      "actors": [
+        "doctor"
+      ],
+      "exceptions": [
+        "training_bona_fide_students"
+      ],
       "category": "professional_conduct",
-      "keywords": ["certificates", "efficiency", "modern medicine", "unqualified", "non-medical"],
-      "intent_match": ["false_certification", "unqualified_certificates"],
+      "keywords": [
+        "certificates",
+        "efficiency",
+        "modern medicine",
+        "unqualified",
+        "non-medical"
+      ],
+      "intent_match": [
+        "false_certification",
+        "unqualified_certificates"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.10"
     },
@@ -2459,13 +2830,38 @@
       "title": "Restrictions on Lay Press Articles",
       "exact_text": "A physician should not contribute to the lay press articles and give interviews regarding diseases and treatments which may have the effect of advertising himself or soliciting practices; but is open to write to the lay press under his own name on matters of public health, hygienic living or to deliver public lectures, give talks on the radio/TV/internet chat etc. for the same purpose and serve on the panel of doctors etc. provided that there shall be no solicitation of patients.",
       "paraphrase": "Doctors can write about public health but not in ways that advertise themselves or attract patients.",
-      "rights": ["public_health_education", "ethical_communication"],
-      "obligations": ["avoid_self_advertising", "no_patient_solicitation", "ethical_public_communication"],
-      "actors": ["doctor", "public"],
-      "exceptions": ["public_health_education"],
+      "rights": [
+        "public_health_education",
+        "ethical_communication"
+      ],
+      "obligations": [
+        "avoid_self_advertising",
+        "no_patient_solicitation",
+        "ethical_public_communication"
+      ],
+      "actors": [
+        "doctor",
+        "public"
+      ],
+      "exceptions": [
+        "public_health_education"
+      ],
       "category": "advertising_ethics",
-      "keywords": ["lay press", "articles", "interviews", "advertising", "soliciting", "public health", "hygienic", "lectures"],
-      "intent_match": ["doctor_advertising", "media_appearances", "public_health_communication"],
+      "keywords": [
+        "lay press",
+        "articles",
+        "interviews",
+        "advertising",
+        "soliciting",
+        "public health",
+        "hygienic",
+        "lectures"
+      ],
+      "intent_match": [
+        "doctor_advertising",
+        "media_appearances",
+        "public_health_communication"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.11"
     },
@@ -2478,13 +2874,34 @@
       "title": "Advertising Medical Institutions",
       "exact_text": "An institution run by a physician for a particular purpose such as a maternity home, nursing home, private hospital, rehabilitation centre or any type of training institution etc. may be advertised in the lay press, but such advertisements should not contain anything more than the name of the institution, type of patients admitted, type of training and other facilities offered and the fees.",
       "paraphrase": "Medical institutions can advertise basic details like name, services, and fees, but nothing more.",
-      "rights": ["transparent_institutional_info"],
-      "obligations": ["limited_institutional_advertising", "disclose_basic_details"],
-      "actors": ["doctor", "hospital", "public"],
+      "rights": [
+        "transparent_institutional_info"
+      ],
+      "obligations": [
+        "limited_institutional_advertising",
+        "disclose_basic_details"
+      ],
+      "actors": [
+        "doctor",
+        "hospital",
+        "public"
+      ],
       "exceptions": [],
       "category": "advertising_ethics",
-      "keywords": ["institution", "advertise", "lay press", "name", "patients", "training", "facilities", "fees"],
-      "intent_match": ["hospital_advertising", "institutional_promotion"],
+      "keywords": [
+        "institution",
+        "advertise",
+        "lay press",
+        "name",
+        "patients",
+        "training",
+        "facilities",
+        "fees"
+      ],
+      "intent_match": [
+        "hospital_advertising",
+        "institutional_promotion"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.12"
     },
@@ -2497,13 +2914,35 @@
       "title": "Proper Sign Board and Prescription Contents",
       "exact_text": "It is improper for a physician to use an unusually large sign board and write on it anything other than his name, qualifications obtained from a University or a statutory body, titles and name of his speciality, registration number including the name of the State Medical Council under which registered. The same should be the contents of his prescription papers. It is improper to affix a sign-board on a chemist's shop or in places where he does not reside or work.",
       "paraphrase": "Sign boards and prescriptions should only show name, qualifications, specialty, and registration details. No advertising on chemists' shops.",
-      "rights": ["transparent_credentials", "professional_identification"],
-      "obligations": ["restrict_sign_board_content", "proper_prescription_details", "no_sign_on_chemist_shops"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "transparent_credentials",
+        "professional_identification"
+      ],
+      "obligations": [
+        "restrict_sign_board_content",
+        "proper_prescription_details",
+        "no_sign_on_chemist_shops"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "advertising_ethics",
-      "keywords": ["sign board", "prescription", "name", "qualifications", "specialty", "registration number", "chemist shop"],
-      "intent_match": ["doctor_signage", "prescription_format", "professional_identification"],
+      "keywords": [
+        "sign board",
+        "prescription",
+        "name",
+        "qualifications",
+        "specialty",
+        "registration number",
+        "chemist shop"
+      ],
+      "intent_match": [
+        "doctor_signage",
+        "prescription_format",
+        "professional_identification"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.13"
     },
@@ -2516,13 +2955,43 @@
       "title": "Confidentiality of Patient Secrets",
       "exact_text": "The registered medical practitioner shall not disclose the secrets of a patient that have been learnt in the exercise of his/her profession except: i) in a court of law under orders of the Presiding Judge; ii) in circumstances where there is a serious and identified risk to a specific person and/or community; and iii) notifiable diseases. In case of communicable/notifiable diseases, concerned public health authorities should be informed immediately.",
       "paraphrase": "Doctors must keep patient information confidential except when required by court order, to prevent serious harm to others, or for notifiable diseases.",
-      "rights": ["privacy", "confidentiality", "data_protection"],
-      "obligations": ["maintain_patient_confidentiality", "disclose_only_when_required_by_law", "report_notifiable_diseases"],
-      "actors": ["doctor", "patient", "court", "public_health_authorities"],
-      "exceptions": ["court_order", "public_safety_risk", "notifiable_diseases"],
+      "rights": [
+        "privacy",
+        "confidentiality",
+        "data_protection"
+      ],
+      "obligations": [
+        "maintain_patient_confidentiality",
+        "disclose_only_when_required_by_law",
+        "report_notifiable_diseases"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "court",
+        "public_health_authorities"
+      ],
+      "exceptions": [
+        "court_order",
+        "public_safety_risk",
+        "notifiable_diseases"
+      ],
       "category": "doctor_patient_relationship",
-      "keywords": ["secrets", "confidentiality", "disclose", "court", "risk", "notifiable diseases", "communicable", "public health"],
-      "intent_match": ["patient_confidentiality", "data_breach", "disease_reporting"],
+      "keywords": [
+        "secrets",
+        "confidentiality",
+        "disclose",
+        "court",
+        "risk",
+        "notifiable diseases",
+        "communicable",
+        "public health"
+      ],
+      "intent_match": [
+        "patient_confidentiality",
+        "data_breach",
+        "disease_reporting"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
       "citation_format": "IMC Ethics Code, Section 7.14"
     },
@@ -2535,13 +3004,40 @@
       "title": "No Religious Refusal for Medical Procedures",
       "exact_text": "The registered medical practitioner shall not refuse on religious grounds alone to give assistance in or conduct of sterility, birth control, circumcision and medical termination of Pregnancy when there is medical indication, unless the medical practitioner feels himself/herself incompetent to do so.",
       "paraphrase": "Doctors cannot refuse to perform sterilization, birth control, circumcision, or medically indicated abortions based solely on religious reasons.",
-      "rights": ["access_to_healthcare", "non_discriminatory_care", "reproductive_rights"],
-      "obligations": ["no_religious_refusal", "provide_medically_indicated_care", "treat_all_patients_equally"],
-      "actors": ["doctor", "patient"],
-      "exceptions": ["lack_of_competence", "non_medical_grounds"],
+      "rights": [
+        "access_to_healthcare",
+        "non_discriminatory_care",
+        "reproductive_rights"
+      ],
+      "obligations": [
+        "no_religious_refusal",
+        "provide_medically_indicated_care",
+        "treat_all_patients_equally"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "lack_of_competence",
+        "non_medical_grounds"
+      ],
       "category": "doctor_patient_relationship",
-      "keywords": ["religious grounds", "refuse", "sterility", "birth control", "circumcision", "medical termination", "abortion", "MTP"],
-      "intent_match": ["religious_discrimination", "access_to_procedures", "reproductive_healthcare"],
+      "keywords": [
+        "religious grounds",
+        "refuse",
+        "sterility",
+        "birth control",
+        "circumcision",
+        "medical termination",
+        "abortion",
+        "MTP"
+      ],
+      "intent_match": [
+        "religious_discrimination",
+        "access_to_procedures",
+        "reproductive_healthcare"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
       "citation_format": "IMC Ethics Code, Section 7.15"
     },
@@ -2554,13 +3050,45 @@
       "title": "Written Consent for Surgery",
       "exact_text": "Before performing an operation the physician should obtain in writing the consent from the husband or wife, parent or guardian in the case of minor, or the patient himself as the case may be. In an operation which may result in sterility the consent of both husband and wife is needed.",
       "paraphrase": "Written consent is required before surgery. For operations that may cause sterility, both spouses must consent.",
-      "rights": ["informed_consent", "autonomy", "spousal_agreement_for_sterilization"],
-      "obligations": ["obtain_written_consent", "explain_risks_before_surgery", "get_both_spouses_consent_for_sterility"],
-      "actors": ["doctor", "patient", "spouse", "guardian", "parent"],
-      "exceptions": ["emergency_life_saving_surgery", "patient_incapacity"],
+      "rights": [
+        "informed_consent",
+        "autonomy",
+        "spousal_agreement_for_sterilization"
+      ],
+      "obligations": [
+        "obtain_written_consent",
+        "explain_risks_before_surgery",
+        "get_both_spouses_consent_for_sterility"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "spouse",
+        "guardian",
+        "parent"
+      ],
+      "exceptions": [
+        "emergency_life_saving_surgery",
+        "patient_incapacity"
+      ],
       "category": "doctor_patient_relationship",
-      "keywords": ["consent", "written", "operation", "surgery", "sterility", "husband", "wife", "spouse", "minor", "guardian"],
-      "intent_match": ["surgical_consent", "informed_consent", "sterilization_consent"],
+      "keywords": [
+        "consent",
+        "written",
+        "operation",
+        "surgery",
+        "sterility",
+        "husband",
+        "wife",
+        "spouse",
+        "minor",
+        "guardian"
+      ],
+      "intent_match": [
+        "surgical_consent",
+        "informed_consent",
+        "sterilization_consent"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
       "citation_format": "IMC Ethics Code, Section 7.16"
     },
@@ -2573,13 +3101,40 @@
       "title": "Patient Privacy in Publications",
       "exact_text": "A registered medical practitioner shall not publish photographs or case reports of his/her patients without their permission, in any medical or other journal in a manner by which their identity could be made out. If the identity is not to be disclosed, the consent is not needed.",
       "paraphrase": "Doctors need patient permission to publish identifiable photos or case reports. Anonymous publications don't require consent.",
-      "rights": ["privacy", "control_over_medical_information", "dignity"],
-      "obligations": ["protect_patient_identity", "obtain_consent_for_publications", "ensure_anonymity_if_no_consent"],
-      "actors": ["doctor", "patient"],
-      "exceptions": ["anonymous_publications", "de_identified_data"],
+      "rights": [
+        "privacy",
+        "control_over_medical_information",
+        "dignity"
+      ],
+      "obligations": [
+        "protect_patient_identity",
+        "obtain_consent_for_publications",
+        "ensure_anonymity_if_no_consent"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
+      "exceptions": [
+        "anonymous_publications",
+        "de_identified_data"
+      ],
       "category": "doctor_patient_relationship",
-      "keywords": ["publish", "photographs", "case reports", "permission", "consent", "identity", "anonymous", "journal"],
-      "intent_match": ["medical_publications", "patient_privacy", "case_study_ethics"],
+      "keywords": [
+        "publish",
+        "photographs",
+        "case reports",
+        "permission",
+        "consent",
+        "identity",
+        "anonymous",
+        "journal"
+      ],
+      "intent_match": [
+        "medical_publications",
+        "patient_privacy",
+        "case_study_ethics"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_PRIVACY",
       "citation_format": "IMC Ethics Code, Section 7.17"
     },
@@ -2592,13 +3147,34 @@
       "title": "Responsibility for Nursing Home Operations",
       "exact_text": "In the case of running of a nursing home by a physician and employing assistants to help him/her, the ultimate responsibility rests on the physician.",
       "paraphrase": "Doctors running nursing homes are ultimately responsible for all operations and staff actions.",
-      "rights": ["accountable_healthcare", "responsible_management"],
-      "obligations": ["supervise_nursing_home_operations", "take_ultimate_responsibility"],
-      "actors": ["doctor", "staff", "patient"],
+      "rights": [
+        "accountable_healthcare",
+        "responsible_management"
+      ],
+      "obligations": [
+        "supervise_nursing_home_operations",
+        "take_ultimate_responsibility"
+      ],
+      "actors": [
+        "doctor",
+        "staff",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["nursing home", "responsibility", "ultimate", "assistants", "running", "employing"],
-      "intent_match": ["nursing_home_responsibility", "doctor_liability", "healthcare_facility_management"],
+      "keywords": [
+        "nursing home",
+        "responsibility",
+        "ultimate",
+        "assistants",
+        "running",
+        "employing"
+      ],
+      "intent_match": [
+        "nursing_home_responsibility",
+        "doctor_liability",
+        "healthcare_facility_management"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.18"
     },
@@ -2611,13 +3187,30 @@
       "title": "Prohibition of Using Touts or Agents",
       "exact_text": "A physician shall not use touts or agents for procuring patients.",
       "paraphrase": "Doctors cannot use middlemen or agents to get patients.",
-      "rights": ["ethical_patient_acquisition"],
-      "obligations": ["no_use_of_touts", "no_patient_procurement_agents"],
-      "actors": ["doctor"],
+      "rights": [
+        "ethical_patient_acquisition"
+      ],
+      "obligations": [
+        "no_use_of_touts",
+        "no_patient_procurement_agents"
+      ],
+      "actors": [
+        "doctor"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["touts", "agents", "procuring", "patients", "middlemen"],
-      "intent_match": ["patient_solicitation", "unethical_marketing", "doctor_advertising"],
+      "keywords": [
+        "touts",
+        "agents",
+        "procuring",
+        "patients",
+        "middlemen"
+      ],
+      "intent_match": [
+        "patient_solicitation",
+        "unethical_marketing",
+        "doctor_advertising"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.19"
     },
@@ -2630,13 +3223,32 @@
       "title": "Claiming Specialization Without Qualification",
       "exact_text": "A physician shall not claim to be specialist unless he has a special qualification in that branch.",
       "paraphrase": "Doctors cannot claim to be specialists without proper qualifications in that field.",
-      "rights": ["accurate_credentials", "qualified_specialists"],
-      "obligations": ["claim_specialization_only_with_qualification", "truthful_representation"],
-      "actors": ["doctor", "patient"],
+      "rights": [
+        "accurate_credentials",
+        "qualified_specialists"
+      ],
+      "obligations": [
+        "claim_specialization_only_with_qualification",
+        "truthful_representation"
+      ],
+      "actors": [
+        "doctor",
+        "patient"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["specialist", "claim", "special qualification", "branch", "credentials"],
-      "intent_match": ["false_specialization", "doctor_credentials", "misrepresentation"],
+      "keywords": [
+        "specialist",
+        "claim",
+        "special qualification",
+        "branch",
+        "credentials"
+      ],
+      "intent_match": [
+        "false_specialization",
+        "doctor_credentials",
+        "misrepresentation"
+      ],
       "template_id": "TEMPLATE_PROFESSIONAL_CONDUCT",
       "citation_format": "IMC Ethics Code, Section 7.20"
     },
@@ -2649,13 +3261,40 @@
       "title": "Informed Consent for IVF and Artificial Insemination",
       "exact_text": "No act of invitro fertilization or artificial insemination shall be undertaken without the informed consent of the female patient and her spouse as well as the donor. Such consent shall be obtained in writing only after the patient is provided, at her own level of comprehension, with sufficient information about the purpose, methods, risks, inconveniences, disappointments of the procedure and possible risks and hazards.",
       "paraphrase": "IVF and artificial insemination require written informed consent from the female patient, her spouse, and the donor after full disclosure of risks and procedures.",
-      "rights": ["informed_consent", "reproductive_autonomy", "full_disclosure"],
-      "obligations": ["obtain_written_consent_ivf", "disclose_all_risks_procedures", "ensure_comprehension"],
-      "actors": ["doctor", "patient", "spouse", "donor"],
+      "rights": [
+        "informed_consent",
+        "reproductive_autonomy",
+        "full_disclosure"
+      ],
+      "obligations": [
+        "obtain_written_consent_ivf",
+        "disclose_all_risks_procedures",
+        "ensure_comprehension"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "spouse",
+        "donor"
+      ],
       "exceptions": [],
       "category": "doctor_patient_relationship",
-      "keywords": ["invitro fertilization", "IVF", "artificial insemination", "informed consent", "spouse", "donor", "risks", "hazards", "disappointments"],
-      "intent_match": ["ivf_consent", "assisted_reproduction", "reproductive_ethics"],
+      "keywords": [
+        "invitro fertilization",
+        "IVF",
+        "artificial insemination",
+        "informed consent",
+        "spouse",
+        "donor",
+        "risks",
+        "hazards",
+        "disappointments"
+      ],
+      "intent_match": [
+        "ivf_consent",
+        "assisted_reproduction",
+        "reproductive_ethics"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
       "citation_format": "IMC Ethics Code, Section 7.21"
     },
@@ -2668,13 +3307,38 @@
       "title": "Ethical Clinical Drug Trials",
       "exact_text": "Clinical drug trials or other research involving patients or volunteers as per the guidelines of ICMR can be undertaken, provided ethical considerations are borne in mind. Violation of existing ICMR guidelines in this regard shall constitute misconduct. Consent taken from the patient for trial of drug or therapy which is not as per the guidelines shall also be construed as misconduct.",
       "paraphrase": "Clinical trials must follow ICMR guidelines. Violating guidelines or getting improper consent is misconduct.",
-      "rights": ["ethical_research", "proper_consent", "research_protection"],
-      "obligations": ["follow_icmr_guidelines", "obtain_proper_consent", "ensure_ethical_research"],
-      "actors": ["doctor", "patient", "researcher"],
+      "rights": [
+        "ethical_research",
+        "proper_consent",
+        "research_protection"
+      ],
+      "obligations": [
+        "follow_icmr_guidelines",
+        "obtain_proper_consent",
+        "ensure_ethical_research"
+      ],
+      "actors": [
+        "doctor",
+        "patient",
+        "researcher"
+      ],
       "exceptions": [],
       "category": "professional_conduct",
-      "keywords": ["clinical trials", "drug trials", "research", "ICMR", "guidelines", "ethical", "consent", "misconduct"],
-      "intent_match": ["clinical_trials", "research_ethics", "patient_research_rights"],
+      "keywords": [
+        "clinical trials",
+        "drug trials",
+        "research",
+        "ICMR",
+        "guidelines",
+        "ethical",
+        "consent",
+        "misconduct"
+      ],
+      "intent_match": [
+        "clinical_trials",
+        "research_ethics",
+        "patient_research_rights"
+      ],
       "template_id": "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION",
       "citation_format": "IMC Ethics Code, Section 7.22"
     }
