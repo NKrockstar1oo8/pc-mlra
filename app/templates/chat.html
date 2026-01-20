@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PC-MLRA Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #chat-container { border: 1px solid #ddd; border-radius: 5px; height: 400px; overflow-y: auto; padding: 10px; margin-bottom: 20px; }
+        .message { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .user { background: #e3f2fd; margin-left: 20px; }
+        .bot { background: #f1f8e9; margin-right: 20px; }
+        #input-area { display: flex; gap: 10px; }
+        #query-input { flex: 1; padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>PC-MLRA Medical Rights Chat</h1>
+    <p>Ask about your medical rights and doctor obligations.</p>
+    
+    <div id="chat-container"></div>
+    
+    <div id="input-area">
+        <input type="text" id="query-input" placeholder="Ask a question about medical rights...">
+        <button onclick="sendQuery()">Send</button>
+    </div>
+    
+    <div style="margin-top: 20px; font-size: 12px; color: #666;">
+        <p><strong>Examples:</strong> "Can I get my medical reports?", "Doctor was rude to me", "I need a second opinion"</p>
+    </div>
+    
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const queryInput = document.getElementById('query-input');
+        
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = isUser ? `<strong>You:</strong> ${text}` : `<strong>PC-MLRA:</strong> ${text}`;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        async function sendQuery() {
+            const query = queryInput.value.trim();
+            if (!query) return;
+            
+            addMessage(query, true);
+            queryInput.value = '';
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+                
+                const data = await response.json();
+                if (data.status === 'success') {
+                    addMessage(data.response);
+                } else {
+                    addMessage('Error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                addMessage('Network error. Please try again.');
+            }
+        }
+        
+        queryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendQuery();
+        });
+        
+        // Add welcome message
+        addMessage("Hello! I'm PC-MLRA, your Medical Legal Rights Advisor. How can I help you today?");
+    </script>
+</body>
+</html>

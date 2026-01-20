@@ -1,0 +1,14 @@
+# Production dependencies
+-r base.txt
+
+# Production-specific
+gunicorn==21.2.0
+whitenoise==6.5.0
+
+# Monitoring
+blinker==1.7.0
+python-json-logger==2.0.7
+
+# Security
+Flask-Talisman==1.1.0
+Flask-Limiter==3.3.3

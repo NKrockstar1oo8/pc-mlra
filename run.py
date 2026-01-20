@@ -1,36 +1,25 @@
 #!/usr/bin/env python3
 """
-Run PC-MLRA Flask Application
+PC-MLRA Runner Script
 """
-
 import os
 import sys
 
-# Install Flask if not already installed
-try:
-    import flask
-except ImportError:
-    print("Installing Flask...")
-    os.system(f"{sys.executable} -m pip install -r requirements_flask.txt")
+# Add current directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Run the Flask app
-from app import app
+from app import create_app
+
+app = create_app()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
     
-    print(f"""
-╔═════════════════════════════════════════════════════════╗
-║      PC-MLRA WEB APPLICATION v1.0.0                     ║
-║                                                         ║
-║  System Status: ✓ READY                                 ║
-║  Web Interface: http://localhost:{port}                 ║
-║  API Health:    http://localhost:{port}/api/health      ║
-║  Chat Interface: http://localhost:{port}/chat           ║
-║                                                         ║
-║  Press Ctrl+C to stop the server                        ║
-╚═════════════════════════════════════════════════════════╝
-    """)
+    print(f"\n📡 PC-MLRA Web Application")
+    print("=" * 60)
+    print(f"🌐 Server starting on port: {port}")
+    print(f"🔧 Debug mode: {debug}")
+    print("=" * 60)
     
-    app.run(host='0.0.0.0', port=port, debug=debug)
+    app.run(host='0.0.0.0', port=port, debug=debug, use_reloader=False)
