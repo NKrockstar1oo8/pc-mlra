@@ -106,3 +106,6 @@ test_input.txt
 *.backup
 cleanup.sh
 gunicorn_config.py
+config/google_sheets_credentials.json
+*.json
+config/*.json
