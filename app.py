@@ -1,491 +1,79 @@
-cat > app_updated.py << 'EOF'
-#!/usr/bin/env python3
-"""
-PC-MLRA Flask Web Application with Google Sheets Logging
-Proof-Carrying Medical Legal Rights Advisor
-"""
-
-import os
-import sys
-import json
-import uuid
-import time
-import threading
-import traceback
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
+import json
 from datetime import datetime
 
-# Add current directory to path to import PC-MLRA modules
-sys.path.insert(0, os.path.dirname(__file__))
+# Import your logger
+from utils.google_sheets_logger import get_logger
 
-print("🚀 Starting PC-MLRA Web Application with Google Sheets Logging...")
-print("=" * 60)
-
-# Import Google Sheets logger
-try:
-    from utils.google_sheets_logger import get_logger
-    logger = get_logger()
-    print(f"📊 Google Sheets Logging: {'✅ Active' if logger.is_connected() else '⚠️ Not available'}")
-except Exception as e:
-    print(f"⚠️  Google Sheets logger not available: {e}")
-    logger = None
-
-# Import PC-MLRA components with robust error handling
-pc_mlra = None
-
-try:
-    # Get the absolute path to the current directory
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    src_dir = os.path.join(current_dir, 'src')
-    sys.path.insert(0, current_dir)
-    sys.path.insert(0, src_dir)
-
-    # Try multiple import strategies
-    try:
-        from src.main import PCMLRAConsole
-        print("✓ Import successful: from src.main import PCMLRAConsole")
-    except ImportError:
-        try:
-            from main import PCMLRAConsole
-            print("✓ Import successful: from main import PCMLRAConsole")
-        except ImportError:
-            # Manual import as last resort
-            import_path = os.path.join(current_dir, 'src', 'main.py')
-            if os.path.exists(import_path):
-                with open(import_path, 'r') as f:
-                    code = f.read()
-                exec_globals = {}
-                exec(code, exec_globals)
-                PCMLRAConsole = exec_globals.get('PCMLRAConsole')
-                print("✓ Import successful via exec")
-
-    # Initialize PC-MLRA system
-    print("\n🔧 Initializing PC-MLRA system...")
-    pc_mlra = PCMLRAConsole()
-    print("✓ PC-MLRA Console initialized")
-    
-    # Quick test
-    test_response = pc_mlra.process_query("Can I get my medical reports?")
-    if test_response:
-        print(f"✓ System test passed")
-    else:
-        print("✓ System initialized (command mode)")
-        
-    print("✅ PC-MLRA system ready!")
-    
-except Exception as e:
-    print(f"❌ Error initializing PC-MLRA: {e}")
-    traceback.print_exc()
-    print("\n⚠️ Continuing without PC-MLRA core (demo mode)...")
-
-print("=" * 60)
-
-# Create Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'pc-mlra-secret-key-2026')
 CORS(app)
 
-# In-memory storage for chat history
-chat_histories = {}
-
-def format_response_for_html(response_text):
-    """Format the response text for HTML display"""
-    if not response_text:
-        return ""
-    
-    formatted = response_text
-    formatted = formatted.replace('## ', '<h3>').replace('\n\n', '</h3>\n')
-    formatted = formatted.replace('**', '<strong>').replace('**', '</strong>')
-    formatted = formatted.replace('\n', '<br>')
-    
-    return formatted
-
-def demo_process_query(query):
-    """Demo response if PC-MLRA is not available"""
-    demo_responses = {
-        "Can I get my medical reports?": "Yes, you have the right to access your medical records and reports. This is established in the NHRC Patient Charter 2019.",
-        "Doctor was rude to me": "Doctors are expected to maintain professional conduct. The IMC Ethics Regulations 2002 outline obligations regarding respectful behavior.",
-        "I need a second opinion": "You have the right to seek a second opinion from another healthcare provider.",
-        "Hospital is charging too much": "Hospitals should provide transparent billing. Patients have rights regarding fair and itemized charges.",
-        "Can I choose my own pharmacy?": "Yes, you generally have the right to choose your pharmacy or source for medications.",
-        "hi": "Hello! I'm PC-MLRA, your Medical Legal Rights Advisor. How can I help you today?",
-        "hello": "Hello! I'm PC-MLRA, your Medical Legal Rights Advisor. How can I help you today?",
-    }
-    
-    query_lower = query.lower()
-    for key in demo_responses:
-        if key.lower() in query_lower or query_lower in key.lower():
-            return demo_responses[key]
-    
-    return f"I understand you're asking about '{query}'. In the full PC-MLRA system, I would provide specific legal references."
-
-# Session tracking middleware
-@app.before_request
-def before_request():
-    """Track session start"""
-    if 'session_id' not in session:
-        session['session_id'] = str(uuid.uuid4())
-        session['query_count'] = 0
-        session['start_time'] = datetime.now().isoformat()
-        
-        # Log session start to Google Sheets
-        if logger and logger.is_connected():
-            threading.Thread(
-                target=logger.log_session_start,
-                args=(session['session_id'], request.headers.get('User-Agent', ''), request.remote_addr),
-                daemon=True
-            ).start()
-        else:
-            # Log to console if Google Sheets not available
-            print(f"📱 New session started: {session['session_id']}")
-
-@app.route('/')
-def index():
-    """Home page"""
-    return render_template('index.html')
-
-@app.route('/chat')
-def chat():
-    """Chat interface"""
-    if 'session_id' not in session:
-        session['session_id'] = str(uuid.uuid4())
-        chat_histories[session['session_id']] = []
-    
-    return render_template('chat.html')
+# Initialize logger
+logger = get_logger()
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'service': 'PC-MLRA',
-        'version': '1.0.0',
-        'system': 'Proof-Carrying Medical Legal Rights Advisor',
-        'pc_mlra_available': pc_mlra is not None,
-        'google_sheets_logging': logger.is_connected() if logger else False,
-        'timestamp': datetime.now().isoformat()
-    })
-
-@app.route('/api/system/stats', methods=['GET'])
-def get_system_stats():
-    """Get system statistics"""
-    try:
-        if pc_mlra is None:
-            return jsonify({
-                'system_name': 'PC-MLRA (Demo Mode)',
-                'version': '1.0.0',
-                'total_clauses': 77,
-                'documents': [
-                    'NHRC Patient Charter (2019)',
-                    'IMC Ethics Regulations (2002)'
-                ],
-                'categories': {
-                    'Access Information': 8,
-                    'Consent Autonomy': 12,
-                    'Privacy Confidentiality': 9,
-                    'Quality Safety': 10,
-                    'Redressal Complaint': 7,
-                    'Professional Conduct': 8,
-                    'Transparency Rates': 6,
-                    'Continuity Care': 5,
-                    'Emergency Care': 4,
-                    'Research Education': 4,
-                    'Non Discrimination': 4
-                },
-                'system_status': 'demo_mode'
-            })
-        
-        # Get system metadata
-        metadata = pc_mlra.kb.get_metadata()
-        
-        # Get all clauses
-        clauses = pc_mlra.kb.get_all_clauses()
-        
-        # Count by category
-        categories = {}
-        for clause in clauses:
-            category = clause.get("category", "uncategorized")
-            categories[category] = categories.get(category, 0) + 1
-        
-        # Format categories for display
-        formatted_categories = {}
-        for cat, count in categories.items():
-            readable_name = cat.replace('_', ' ').title()
-            formatted_categories[readable_name] = count
-        
-        stats = {
-            'system_name': metadata.get('system_name', 'PC-MLRA'),
-            'version': metadata.get('version', '1.0.0'),
-            'total_clauses': len(clauses),
-            'documents': [
-                'NHRC Patient Charter (2019)',
-                'IMC Ethics Regulations (2002)'
-            ],
-            'categories': formatted_categories,
-            'system_status': 'operational'
-        }
-        
-        return jsonify(stats)
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/query', methods=['POST'])
-def process_query():
-    """Process a user query with Google Sheets logging"""
-    start_time = time.time()
-    
-    try:
-        data = request.get_json()
-        if not data or 'query' not in data:
-            return jsonify({
-                'error': 'No query provided',
-                'status': 'error'
-            }), 400
-        
-        user_query = data['query'].strip()
-        if not user_query:
-            return jsonify({
-                'error': 'Empty query',
-                'status': 'error'
-            }), 400
-        
-        # Get session ID
-        session_id = session.get('session_id', 'default')
-        if session_id not in chat_histories:
-            chat_histories[session_id] = []
-        
-        # Update query count
-        session['query_count'] = session.get('query_count', 0) + 1
-        
-        # Add user message to history
-        user_message = {
-            'type': 'user',
-            'content': user_query,
-            'timestamp': datetime.now().isoformat()
-        }
-        chat_histories[session_id].append(user_message)
-        
-        # Process query using PC-MLRA or demo mode
-        matched_clause_ids = []
-        intent = "unknown"
-        
-        if pc_mlra is None:
-            response_text = demo_process_query(user_query)
-            system_mode = "demo"
-        else:
-            show_proof = data.get('show_proof', False)
-            response_text = pc_mlra.process_query(user_query)
-            system_mode = "full"
-            
-            # Try to extract matched clauses and intent from pc_mlra
-            try:
-                if hasattr(pc_mlra, 'last_matched_clauses'):
-                    matched_clause_ids = [c.get('id', '') for c in pc_mlra.last_matched_clauses]
-                if hasattr(pc_mlra, 'last_intent'):
-                    intent = pc_mlra.last_intent
-            except:
-                pass
-            
-            # Handle commands
-            if response_text is None:
-                response_text = "Command executed. For detailed output, please use the console version."
-        
-        processing_time = int((time.time() - start_time) * 1000)
-        
-        # Log to Google Sheets (async)
-        if logger and logger.is_connected():
-            threading.Thread(
-                target=logger.log_query,
-                args=(
-                    session_id,
-                    user_query,
-                    intent,
-                    matched_clause_ids,
-                    processing_time,
-                    request.headers.get('User-Agent', '')
-                ),
-                daemon=True
-            ).start()
-        else:
-            # Log to console if Google Sheets not available
-            print(f"📝 Query: {user_query[:50]}... | Session: {session_id[:8]} | Time: {processing_time}ms")
-        
-        # Get proof trace if available
-        proof_trace = None
-        if pc_mlra and hasattr(pc_mlra.assembler, 'last_proof_trace'):
-            proof = pc_mlra.assembler.last_proof_trace
-            if hasattr(proof, 'to_dict'):
-                proof_trace = proof.to_dict()
-        
-        # Format response for HTML
-        formatted_response = format_response_for_html(response_text)
-        
-        # Add bot message to history
-        bot_message = {
-            'type': 'bot',
-            'content': response_text,
-            'formatted_content': formatted_response,
-            'timestamp': datetime.now().isoformat(),
-            'proof_trace': proof_trace,
-            'mode': system_mode
-        }
-        chat_histories[session_id].append(bot_message)
-        
-        # Keep only last 50 messages per session
-        if len(chat_histories[session_id]) > 50:
-            chat_histories[session_id] = chat_histories[session_id][-50:]
-        
-        return jsonify({
-            'query': user_query,
-            'response': response_text,
-            'formatted_response': formatted_response,
-            'proof_trace': proof_trace,
-            'status': 'success',
-            'session_id': session_id,
-            'message_count': len(chat_histories[session_id]),
-            'processing_time_ms': processing_time,
-            'mode': system_mode
-        })
-        
-    except Exception as e:
-        processing_time = int((time.time() - start_time) * 1000)
-        
-        # Log error to Google Sheets
-        if logger and logger.is_connected():
-            threading.Thread(
-                target=logger.log_error,
-                args=(
-                    type(e).__name__,
-                    str(e),
-                    session.get('session_id', 'unknown'),
-                    data.get('query', '') if data else ''
-                ),
-                daemon=True
-            ).start()
-        
-        app.logger.error(f"Error processing query: {e}")
-        traceback.print_exc()
-        
-        return jsonify({
-            'error': str(e),
-            'status': 'error',
-            'processing_time_ms': processing_time
-        }), 500
-
-@app.route('/api/history', methods=['GET'])
-def get_chat_history():
-    """Get chat history for current session"""
-    session_id = session.get('session_id', 'default')
-    history = chat_histories.get(session_id, [])
-    
-    return jsonify({
-        'session_id': session_id,
-        'history': history,
-        'count': len(history)
-    })
-
-@app.route('/api/history/clear', methods=['POST'])
-def clear_chat_history():
-    """Clear chat history for current session"""
-    session_id = session.get('session_id', 'default')
-    if session_id in chat_histories:
-        chat_histories[session_id] = []
-    
-    return jsonify({
-        'status': 'success',
-        'message': 'Chat history cleared',
-        'session_id': session_id
-    })
-
-@app.route('/api/knowledge/search', methods=['GET'])
-def search_knowledge():
-    """Search the knowledge base"""
-    keyword = request.args.get('q', '')
-    if not keyword:
-        return jsonify({'error': 'No search term provided'}), 400
-    
-    try:
-        if pc_mlra is None:
-            return jsonify({
-                'query': keyword,
-                'results': [],
-                'total': 0,
-                'note': 'PC-MLRA core not loaded. Search unavailable in demo mode.'
-            })
-        
-        results = pc_mlra.kb.search_clauses_by_keyword(keyword)
-        
-        # Format results
-        formatted_results = []
-        for clause in results[:20]:
-            formatted_results.append({
-                'id': clause.get('id', ''),
-                'title': clause.get('title', ''),
-                'document': clause.get('document_abbr', ''),
-                'section': clause.get('section', ''),
-                'category': clause.get('category', '').replace('_', ' ').title(),
-                'summary': clause.get('paraphrase', '')[:200] + '...' if clause.get('paraphrase') else ''
-            })
-        
-        return jsonify({
-            'query': keyword,
-            'results': formatted_results,
-            'total': len(results)
-        })
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/examples', methods=['GET'])
-def get_example_queries():
-    """Get example queries for users"""
-    examples = [
-        "Can I get my medical reports?",
-        "Doctor was rude to me",
-        "I need a second opinion",
-        "Hospital is charging too much",
-        "Can I choose my own pharmacy?",
-        "Doctor didn't take my consent",
-        "My medical information was shared without permission",
-        "What are my rights in emergency care?",
-        "Can I get an itemized bill?",
-        "What if I want to leave against medical advice?"
-    ]
-    
-    return jsonify({
-        'examples': examples,
-        'count': len(examples)
+        'timestamp': datetime.now().isoformat(),
+        'service': 'PC-MLRA'
     })
 
 @app.route('/api/logs/status', methods=['GET'])
-def get_logs_status():
-    """Get logging status"""
-    if logger:
+def logs_status():
+    """Check logging status"""
+    try:
+        connected = logger.is_connected()
         return jsonify({
-            'google_sheets_connected': logger.is_connected(),
-            'sheet_id': '1qzzqiK1rrMqiUPX3JGSTSGFP3JKUCLDrp9i4XLAMPq0',
-            'sheet_url': 'https://docs.google.com/spreadsheets/d/1qzzqiK1rrMqiUPX3JGSTSGFP3JKUCLDrp9i4XLAMPq0',
-            'status': 'active' if logger.is_connected() else 'inactive'
+            'connected': connected,
+            'spreadsheet_id': os.environ.get('GOOGLE_SHEETS_ID'),
+            'timestamp': datetime.now().isoformat()
         })
-    else:
+    except Exception as e:
         return jsonify({
-            'google_sheets_connected': False,
-            'status': 'logger_not_initialized'
-        })
+            'connected': False,
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }), 500
+
+@app.route('/api/query', methods=['POST'])
+def handle_query():
+    """Main query endpoint"""
+    try:
+        data = request.json
+        query = data.get('query', '')
+        
+        # Start timer
+        start_time = datetime.now()
+        
+        # Your ML logic here
+        response = {
+            'response': f"Processed query: {query}",
+            'intent': 'medical_inquiry',
+            'confidence': 0.95,
+            'suggestions': ['medical_reports', 'appointment_scheduling']
+        }
+        
+        # End timer
+        end_time = datetime.now()
+        response_time = (end_time - start_time).total_seconds() * 1000  # ms
+        
+        # Log the query
+        logger.log_query(
+            session_id=f"session_{datetime.now().timestamp()}",
+            query=query,
+            intent=response.get('intent', 'unknown'),
+            response_time=response_time
+        )
+        
+        return jsonify(response)
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    
-    # Production settings
-    debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
-    
-    print(f"\n📡 PC-MLRA Web Application")
-    print("=" * 60)
-    print(f"🌐 Server starting on port: {port}")
-    print(f"🔧 Debug mode: {debug}")
-    print(f"🤖 PC-MLRA Core: {'✅ Available' if pc_mlra else '⚠️ Demo Mode'}")
-    print(f"📊 Google Sheets Logging: {'✅ Active' if logger and logger.is_connected() else '⚠️ Not available'}")
-    print("=" * 60)
-    
-    app.run(host='0.0.0.0', port=port, debug=debug, use_reloader=False)
-EOF
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
