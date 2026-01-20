@@ -1,11 +1,9 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-
-# Distribution / packaging
 build/
 develop-eggs/
 dist/
@@ -18,124 +16,82 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environments
-.env
-.venv
-env/
+# Virtual Environment
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
 
-# IDE files
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Project specific
-# ================
-
-# App logs
+# Logs
 *.log
-app.log
-app_fixed.log
-test_fixed.log
-flask_output.log
+logs/
 
-# Temporary test/repair scripts
-fix_function_call.py
-fix_google_sheets_scoping.py
-fix_metadata.py
-direct_connection_test.py
-diagnose_google_sheets.sh
-get_render_credentials.sh
-verify_render_setup.sh
-verify_sharing.py
-test_app_routes.py
-test_final_structure.py
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Configuration files with secrets
-config/google_sheets_credentials.json
+# Secrets - NEVER COMMIT THESE
 config/secrets/
-config/google_sheets_config.py  # This might contain secrets
+config/google_sheets_credentials.json
+*.key
+*.pem
+*.p12
+*.crt
+
+# Data files (except structured knowledge base)
+data/raw_documents/
+*.pdf
+data/cache/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Flask
+instance/
+.webassets-cache
+
+# Temp files
+*.tmp
+*.temp
+*.backup
+app_fixed.log
+app.log
+flask_output.log
 
 # Backup files
 *.backup
-app/__init__.py.backup
+app.py.backup
+app.py.broken
 
-# Runtime files
-utils/  # This seems to be a duplicate directory
+# Large files
+*.zip
+*.tar.gz
 
-# BFG jar file
-bfg-*.jar
-
-# PyCharm
-.idea/
-
-# VS Code
-.vscode/settings.json
-.vscode/launch.json
-
-# OS generated files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Temporary files
-temp/
-tmp/
-
-# Development setup files
-setup.sh
-
-# Render deployment files (might contain env vars)
-config/deployment/render.yaml
-
-# Local test files
-test_fixed.log
-
-# Python cache
-app/services/__pycache__/
-app/utils/__pycache__/
-src/__pycache__/config/google_sheets_credentials.json
-config/secrets/
-config/google_sheets_config.py
-
-# Large/utility files that shouldn't be in repo
-*.jar
-.sheet_id
+# Render/Deployment temporary files
+render_build.log
+deploy.log
