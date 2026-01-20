@@ -109,3 +109,4 @@ gunicorn_config.py
 config/google_sheets_credentials.json
 *.json
 config/*.json
+config/google_sheets_config.py
