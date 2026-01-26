@@ -7,13 +7,88 @@ import re
 from typing import List, Dict, Tuple
 
 class IntentClassifier:
+    """
+    Deterministic rule-based intent classifier.
+    NHRC intents are priority-governed.
+    """
+    INTENT_PRIORITY = [
+        # 🔴 Absolute protections
+        "detained_for_payment",        # NHRC-15
+        "body_withheld",               # NHRC-15
+
+        # 🔴 Research protections
+        "clinical_trial_rights",       # NHRC-13
+        "biomedical_research",         # NHRC-14
+        "research_rights",             # NHRC-14
+
+        # 🔴 Emergency overrides autonomy
+        "emergency_care",              # NHRC-3
+
+        # 🔴 Referral integrity (IMPORTANT)
+        "proper_referral",             # NHRC-12
+        "referral_issues",             # NHRC-12
+        "kickback_commission",         # NHRC-12
+
+        # 🟡 Autonomy & choice
+        "choice_of_source",            # NHRC-11
+        "treatment_choice",            # NHRC-10
+        "second_opinion",              # NHRC-6
+
+        # 🟡 Equality & safety
+        "non_discrimination",          # NHRC-8
+        "patient_safety",              # NHRC-9
+
+        # 🟡 Consent & education
+        "patient_education",           # NHRC-16
+        "informed_consent",            # NHRC-4
+        
+        # 🟢 Generic fallback
+        "right_to_information"         # NHRC-1
+    ]
+
     def __init__(self):
         self.intents = self._load_intents()
         
     def _load_intents(self) -> Dict:
         """Load predefined intents with keywords and patterns"""
         return {
+            
             # NHRC Rights-based intents
+            "biomedical_research": {
+                "keywords": [
+                    "biomedical research",
+                    "health research",
+                    "medical research",
+                    "human research"
+                ],
+                "verbs": ["conducted", "involved", "participated"],
+                "negative_patterns": [
+                    "without ethics approval",
+                    "no ethics committee",
+                    "no consent"
+                ],
+                "description": "Rights related to biomedical and health research",
+                "category": "consent_autonomy"
+            },
+
+            "research_rights": {
+                "keywords": [
+                    "ethics committee",
+                    "informed consent",
+                    "vulnerable",
+                    "research participant",
+                    "compensation"
+                ],
+                "verbs": ["forced", "enrolled", "participated"],
+                "negative_patterns": [
+                    "forced into research",
+                    "no consent",
+                    "not compensated"
+                ],
+                "description": "Protection of participants in biomedical research",
+                "category": "consent_autonomy"
+            },
+
             "right_to_information": {
                 "keywords": ["information", "diagnosis", "explain", "tell me", "what is wrong", "condition", "treatment options"],
                 "verbs": ["explain", "inform", "tell", "describe", "clarify"],
@@ -66,14 +141,34 @@ class IntentClassifier:
             "transparent_pricing": {
                 "keywords": ["bill", "cost", "price", "charge", "expensive", "payment", "money", "rates", "overcharge"],
                 "verbs": ["overcharge", "overbill", "cheat", "fraud", "scam", "hide costs"],
-                "negative_patterns": ["overcharged", "bill too high", "unfair charges", "cheated", "hidden costs"],
+                "negative_patterns": ["overcharged", "bill too high", "unfair charges", "cheated", "hidden costs", "charging too much", "extra charges added", "paid more than expected"],
                 "description": "Right to transparent pricing and itemized bills",
                 "category": "access_information"
             },
+            "choice_of_source": {
+                "keywords": [
+                    "pharmacy", "chemist", "medicine",
+                    "lab", "diagnostic", "test",
+                    "outside", "anywhere", "choice"
+                ],
+                "verbs": [
+                    "force", "compel", "restrict",
+                    "deny", "insist", "pressure"
+                ],
+                "negative_patterns": [
+                    "forced to buy",
+                    "told to buy here only",
+                    "not allowed outside",
+                    "refused lab choice",
+                    "forced pharmacy"
+                ],
+                "description": "Right to choose pharmacy or diagnostic center",
+                "category": "consent_autonomy"
+            },
             "non_discrimination": {
-                "keywords": ["discriminate", "HIV", "caste", "religion", "gender", "age", "sexual", "poor", "rich"],
+                "keywords": ["HIV status", "hiv", "AIDS", "aids", "positive", "disease based", "illness based", "discrimination","discriminated", "unequal", "unfair", "biased", "bias", "treated differently", "denied because", "refused because", "discriminate", "HIV", "caste", "religion", "gender", "age", "sexual", "poor", "rich"],
                 "verbs": ["discriminate", "treat differently", "refuse because", "deny because"],
-                "negative_patterns": ["discriminated against", "treated differently", "refused because"],
+                "negative_patterns": ["denied care due to HIV", "refused treatment due to HIV", "because of HIV", "because of my illness", "because of my disease", "refused treatment because", "denied care because", "discriminated against", "treated unfairly", "discriminated against", "treated differently", "refused because"],
                 "description": "Right to non-discrimination in treatment",
                 "category": "quality_safety"
             },
@@ -84,12 +179,22 @@ class IntentClassifier:
                 "description": "Right to safety and quality care",
                 "category": "quality_safety"
             },
-            "treatment_choice": {
-                "keywords": ["choice", "alternative", "option", "refuse treatment", "against medical advice"],
-                "verbs": ["force", "pressure", "refuse to allow", "deny choice"],
-                "negative_patterns": ["forced treatment", "no choice", "refused alternative"],
-                "description": "Right to choose treatment options",
-                "category": "consent_autonomy"
+            "proper_referral": {
+                "keywords": [
+                    "referral", "transfer", "sent to another hospital",
+                    "higher center", "continuity of care"
+                ],
+                "verbs": [
+                    "referred", "transferred", "shifted"
+                ],
+                "negative_patterns": [
+                    "forced referral",
+                    "referral for commission",
+                    "sent for money",
+                    "commercial referral"
+                ],
+                "description": "Right to proper referral and continuity of care",
+                "category": "quality_safety"
             },
             "pharmacy_choice": {
                 "keywords": ["pharmacy", "medicine", "chemist", "buy medicines", "purchase drugs"],
@@ -112,25 +217,89 @@ class IntentClassifier:
                 "description": "Rights of clinical trial participants",
                 "category": "consent_autonomy"
             },
-            "detention_for_payment": {
-                "keywords": ["detain", "keep", "hold", "discharge", "body", "dead", "corpse", "payment dispute"],
-                "verbs": ["detain", "hold", "keep", "refuse to release"],
-                "negative_patterns": ["detained for payment", "won't release body", "held for bill"],
-                "description": "Right to discharge and release of dead body",
-                "category": "access_information"
+            "trial_compensation": {
+                "keywords": [
+                    "adverse effect", "side effect", "injury",
+                    "compensation", "death during trial", "harm"
+                ],
+                "verbs": [
+                    "suffered", "injured", "died", "affected"
+                ],
+                "negative_patterns": [
+                    "no compensation", "refused compensation",
+                    "denied treatment after trial"
+                ],
+                "description": "Compensation and care for injuries during clinical trials",
+                "category": "consent_autonomy"
+            },
+            "treatment_choice": {
+                "keywords": [
+                    "against meical advice",
+                    "alternative",
+                    "choice",
+                    "offer",
+                    "alternative treatment",
+                    "other treatment",
+                    "treatment options",
+                    "ayurveda",
+                    "homeopathy",
+                    "ayush",
+                    "different treatment"
+                ],
+                "verbs": [
+                    "choose",
+                    "opt",
+                    "prefer"
+                ],
+                "negative_patterns": [
+                    "not allowed to choose treatment",
+                    "doctor forced treatment"
+                ],
+                "description": "Right to choose between available treatment options",
+                "category": "autonomy"
             },
             "patient_education": {
-                "keywords": ["educate", "teach", "learn", "information", "how to", "instructions"],
-                "verbs": ["not explain", "not teach", "no instructions"],
-                "negative_patterns": ["no education", "didn't explain", "no instructions"],
-                "description": "Right to patient education",
+                "keywords": [
+                    "education",
+                    "health education",
+                    "patient education",
+                    "insurance",
+                    "grievance",
+                    "rights and responsibilities",
+                    "health scheme",
+                    "ayushman",
+                    "insurance scheme"
+                ],
+                "verbs": [
+                    "educate",
+                    "explain",
+                    "inform",
+                    "tell"
+                ],
+                "negative_patterns": [
+                    "not given education",
+                    "not educated",
+                    "never educated",
+                    "did not explain",
+                    "did not inform",
+                    "no health education",
+                    "not told my rights"
+                ],
+                "description": "Right to patient education under NHRC-16",
                 "category": "access_information"
             },
+            "patient_safety": {
+                "keywords": ["unsafe", "infection", "hygiene", "dirty ward", "medical error", "unsafe care", "poor safety", "hospital negligence"],
+                "verbs": ["infected", "neglected", "ignored safety", "used unclean equipment"],
+                "negative_patterns": ["caught infection in hospital", "unsafe treatment","poor quality care"],
+                "description": "Right to safe and quality medical care",
+                "category": "quality_safety"
+            },
             "grievance_redressal": {
-                "keywords": ["complain", "complaint", "grievance", "redressal", "feedback", "lodge complaint"],
-                "verbs": ["refuse to accept", "ignore", "not respond", "dismiss"],
-                "negative_patterns": ["won't accept complaint", "no grievance mechanism", "ignored complaint"],
-                "description": "Right to grievance redressal",
+                "keywords": ["mechanism", "complain", "complaint", "grievance", "redressal", "feedback", "lodge complaint"],
+                "verbs": ["file", "lodge", "refuse to accept", "ignore", "not respond", "dismiss"],
+                "negative_patterns": ["won't accept complaint", "no grievance mechanism", "ignored complaint", "complaint ignored", "no response to complaint"],
+                "description": "Right to be heard and seek redressal",
                 "category": "redressal_complaint"
             },
             
@@ -149,6 +318,39 @@ class IntentClassifier:
                 "description": "Doctor absenteeism during duty hours",
                 "category": "quality_safety"
             },
+            "detained_for_payment": {
+                "keywords": [
+                    "detain", "detained", "discharge", "not discharging",
+                    "refused discharge", "held", "held in hospital",
+                    "not allowed to leave", "cannot leave",
+                    "payment dispute", "bill pending", "payment pending"
+                ],
+                "verbs": ["detain", "hold", "refuse"],
+                "negative_patterns": [
+                    "not discharging",
+                    "not discharging due to bill",
+                    "detained for payment",
+                    "asked to pay before discharge",
+                    "because bill is pending",
+                    "held because bill"
+                ],
+                "description": "Illegal detention of patient for payment or billing dispute",
+                "category": "quality_safety"
+            },
+
+            "body_withheld": {
+                "keywords": [
+                    "dead body", "body", "mortuary", "released body", "hand over body"
+                ],
+                "verbs": ["withhold", "refuse", "detain"],
+                "negative_patterns": [
+                    "not giving body",
+                    "body withheld for payment",
+                    "asked to pay before body"
+                ],
+                "description": "Dead body withheld due to payment dispute",
+                "category": "access_information"
+            },
             "advertising_issues": {
                 "keywords": ["advertise", "publicity", "claim", "boast", "self promotion", "sign board"],
                 "verbs": ["advertise", "claim", "boast", "promote"],
@@ -157,9 +359,9 @@ class IntentClassifier:
                 "category": "professional_conduct"
             },
             "kickback_commission": {
-                "keywords": ["commission", "kickback", "bribe", "referral fee", "incentive", "gift"],
-                "verbs": ["take", "receive", "give", "offer"],
-                "negative_patterns": ["taking commission", "getting kickback", "bribed"],
+                "keywords": ["commission", "kickback", "referral money"],
+                "verbs": ["received commission", "paid commission"],
+                "negative_patterns": ["took commission", "illegal commission"],
                 "description": "Receiving commissions or kickbacks",
                 "category": "professional_conduct"
             },
@@ -178,9 +380,9 @@ class IntentClassifier:
                 "category": "professional_conduct"
             },
             "prescription_issues": {
-                "keywords": ["prescription", "medicine", "drug", "generic", "brand", "unnecessary", "overprescribe"],
-                "verbs": ["prescribe", "give", "recommend", "suggest"],
-                "negative_patterns": ["unnecessary prescription", "overprescribed", "wrong medicine"],
+                "keywords": ["prescription", "drug", "medicine"],
+                "verbs": ["illegal prescription", "wrong prescription"],
+                "negative_patterns": ["forged prescription"],
                 "description": "Issues with medical prescriptions",
                 "category": "professional_conduct"
             }
@@ -198,6 +400,7 @@ class IntentClassifier:
         Classify query into one or more intents
         Returns list of (intent, confidence_score)
         """
+        # 🔒 HARD LEGAL OVERRIDE: Commercial referral beats choice-of-source
         cleaned_query = self.clean_query(query)
         words = cleaned_query.split()
         
@@ -225,9 +428,46 @@ class IntentClassifier:
                 scores[intent_name] = min(score / 6.0, 1.0)  # Normalize to 0-1
         
         # Sort by confidence score
-        sorted_intents = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-        return sorted_intents[:3]  # Return top 3 intents
-    
+        def priority_key(item):
+            intent, score = item
+            try:
+                priority = self.INTENT_PRIORITY.index(intent)
+            except ValueError:
+                priority = len(self.INTENT_PRIORITY)
+            return (priority, -score)
+
+        # Sort by NHRC priority + confidence
+        sorted_intents = sorted(scores.items(), key=priority_key)
+
+        # 🔒 HARD LEGAL OVERRIDES (Statutory hierarchy)
+        intent_names = [i[0] for i in sorted_intents]
+        
+        # 🔒 HARD LEGAL OVERRIDE — NHRC-15 beats pricing & records
+        if any(i in intent_names for i in {"detained_for_payment", "body_withheld"}):
+            sorted_intents.sort(
+                key=lambda x: 0 if x[0] in {"detained_for_payment", "body_withheld"} else 1
+            )
+
+        # NHRC-13 (Clinical Trials) highest
+        if "clinical_trial_rights" in intent_names:
+            sorted_intents.sort(
+                key=lambda x: 0 if x[0] == "clinical_trial_rights" else 1
+            )
+
+        # NHRC-14 (Biomedical Research) next
+        elif any(i in intent_names for i in {"biomedical_research", "research_rights"}):
+            sorted_intents.sort(
+                key=lambda x: 0 if x[0] in {"biomedical_research", "research_rights"} else 1
+            )
+
+        # NHRC-12 beats NHRC-11
+        elif any(i in intent_names for i in {"kickback_commission", "referral_issues", "proper_referral"}):
+            sorted_intents.sort(
+                key=lambda x: 0 if x[0] in {"kickback_commission", "referral_issues", "proper_referral"} else 1
+            )
+
+        return sorted_intents[:3]
+
     def get_intent_details(self, intent_name: str) -> Dict:
         """Get detailed information about a specific intent"""
         return self.intents.get(intent_name, {})

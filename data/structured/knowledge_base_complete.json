@@ -442,8 +442,6 @@
         "sexual orientation"
       ],
       "intent_match": [
-        "discrimination",
-        "unequal_treatment",
         "non_discrimination"
       ],
       "template_id": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
@@ -594,9 +592,7 @@
         "purchase"
       ],
       "intent_match": [
-        "pharmacy_choice",
-        "lab_choice",
-        "forced_purchase"
+        "choice_of_source"
       ],
       "template_id": "TEMPLATE_RIGHT_TO_CHOOSE_SOURCE",
       "citation_format": "NHRC Charter, Right 11",
@@ -611,7 +607,7 @@
       "document_abbr": "NHRC",
       "section": "12",
       "subsection": null,
-      "title": "Right to Proper Referral and Transfer",
+      "title": "Right to Proper Referral and Transfer, which is free from perverse commercial",
       "exact_text": "A patient has the right to continuity of care, and the right to be duly registered at the first healthcare facility where treatment has been sought, as well as at any subsequent facilities where care is sought. When being transferred from one healthcare facility to another, the patient/caregiver must receive a complete explanation of the justification for the transfer, the alternative options for a transfer and it must be confirmed that the transfer is acceptable to the receiving facility. The patient and caregivers have the right to be informed by the hospital about any continuing healthcare requirements following discharge from the hospital. The hospital management has a duty to ensure proper referral and transfer of patients regarding such a shift in care. In regard to all referrals of patients, including referrals to other hospitals, specialists, laboratories or imaging services, the decision regarding facility to which referral is made must be guided entirely by the best interest of the patient. The referral process must not be influenced by any commercial consideration such as kickbacks, commissions, incentives, or other perverse business practices.",
       "paraphrase": "Patients have the right to proper referrals based on medical need, not commercial interests, with clear explanations for transfers.",
       "rights": [
@@ -645,9 +641,9 @@
         "commission"
       ],
       "intent_match": [
-        "forced_referral",
-        "commercial_referral",
-        "transfer_issues"
+        "proper_referral",
+        "referral_issues",
+        "kickback_commission"
       ],
       "template_id": "TEMPLATE_RIGHT_TO_PROPER_REFERRAL",
       "citation_format": "NHRC Charter, Right 12",

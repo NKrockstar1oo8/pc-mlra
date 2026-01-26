@@ -6,6 +6,132 @@
     "last_updated": "2024-01-02"
   },
   "templates": {
+    "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION": {
+      "description": "Specialized template for NHRC-13 Clinical Trial Protection",
+      "components": [
+        {
+          "type": "header",
+          "text": "Rights and Protections for Clinical Trial Participants",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "**In simple terms:** {paraphrase}"
+        },
+        {
+          "type": "rights_list",
+          "text": "**Your Rights in a Clinical Trial:**\n{rights_bulleted}",
+          "condition": "has_rights"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Doctors / Hospitals Must:**\n{obligations_bulleted}",
+          "condition": "has_obligations"
+        },
+        {
+          "type": "legal_references",
+          "text": "**Applicable Laws & Ethical Guidelines:**\n{legal_references_bulleted}",
+          "condition": "has_legal_references"
+        }
+      ],
+      "variables": [
+        "citation_format",
+        "paraphrase",
+        "rights_bulleted",
+        "obligations_bulleted",
+        "legal_references_bulleted"
+      ]
+    },
+    "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION": {
+      "description": "Rights and protections for biomedical and health research participants (NHRC-14)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Protection of Participants in Biomedical and Health Research",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "{paraphrase}"
+        },
+        {
+          "type": "rights_list",
+          "text": "**This Includes:**\n• Ethics committee approval\n• Informed consent\n• Privacy and dignity\n• Compensation for research-related harm"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Researchers / Hospitals Must:**\n• Obtain ethics committee approval\n• Take documented informed consent\n• Protect privacy and dignity\n• Provide compensation for harm"
+        }
+      ],
+      "variables": ["citation_format", "paraphrase"]
+    },
+    "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION": {
+      "description": "Right to Patient Education (NHRC-16)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Patient Education",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "**In simple terms:** {paraphrase}"
+        },
+        {
+          "type": "rights_list",
+          "text": "**This Includes:**\n{rights_bulleted}"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital / Doctor Must:**\n{obligations_bulleted}"
+        }
+      ],
+      "variables": [
+        "citation_format",
+        "paraphrase",
+        "rights_bulleted",
+        "obligations_bulleted"
+      ]
+    },
+    "TEMPLATE_RIGHT_TO_DISCHARGE_BODY": {
+      "description": "Right to discharge or release of dead body (NHRC-15)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Discharge or Release of Dead Body",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "{paraphrase}"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital Must:**\n• Discharge patients without detaining them for payment\n• Release dead bodies without delay\n• Avoid wrongful confinement under any circumstances"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Demand immediate discharge or release of body\n2. Record refusal by hospital staff\n3. Escalate to hospital administration\n4. Approach police or magistrate if detention continues"
+        }
+      ],
+      "variables": ["citation_format", "paraphrase"]
+    },
     "TEMPLATE_SINGLE_CLAUSE": {
       "description": "Template for explaining a single legal clause",
       "components": [
@@ -57,6 +183,39 @@
         "title", "citation_format", "exact_text", "paraphrase",
         "rights_bulleted", "obligations_bulleted", "exceptions_bulleted",
         "legal_references_bulleted", "timeframe_note"
+      ]
+    },
+    "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION": {
+      "description": "Specialized template for Right to Non-Discrimination (NHRC-8)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Non-Discrimination in Healthcare",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "You have the right to receive medical care without discrimination based on illness, religion, caste, gender, age, disability, or any personal characteristic."
+        },
+        {
+          "type": "rights_list",
+          "text": "**This Means:**\n• Equal access to medical treatment\n• No denial of care based on identity or condition\n• Respectful and dignified treatment at all times"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital / Healthcare Providers Must:**\n• Ensure equal treatment for all patients\n• Prevent discriminatory behavior by staff\n• Train doctors and staff on non-discrimination policies"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Document the discriminatory behavior\n2. Ask for reasons if care is denied\n3. Escalate to hospital authorities if discrimination continues"
+        }
+      ],
+      "variables": [
+        "citation_format"
       ]
     },
     "TEMPLATE_MULTIPLE_CLAUSES": {
@@ -169,6 +328,68 @@
         {
           "type": "actionable_advice",
           "text": "**What You Can Do:**\n1. Ask questions until you fully understand\n2. Don't sign if you're unsure or pressured\n3. Request time to think if needed\n4. Keep a copy of signed consent forms"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_TRANSPARENT_PRICING": {
+      "description": "Specialized template for Right to Transparency in Rates and Care (NHRC-7)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Transparency in Rates and Care",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "Hospitals must clearly disclose their rates, provide itemized bills, and charge only prices prescribed by law."
+        },
+        {
+          "type": "rights_list",
+          "text": "**This Means:**\n• You have the right to know treatment and service costs in advance\n• You must receive an itemized bill\n• Essential medicines and implants must be charged at regulated prices\n• You cannot be forced into hidden or arbitrary charges"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital Must:**\n• Display rates prominently in local language and English\n• Provide detailed itemized bills on request\n• Follow NPPA and government-prescribed pricing\n• Not charge above MRP or notified rates"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Ask for an itemized bill\n2. Request the hospital’s rate chart\n3. Question any unexplained charges\n4. Escalate if prices exceed prescribed rates"
+        }
+      ],
+      "variables": ["citation_format"]
+    },
+    "TEMPLATE_RIGHT_TO_SECOND_OPINION": {
+      "description": "Specialized template for Right to Second Opinion (NHRC-6)",
+      "components": [
+        {
+          "type": "header",
+          "text": "Right to Seek a Second Medical Opinion",
+          "style": "h2"
+        },
+        {
+          "type": "citation",
+          "text": "**Legal Reference:** {citation_format}"
+        },
+        {
+          "type": "paraphrase",
+          "text": "You have the right to seek a second opinion from another qualified doctor regarding your diagnosis or treatment."
+        },
+        {
+          "type": "rights_list",
+          "text": "**This Means:**\n• You may consult another doctor of your choice\n• Seeking a second opinion must not affect your ongoing care\n• You are entitled to access your medical records for this purpose"
+        },
+        {
+          "type": "obligations_list",
+          "text": "**Hospital / Doctor Must:**\n• Not prevent or discourage a second opinion\n• Provide required medical records without delay or extra cost\n• Continue proper care while you seek another opinion"
+        },
+        {
+          "type": "actionable_advice",
+          "text": "**What You Can Do:**\n1. Request copies of your medical records\n2. Clearly state you want a second opinion\n3. Escalate if records are denied or delayed"
         }
       ],
       "variables": ["citation_format"]

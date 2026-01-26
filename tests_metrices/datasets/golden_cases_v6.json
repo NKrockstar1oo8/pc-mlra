@@ -1,0 +1,119 @@
+[
+  {
+    "test_id": "TC_001",
+    "user_query": "The doctor performed surgery on me without explaining the risks or getting my signature on any consent form. What can I do?",
+    "user_role": "patient",
+    "scenario_type": "mixed",
+    "expected_primary_legal_triggers": ["patient_education"],
+    "expected_secondary_legal_triggers": ["right_to_information"],
+    "required_nhrc_clauses": ["NHRC-16"],
+    "optional_nhrc_clauses": ["NHRC-3"],
+    "forbidden_nhrc_clauses": ["NHRC-2", "NHRC-12", "NHRC-14"],
+    "imc_awareness_expected": false,
+    "required_imc_clauses": [],
+    "optional_imc_clauses": ["IMC-7.7"],
+    "forbidden_imc_clauses": ["IMC-6.1", "IMC-8"],
+    "misconduct_awareness_expected": false,
+    "proof_required": true
+  },
+
+  {
+    "test_id": "TC_002",
+    "user_query": "I am a doctor. A pharmaceutical company is offering an expensive gift if I prescribe their new drug. Is this acceptable?",
+    "user_role": "doctor",
+    "scenario_type": "ethics_only",
+    "expected_primary_legal_triggers": ["treatment_choice"],
+    "expected_secondary_legal_triggers": [],
+    "required_nhrc_clauses": [],
+    "optional_nhrc_clauses": ["NHRC-10"],
+    "forbidden_nhrc_clauses": [
+      "NHRC-1","NHRC-2","NHRC-3","NHRC-4","NHRC-5","NHRC-6","NHRC-7",
+      "NHRC-8","NHRC-9","NHRC-11","NHRC-12","NHRC-13","NHRC-14",
+      "NHRC-15","NHRC-16","NHRC-17"
+    ],
+    "imc_awareness_expected": true,
+    "required_imc_clauses": ["IMC-6.1"],
+    "optional_imc_clauses": [],
+    "forbidden_imc_clauses": ["IMC-7.1", "IMC-1.3.2"],
+    "misconduct_awareness_expected": true,
+    "proof_required": true
+  },
+
+  {
+    "test_id": "TC_003",
+    "user_query": "The hospital refused to treat me because I couldn't pay the advance. I was in severe pain from an accident.",
+    "user_role": "patient",
+    "scenario_type": "mixed",
+    "expected_primary_legal_triggers": ["emergency_care"],
+    "expected_secondary_legal_triggers": ["detained_for_payment"],
+    "required_nhrc_clauses": ["NHRC-15"],
+    "optional_nhrc_clauses": ["NHRC-2"],
+    "forbidden_nhrc_clauses": ["NHRC-12", "NHRC-14"],
+    "imc_awareness_expected": false,
+    "required_imc_clauses": [],
+    "optional_imc_clauses": ["IMC-2.1"],
+    "forbidden_imc_clauses": ["IMC-7.7"],
+    "misconduct_awareness_expected": false,
+    "proof_required": true
+  },
+
+  {
+    "test_id": "TC_004",
+    "user_query": "How do I get a copy of my medical records and bills?",
+    "user_role": "patient",
+    "scenario_type": "rights_only",
+    "expected_primary_legal_triggers": ["access_medical_records"],
+    "expected_secondary_legal_triggers": ["transparent_pricing"],
+    "required_nhrc_clauses": ["NHRC-2"],
+    "optional_nhrc_clauses": ["NHRC-8"],
+    "forbidden_nhrc_clauses": ["NHRC-3", "NHRC-5"],
+    "imc_awareness_expected": false,
+    "required_imc_clauses": [],
+    "optional_imc_clauses": [],
+    "forbidden_imc_clauses": ["IMC-1.3.1"],
+    "misconduct_awareness_expected": false,
+    "proof_required": true
+  },
+
+  {
+    "test_id": "TC_005",
+    "user_query": "My neighbor's doctor told me about my neighbor's HIV diagnosis during a casual conversation.",
+    "user_role": "unknown",
+    "scenario_type": "mixed",
+    "expected_primary_legal_triggers": ["non_discrimination"],
+    "expected_secondary_legal_triggers": ["right_to_information"],
+    "required_nhrc_clauses": ["NHRC-8"],
+    "optional_nhrc_clauses": ["NHRC-5"],
+    "forbidden_nhrc_clauses": ["NHRC-3"],
+    "imc_awareness_expected": false,
+    "required_imc_clauses": [],
+    "optional_imc_clauses": ["IMC-7.1"],
+    "forbidden_imc_clauses": ["IMC-2.1"],
+    "misconduct_awareness_expected": false,
+    "proof_required": true
+  },
+
+  {
+    "test_id": "TC_006",
+    "user_query": "What is the visiting hours policy for the cardiology ward?",
+    "user_role": "unknown",
+    "scenario_type": "no_match",
+    "expected_primary_legal_triggers": [],
+    "expected_secondary_legal_triggers": [],
+    "required_nhrc_clauses": [],
+    "optional_nhrc_clauses": [],
+    "forbidden_nhrc_clauses": [
+      "NHRC-1","NHRC-2","NHRC-3","NHRC-4","NHRC-5","NHRC-6","NHRC-7",
+      "NHRC-8","NHRC-9","NHRC-10","NHRC-11","NHRC-12","NHRC-13",
+      "NHRC-14","NHRC-15","NHRC-16","NHRC-17"
+    ],
+    "imc_awareness_expected": false,
+    "required_imc_clauses": [],
+    "optional_imc_clauses": [],
+    "forbidden_imc_clauses": [
+      "IMC-1.3.1","IMC-1.3.2","IMC-2.1","IMC-2.2","IMC-6.1","IMC-7.1","IMC-7.7"
+    ],
+    "misconduct_awareness_expected": false,
+    "proof_required": false
+  }
+]

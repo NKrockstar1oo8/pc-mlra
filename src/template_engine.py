@@ -44,14 +44,22 @@ class TemplateEngine:
         """Load templates from JSON file"""
         try:
             with open(template_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+
+            # Support structured template library with metadata
+            if "templates" in data:
+                return data["templates"]
+
+            return data
+
         except FileNotFoundError:
             print(f"Template file not found: {template_file}")
-            return {"templates": {}}
+            return {}
+
     
     def get_template(self, template_id: str) -> Optional[Dict]:
         """Get a specific template by ID"""
-        return self.templates.get("templates", {}).get(template_id)
+        return self.templates.get(template_id)
     
     def format_bulleted_list(self, items: List[str]) -> str:
         """Format a list of items as bullet points"""
@@ -98,12 +106,41 @@ class TemplateEngine:
             return bool(context.get(key))
         
         return True
-    
+    def _normalize_context_keys(self, context: dict) -> dict:
+        """
+        Normalize assembler keys → template condition keys.
+        This is a PRESENTATION-LAYER adapter.
+        """
+
+        normalized = dict(context)  # shallow copy
+
+        # Map bulleted lists
+        if "rights_bulleted" in context:
+            normalized["rights"] = context["rights_bulleted"]
+
+        if "obligations_bulleted" in context:
+            normalized["obligations"] = context["obligations_bulleted"]
+
+        if "exceptions_bulleted" in context:
+            normalized["exceptions"] = context["exceptions_bulleted"]
+
+        if "legal_references_bulleted" in context:
+            normalized["legal_references"] = context["legal_references_bulleted"]
+
+        # Map timeframe note
+        if "timeframe_note" in context:
+            normalized["timeframes"] = context["timeframe_note"]
+
+        return normalized
+
     def fill_template(self, template_id: str, context: Dict) -> str:
         """Fill a template with context data"""
         template = self.get_template(template_id)
         if not template:
             return f"Template '{template_id}' not found."
+        
+        # ✅ APPLY NORMALIZATION HERE
+        context = self._normalize_context_keys(context)
         
         components = template.get("components", [])
         result_parts = []

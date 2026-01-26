@@ -1,97 +1,100 @@
-# Python
+########################
+# Python / Bytecode
+########################
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 
-# Virtual Environment
+########################
+# Virtual Environments
+########################
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
+.env
+.env.*
+!.env.example
 
-# IDE
+########################
+# IDE / Editor
+########################
 .vscode/
 .idea/
 *.swp
 *.swo
 
+########################
 # OS
+########################
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# Logs
+########################
+# Logs / Temp
+########################
 *.log
 logs/
+*.tmp
+*.temp
+*.backup
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+########################
+# Build / Packaging
+########################
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
 
-# Secrets - NEVER COMMIT THESE
+########################
+# Pytest / Coverage
+########################
+.pytest_cache/
+.coverage
+htmlcov/
+
+########################
+# Secrets (ABSOLUTE)
+########################
 config/secrets/
 config/google_sheets_credentials.json
+**/google_sheets_credentials.json
 *.key
 *.pem
 *.p12
 *.crt
 
-# Data files (except structured knowledge base)
+########################
+# Data: Raw / Large / Private
+########################
 data/raw_documents/
 *.pdf
 data/cache/
 
-# Test coverage
-.coverage
-htmlcov/
-.pytest_cache/
+########################
+# Metrics & Evaluation Outputs
+########################
+tests_metrices/results/
+tests_metrices/plots/
+metrics_history.json
 
-# Flask
-instance/
-.webassets-cache
+########################
+# Allow ONLY canonical dataset
+########################
+!tests_metrices/datasets/golden_cases_v6.json
+tests_metrices/datasets/golden_cases_v*.json
+!tests_metrices/datasets/README.md
 
-# Temp files
-*.tmp
-*.temp
-*.backup
-app_fixed.log
-app.log
-flask_output.log
-
-# Backup files
-*.backup
-app.py.backup
-app.py.broken
-
-# Large files
-*.zip
-*.tar.gz
-
-# Render/Deployment temporary files
+########################
+# Deployment Artifacts
+########################
 render_build.log
 deploy.log
+
+########################
+# Misc
+########################
+instance/
+.webassets-cache
