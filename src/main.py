@@ -177,7 +177,8 @@ Available Commands:
         
         # Handle regular query
         response, proof_trace = self.assembler.generate_response(query, self.show_proof)
-        return response
+        return response, proof_trace
+
     
     def run(self):
         """Run the console application"""

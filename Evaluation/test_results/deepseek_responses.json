@@ -1,0 +1,302 @@
+[
+  {
+    "query": "doctor not giving my medical records",
+    "intent_guess": "access to medical records",
+    "mentions_nhrc": false,
+    "keywords_present": ["doctor", "medical records"]
+  },
+  {
+    "query": "hospital refused to provide discharge summary",
+    "intent_guess": "access to discharge summary",
+    "mentions_nhrc": false,
+    "keywords_present": ["hospital", "discharge summary"]
+  },
+  {
+    "query": "I asked for reports but they denied",
+    "intent_guess": "access to medical reports",
+    "mentions_nhrc": false,
+    "keywords_present": ["reports", "denied"]
+  },
+  {
+    "query": "can I get my medical file copy",
+    "intent_guess": "access to medical file copy",
+    "mentions_nhrc": false,
+    "keywords_present": ["medical file copy"]
+  },
+  {
+    "query": "hospital not sharing test results",
+    "intent_guess": "access to test results",
+    "mentions_nhrc": false,
+    "keywords_present": ["test results"]
+  },
+  {
+    "query": "hospital refused emergency treatment",
+    "intent_guess": "denial of emergency treatment",
+    "mentions_nhrc": false,
+    "keywords_present": ["emergency treatment", "refused"]
+  },
+  {
+    "query": "they asked money before treating accident case",
+    "intent_guess": "illegal advance payment demand in emergency",
+    "mentions_nhrc": false,
+    "keywords_present": ["money", "accident case"]
+  },
+  {
+    "query": "doctor denied urgent care",
+    "intent_guess": "denial of urgent care",
+    "mentions_nhrc": false,
+    "keywords_present": ["urgent care", "denied"]
+  },
+  {
+    "query": "no treatment given in emergency",
+    "intent_guess": "denial of emergency treatment",
+    "mentions_nhrc": false,
+    "keywords_present": ["emergency", "no treatment"]
+  },
+  {
+    "query": "patient was turned away in critical condition",
+    "intent_guess": "denial of treatment in critical condition",
+    "mentions_nhrc": false,
+    "keywords_present": ["turned away", "critical condition"]
+  },
+  {
+    "query": "surgery done without my consent",
+    "intent_guess": "surgery without consent",
+    "mentions_nhrc": false,
+    "keywords_present": ["surgery", "without my consent"]
+  },
+  {
+    "query": "doctor did not explain risks before operation",
+    "intent_guess": "lack of informed consent",
+    "mentions_nhrc": false,
+    "keywords_present": ["risks", "operation", "not explain"]
+  },
+  {
+    "query": "procedure performed without permission",
+    "intent_guess": "unauthorized medical procedure",
+    "mentions_nhrc": false,
+    "keywords_present": ["procedure", "without permission"]
+  },
+  {
+    "query": "they forced me into surgery",
+    "intent_guess": "coerced surgery",
+    "mentions_nhrc": false,
+    "keywords_present": ["forced", "surgery"]
+  },
+  {
+    "query": "no consent taken before treatment",
+    "intent_guess": "treatment without consent",
+    "mentions_nhrc": false,
+    "keywords_present": ["no consent", "treatment"]
+  },
+  {
+    "query": "doctor shared my medical information",
+    "intent_guess": "breach of medical confidentiality",
+    "mentions_nhrc": false,
+    "keywords_present": ["shared", "medical information"]
+  },
+  {
+    "query": "my reports were discussed publicly",
+    "intent_guess": "public disclosure of medical reports",
+    "mentions_nhrc": false,
+    "keywords_present": ["reports", "discussed publicly"]
+  },
+  {
+    "query": "hospital leaked my HIV status",
+    "intent_guess": "unauthorized disclosure of HIV status",
+    "mentions_nhrc": false,
+    "keywords_present": ["HIV status", "leaked"]
+  },
+  {
+    "query": "no privacy during examination",
+    "intent_guess": "lack of privacy during examination",
+    "mentions_nhrc": false,
+    "keywords_present": ["privacy", "examination"]
+  },
+  {
+    "query": "doctor told others about my condition",
+    "intent_guess": "unauthorized disclosure of medical condition",
+    "mentions_nhrc": false,
+    "keywords_present": ["told others", "condition"]
+  },
+  {
+    "query": "doctor not allowing second opinion",
+    "intent_guess": "denial of second opinion",
+    "mentions_nhrc": false,
+    "keywords_present": ["second opinion", "not allowing"]
+  },
+  {
+    "query": "hospital refused to give records for second opinion",
+    "intent_guess": "obstruction to second opinion",
+    "mentions_nhrc": false,
+    "keywords_present": ["records", "second opinion"]
+  },
+  {
+    "query": "can I consult another doctor",
+    "intent_guess": "right to second opinion inquiry",
+    "mentions_nhrc": false,
+    "keywords_present": ["consult", "another doctor"]
+  },
+  {
+    "query": "they prevented me from getting second opinion",
+    "intent_guess": "obstruction to second opinion",
+    "mentions_nhrc": false,
+    "keywords_present": ["prevented", "second opinion"]
+  },
+  {
+    "query": "doctor said I cannot go elsewhere",
+    "intent_guess": "restriction on patient choice",
+    "mentions_nhrc": false,
+    "keywords_present": ["cannot go elsewhere"]
+  },
+  {
+    "query": "hospital overcharged me",
+    "intent_guess": "overcharging",
+    "mentions_nhrc": false,
+    "keywords_present": ["overcharged"]
+  },
+  {
+    "query": "bill is too high and unclear",
+    "intent_guess": "unclear high billing",
+    "mentions_nhrc": false,
+    "keywords_present": ["bill", "high", "unclear"]
+  },
+  {
+    "query": "hidden charges added in bill",
+    "intent_guess": "hidden billing charges",
+    "mentions_nhrc": false,
+    "keywords_present": ["hidden charges", "bill"]
+  },
+  {
+    "query": "they did not give itemized bill",
+    "intent_guess": "failure to provide itemized bill",
+    "mentions_nhrc": false,
+    "keywords_present": ["itemized bill"]
+  },
+  {
+    "query": "hospital charging extra money",
+    "intent_guess": "extra billing",
+    "mentions_nhrc": false,
+    "keywords_present": ["charging extra money"]
+  },
+  {
+    "query": "doctor refused treatment because of religion",
+    "intent_guess": "religious discrimination in treatment",
+    "mentions_nhrc": false,
+    "keywords_present": ["refused treatment", "religion"]
+  },
+  {
+    "query": "hospital discriminated based on HIV",
+    "intent_guess": "HIV-based discrimination",
+    "mentions_nhrc": false,
+    "keywords_present": ["discriminated", "HIV"]
+  },
+  {
+    "query": "unequal treatment given to poor patient",
+    "intent_guess": "economic discrimination",
+    "mentions_nhrc": false,
+    "keywords_present": ["unequal treatment", "poor patient"]
+  },
+  {
+    "query": "doctor treated me badly due to caste",
+    "intent_guess": "caste-based discrimination",
+    "mentions_nhrc": false,
+    "keywords_present": ["caste", "treated badly"]
+  },
+  {
+    "query": "denied care because of illness",
+    "intent_guess": "discrimination based on illness type",
+    "mentions_nhrc": false,
+    "keywords_present": ["denied care", "illness"]
+  },
+  {
+    "query": "hospital caused infection due to poor hygiene",
+    "intent_guess": "hospital-acquired infection negligence",
+    "mentions_nhrc": false,
+    "keywords_present": ["infection", "poor hygiene"]
+  },
+  {
+    "query": "doctor made mistake in treatment",
+    "intent_guess": "medical error",
+    "mentions_nhrc": false,
+    "keywords_present": ["mistake", "treatment"]
+  },
+  {
+    "query": "unsafe equipment used",
+    "intent_guess": "unsafe medical equipment",
+    "mentions_nhrc": false,
+    "keywords_present": ["unsafe equipment"]
+  },
+  {
+    "query": "patient harmed due to negligence",
+    "intent_guess": "medical negligence causing harm",
+    "mentions_nhrc": false,
+    "keywords_present": ["negligence", "harmed"]
+  },
+  {
+    "query": "poor safety in hospital",
+    "intent_guess": "hospital safety concerns",
+    "mentions_nhrc": false,
+    "keywords_present": ["poor safety"]
+  },
+  {
+    "query": "doctor forced me to go to another hospital",
+    "intent_guess": "forced referral",
+    "mentions_nhrc": false,
+    "keywords_present": ["forced", "another hospital"]
+  },
+  {
+    "query": "unnecessary referral for money",
+    "intent_guess": "referral for kickbacks",
+    "mentions_nhrc": false,
+    "keywords_present": ["unnecessary referral", "money"]
+  },
+  {
+    "query": "hospital sending patients for commission",
+    "intent_guess": "patient brokering for commission",
+    "mentions_nhrc": false,
+    "keywords_present": ["sending patients", "commission"]
+  },
+  {
+    "query": "referred me without reason",
+    "intent_guess": "unjustified referral",
+    "mentions_nhrc": false,
+    "keywords_present": ["referred", "without reason"]
+  },
+  {
+    "query": "doctor pushing me to specific clinic",
+    "intent_guess": "biased referral to specific clinic",
+    "mentions_nhrc": false,
+    "keywords_present": ["pushing", "specific clinic"]
+  },
+  {
+    "query": "doctor behaved badly",
+    "intent_guess": "unprofessional conduct",
+    "mentions_nhrc": false,
+    "keywords_present": ["behaved badly"]
+  },
+  {
+    "query": "something wrong happened in hospital",
+    "intent_guess": "general grievance",
+    "mentions_nhrc": false,
+    "keywords_present": ["something wrong"]
+  },
+  {
+    "query": "I feel cheated by hospital",
+    "intent_guess": "feeling cheated / possible fraud",
+    "mentions_nhrc": false,
+    "keywords_present": ["feel cheated"]
+  },
+  {
+    "query": "doctor shouted at me.",
+    "intent_guess": "verbal abuse by doctor",
+    "mentions_nhrc": false,
+    "keywords_present": ["shouted"]
+  },
+  {
+    "query": "hospital not helping me",
+    "intent_guess": "refusal to help / denial of care",
+    "mentions_nhrc": false,
+    "keywords_present": ["not helping"]
+  }
+]

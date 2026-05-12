@@ -39,7 +39,6 @@ class IntentClassifier:
         "patient_safety",              # NHRC-9
 
         # 🟡 Consent & education
-        "patient_education",           # NHRC-16
         "informed_consent",            # NHRC-4
         
         # 🟢 Generic fallback
@@ -96,20 +95,23 @@ class IntentClassifier:
                 "description": "Right to information about diagnosis and treatment",
                 "category": "access_information"
             },
+            
             "access_medical_records": {
-                "keywords": ["report", "record", "document", "medical file", "test result", "discharge summary", "case papers"],
-                "verbs": ["get", "access", "obtain", "want", "need", "request", "copy"],
+                "keywords": ["report", "reports", "record", "records", "document", "medical file", "test result", "discharge summary", "case papers", "shouted", "shout", "access", "medical records", "my records", "patient records", "hospital records", "file"],
+                "verbs": ["get", "access", "obtain", "want", "need", "request", "copy", "explain"],
                 "negative_patterns": ["refused to give", "denied access", "won't provide", "not giving"],
                 "description": "Right to access medical records and reports",
                 "category": "access_information"
             },
+            
             "emergency_care": {
-                "keywords": ["emergency", "urgent", "accident", "critical", "immediate", "life threatening"],
+                "keywords": ["emergency", "urgent", "accident", "critical", "immediate", "life threatening", "heart attack", "poison", "swallowed", "bleeding", "unconscious", "severe"],
                 "verbs": ["refused", "denied", "asked for payment", "demand money"],
                 "negative_patterns": ["refused emergency", "asked for advance", "demanded payment", "turned away"],
                 "description": "Right to emergency medical care without advance payment",
                 "category": "quality_safety"
             },
+            
             "informed_consent": {
                 "keywords": ["consent", "permission", "agree", "explain", "procedure", "surgery", "operation", "risk"],
                 "verbs": ["force", "pressure", "make", "without asking", "didn't tell", "performed without"],
@@ -117,13 +119,15 @@ class IntentClassifier:
                 "description": "Right to informed consent before procedures",
                 "category": "consent_autonomy"
             },
+            
             "privacy_confidentiality": {
-                "keywords": ["privacy", "confidential", "secret", "information", "data", "details", "told others"],
-                "verbs": ["share", "disclose", "tell", "leak", "reveal", "expose"],
-                "negative_patterns": ["shared my information", "told others", "breached privacy", "leaked"],
+                "keywords": ["privacy", "confidential", "secret", "information", "data", "details", "told others", "discussed", "corridor", "overheard", "HIV status", "status", "medical condition"],
+                "verbs": ["share", "disclose", "tell", "leak", "reveal", "expose", "discuss"],
+                "negative_patterns": ["shared my information", "told others", "breached privacy", "leaked", "discussed in corridor", "everyone heard"],
                 "description": "Right to privacy and confidentiality",
                 "category": "privacy_confidentiality"
             },
+            
             "dignity_respect": {
                 "keywords": ["dignity", "respect", "female attendant", "examination", "male doctor"],
                 "verbs": ["disrespect", "humiliate", "embarrass", "examine without"],
@@ -131,6 +135,7 @@ class IntentClassifier:
                 "description": "Right to dignity and privacy during examination",
                 "category": "privacy_confidentiality"
             },
+            
             "second_opinion": {
                 "keywords": ["second opinion", "another doctor", "consult", "different doctor", "get opinion"],
                 "verbs": ["refused", "denied", "prevent", "stop", "not allow"],
@@ -138,6 +143,7 @@ class IntentClassifier:
                 "description": "Right to seek second opinion",
                 "category": "quality_safety"
             },
+            
             "transparent_pricing": {
                 "keywords": ["bill", "cost", "price", "charge", "expensive", "payment", "money", "rates", "overcharge"],
                 "verbs": ["overcharge", "overbill", "cheat", "fraud", "scam", "hide costs"],
@@ -145,6 +151,7 @@ class IntentClassifier:
                 "description": "Right to transparent pricing and itemized bills",
                 "category": "access_information"
             },
+            
             "choice_of_source": {
                 "keywords": [
                     "pharmacy", "chemist", "medicine",
@@ -165,20 +172,23 @@ class IntentClassifier:
                 "description": "Right to choose pharmacy or diagnostic center",
                 "category": "consent_autonomy"
             },
+            
             "non_discrimination": {
-                "keywords": ["HIV status", "hiv", "AIDS", "aids", "positive", "disease based", "illness based", "discrimination","discriminated", "unequal", "unfair", "biased", "bias", "treated differently", "denied because", "refused because", "discriminate", "HIV", "caste", "religion", "gender", "age", "sexual", "poor", "rich"],
-                "verbs": ["discriminate", "treat differently", "refuse because", "deny because"],
-                "negative_patterns": ["denied care due to HIV", "refused treatment due to HIV", "because of HIV", "because of my illness", "because of my disease", "refused treatment because", "denied care because", "discriminated against", "treated unfairly", "discriminated against", "treated differently", "refused because"],
+                "keywords": ["HIV status", "hiv", "AIDS", "aids", "positive", "disease based", "illness based", "discrimination", "discriminated", "unequal", "unfair", "biased", "bias", "treated differently", "denied because", "refused because", "discriminate", "HIV", "caste", "religion", "gender", "age", "sexual", "poor", "rich", "Muslim", "Hindu", "Christian", "Sikh", "religious", "religion"],
+                "verbs": ["discriminate", "treat differently", "refuse because", "deny because", "won't treat"],
+                "negative_patterns": ["denied care due to HIV", "refused treatment due to HIV", "because of HIV", "because of my illness", "because of my disease", "refused treatment because", "denied care because", "discriminated against", "treated unfairly", "refused because", "won't treat Muslims", "won't treat Hindus"],
                 "description": "Right to non-discrimination in treatment",
                 "category": "quality_safety"
             },
+            
             "medical_negligence": {
-                "keywords": ["negligence", "mistake", "error", "wrong treatment", "complication", "infection", "dirty"],
+                "keywords": ["negligence", "mistake", "error", "wrong treatment", "complication", "infection", "dirty", "drunk", "intoxicated", "alcohol"],
                 "verbs": ["neglect", "mistreat", "harm", "injure", "cause"],
-                "negative_patterns": ["negligent", "made mistake", "caused infection", "unsafe"],
+                "negative_patterns": ["negligent", "made mistake", "caused infection", "unsafe", "was drunk", "under influence"],
                 "description": "Right to safety and quality care",
                 "category": "quality_safety"
             },
+            
             "proper_referral": {
                 "keywords": [
                     "referral", "transfer", "sent to another hospital",
@@ -196,6 +206,7 @@ class IntentClassifier:
                 "description": "Right to proper referral and continuity of care",
                 "category": "quality_safety"
             },
+            
             "pharmacy_choice": {
                 "keywords": ["pharmacy", "medicine", "chemist", "buy medicines", "purchase drugs"],
                 "verbs": ["force", "pressure", "insist", "make buy"],
@@ -203,6 +214,7 @@ class IntentClassifier:
                 "description": "Right to choose pharmacy for medicines",
                 "category": "consent_autonomy"
             },
+            
             "referral_issues": {
                 "keywords": ["referral", "transfer", "send to", "recommend", "specialist", "kickback", "commission"],
                 "verbs": ["force", "pressure", "refer unnecessarily", "get commission"],
@@ -210,6 +222,7 @@ class IntentClassifier:
                 "description": "Right to proper referral without commercial influence",
                 "category": "quality_safety"
             },
+            
             "clinical_trial_rights": {
                 "keywords": ["clinical trial", "research", "experiment", "study participant", "trial"],
                 "verbs": ["force", "pressure", "mislead", "not explain"],
@@ -217,6 +230,7 @@ class IntentClassifier:
                 "description": "Rights of clinical trial participants",
                 "category": "consent_autonomy"
             },
+            
             "trial_compensation": {
                 "keywords": [
                     "adverse effect", "side effect", "injury",
@@ -232,9 +246,10 @@ class IntentClassifier:
                 "description": "Compensation and care for injuries during clinical trials",
                 "category": "consent_autonomy"
             },
+            
             "treatment_choice": {
                 "keywords": [
-                    "against meical advice",
+                    "against medical advice",
                     "alternative",
                     "choice",
                     "offer",
@@ -258,6 +273,7 @@ class IntentClassifier:
                 "description": "Right to choose between available treatment options",
                 "category": "autonomy"
             },
+            
             "patient_education": {
                 "keywords": [
                     "education",
@@ -288,13 +304,15 @@ class IntentClassifier:
                 "description": "Right to patient education under NHRC-16",
                 "category": "access_information"
             },
+            
             "patient_safety": {
                 "keywords": ["unsafe", "infection", "hygiene", "dirty ward", "medical error", "unsafe care", "poor safety", "hospital negligence"],
                 "verbs": ["infected", "neglected", "ignored safety", "used unclean equipment"],
-                "negative_patterns": ["caught infection in hospital", "unsafe treatment","poor quality care"],
+                "negative_patterns": ["caught infection in hospital", "unsafe treatment", "poor quality care"],
                 "description": "Right to safe and quality medical care",
                 "category": "quality_safety"
             },
+            
             "grievance_redressal": {
                 "keywords": ["mechanism", "complain", "complaint", "grievance", "redressal", "feedback", "lodge complaint"],
                 "verbs": ["file", "lodge", "refuse to accept", "ignore", "not respond", "dismiss"],
@@ -305,12 +323,18 @@ class IntentClassifier:
             
             # IMC-specific intents
             "doctor_misbehavior": {
-                "keywords": ["abuse", "shout", "rude", "disrespectful", "yell", "insult", "arrogant", "unprofessional"],
-                "verbs": ["misbehave", "abused", "shouted", "insulted", "humiliated"],
-                "negative_patterns": ["shouted at me", "abused me", "was rude", "disrespected"],
+                "keywords": [
+                    "abuse", "shout", "shouted", "rude", "disrespectful", "yell", "yelled", "insult", "insulted",
+                    "arrogant", "unprofessional", "misconduct", "misbehaviour",
+                    "misbehavior", "bad behavior", "unethical", "improper", "called names", "shouting",
+                    "drunk", "intoxicated", "alcohol", "under influence"
+                ],
+                "verbs": ["misbehave", "abused", "shouted", "insulted", "humiliated", "yell", "shout"],
+                "negative_patterns": ["shouted at me", "abused me", "was rude", "disrespected", "called me names", "yelled at me", "was drunk", "under influence"],
                 "description": "Doctor's professional misconduct",
                 "category": "quality_safety"
             },
+            
             "doctor_absenteeism": {
                 "keywords": ["absent", "not available", "not present", "away", "on leave", "duty hours"],
                 "verbs": ["absent", "away", "not come", "miss"],
@@ -318,6 +342,7 @@ class IntentClassifier:
                 "description": "Doctor absenteeism during duty hours",
                 "category": "quality_safety"
             },
+            
             "detained_for_payment": {
                 "keywords": [
                     "detain", "detained", "discharge", "not discharging",
@@ -340,17 +365,19 @@ class IntentClassifier:
 
             "body_withheld": {
                 "keywords": [
-                    "dead body", "body", "mortuary", "released body", "hand over body"
+                    "dead body", "body", "mortuary", "released body", "hand over body", "father's body", "mother's body"
                 ],
                 "verbs": ["withhold", "refuse", "detain"],
                 "negative_patterns": [
                     "not giving body",
                     "body withheld for payment",
-                    "asked to pay before body"
+                    "asked to pay before body",
+                    "not releasing body"
                 ],
                 "description": "Dead body withheld due to payment dispute",
                 "category": "access_information"
             },
+            
             "advertising_issues": {
                 "keywords": ["advertise", "publicity", "claim", "boast", "self promotion", "sign board"],
                 "verbs": ["advertise", "claim", "boast", "promote"],
@@ -358,6 +385,7 @@ class IntentClassifier:
                 "description": "Unethical advertising by doctors",
                 "category": "professional_conduct"
             },
+            
             "kickback_commission": {
                 "keywords": ["commission", "kickback", "referral money"],
                 "verbs": ["received commission", "paid commission"],
@@ -365,20 +393,23 @@ class IntentClassifier:
                 "description": "Receiving commissions or kickbacks",
                 "category": "professional_conduct"
             },
+            
             "euthanasia": {
-                "keywords": ["euthanasia", "mercy killing", "end life", "withdraw treatment", "life support"],
+                "keywords": ["euthanasia", "mercy killing", "life support", "brain dead", "brain death"], #"end life" # "withdraw treatment"
                 "verbs": ["perform", "practice", "do", "carry out"],
                 "negative_patterns": ["performed euthanasia", "ended life"],
                 "description": "Issues related to euthanasia",
                 "category": "professional_conduct"
             },
+            
             "sex_determination": {
-                "keywords": ["sex determination", "female foeticide", "gender test", "abortion", "foetus"],
+                "keywords": ["sex determination", "female foeticide", "gender test", "foetus", "fetus", "gender selection"],
                 "verbs": ["perform", "do", "conduct", "carry out"],
                 "negative_patterns": ["did sex determination", "female foeticide"],
                 "description": "Illegal sex determination tests",
                 "category": "professional_conduct"
             },
+            
             "prescription_issues": {
                 "keywords": ["prescription", "drug", "medicine"],
                 "verbs": ["illegal prescription", "wrong prescription"],
@@ -398,34 +429,55 @@ class IntentClassifier:
     def classify(self, query: str) -> List[Tuple[str, float]]:
         """
         Classify query into one or more intents
-        Returns list of (intent, confidence_score)
+        Returns:
+            - sorted_intents: List[(intent, confidence)]
+            - matched_indicators: Dict[intent → matched signals]
         """
-        # 🔒 HARD LEGAL OVERRIDE: Commercial referral beats choice-of-source
+        
         cleaned_query = self.clean_query(query)
-        words = cleaned_query.split()
+        
+        # DEBUG PRINT
+        print(f"DEBUG: Original query: '{query}'")
+        print(f"DEBUG: Cleaned query: '{cleaned_query}'")
         
         scores = {}
+        matched_indicators = {}
         
         for intent_name, intent_data in self.intents.items():
             score = 0
+            
+            matched_keywords = []
+            matched_verbs = []
+            matched_patterns = []
             
             # Check for keywords
             for keyword in intent_data["keywords"]:
                 if keyword in cleaned_query:
                     score += 2
+                    matched_keywords.append(keyword)
             
             # Check for negative patterns (strong indicator)
             for pattern in intent_data["negative_patterns"]:
                 if pattern in cleaned_query:
                     score += 3
+                    matched_patterns.append(pattern)
             
             # Check for verbs
             for verb in intent_data.get("verbs", []):
                 if verb in cleaned_query:
                     score += 1
+                    matched_verbs.append(verb)
             
             if score > 0:
                 scores[intent_name] = min(score / 6.0, 1.0)  # Normalize to 0-1
+                
+                print(f"DEBUG: {intent_name} matched with score={score}, confidence={scores[intent_name]}")
+                    
+                matched_indicators[intent_name] = {
+                    "keywords": matched_keywords,
+                    "verbs": matched_verbs,
+                    "negative_patterns": matched_patterns
+                }
         
         # Sort by confidence score
         def priority_key(item):
@@ -439,34 +491,9 @@ class IntentClassifier:
         # Sort by NHRC priority + confidence
         sorted_intents = sorted(scores.items(), key=priority_key)
 
-        # 🔒 HARD LEGAL OVERRIDES (Statutory hierarchy)
-        intent_names = [i[0] for i in sorted_intents]
-        
-        # 🔒 HARD LEGAL OVERRIDE — NHRC-15 beats pricing & records
-        if any(i in intent_names for i in {"detained_for_payment", "body_withheld"}):
-            sorted_intents.sort(
-                key=lambda x: 0 if x[0] in {"detained_for_payment", "body_withheld"} else 1
-            )
-
-        # NHRC-13 (Clinical Trials) highest
-        if "clinical_trial_rights" in intent_names:
-            sorted_intents.sort(
-                key=lambda x: 0 if x[0] == "clinical_trial_rights" else 1
-            )
-
-        # NHRC-14 (Biomedical Research) next
-        elif any(i in intent_names for i in {"biomedical_research", "research_rights"}):
-            sorted_intents.sort(
-                key=lambda x: 0 if x[0] in {"biomedical_research", "research_rights"} else 1
-            )
-
-        # NHRC-12 beats NHRC-11
-        elif any(i in intent_names for i in {"kickback_commission", "referral_issues", "proper_referral"}):
-            sorted_intents.sort(
-                key=lambda x: 0 if x[0] in {"kickback_commission", "referral_issues", "proper_referral"} else 1
-            )
-
-        return sorted_intents[:3]
+        # Return top 3 intents
+        return sorted_intents, matched_indicators  # Return ALL, let assembler filter
+    
 
     def get_intent_details(self, intent_name: str) -> Dict:
         """Get detailed information about a specific intent"""
@@ -482,28 +509,32 @@ class IntentClassifier:
 def test_classifier():
     classifier = IntentClassifier()
     
+    # Critical test cases that were failing
     test_queries = [
-        "I want my medical reports but doctor refused to give",
-        "Doctor performed surgery without my consent",
-        "The doctor shouted at me and was very rude",
-        "Hospital shared my information with others",
-        "I was overcharged for my treatment",
-        "They refused emergency treatment asking for advance payment",
-        "Doctor forced me to buy medicines from hospital pharmacy",
-        "Hospital detained me for not paying bill",
-        "Doctor didn't explain risks before surgery",
-        "They discriminated against me because of my HIV status"
+        ("Doctor shouted at my mother and called her names", "doctor_misbehavior"),
+        ("Surgeon was drunk during operation", "doctor_misbehavior"),
+        ("Doctor said he won't treat Muslims", "non_discrimination"),
+        ("Hospital refused treatment because I am HIV positive", "non_discrimination"),
+        ("Hospital staff discussed my abortion in the corridor", "privacy_confidentiality"),
+        ("Doctor told my relatives about my HIV status", "privacy_confidentiality"),
+        ("My father had a heart attack, hospital refusing treatment", "emergency_care"),
+        ("Doctor refused to give my discharge summary", "access_medical_records"),
     ]
     
-    print("Testing Intent Classifier:")
+    print("Testing Intent Classifier (Critical Fixes):")
     print("=" * 70)
     
-    for query in test_queries:
+    for query, expected_intent in test_queries:
         print(f"\nQuery: '{query}'")
-        intents = classifier.classify(query)
-        for intent, confidence in intents:
-            details = classifier.get_intent_details(intent)
-            print(f"  - {intent}: {confidence:.2f} ({details['description']})")
+        intents, indicators = classifier.classify(query)
+        matched_intent_names = [i[0] for i in intents]
+        
+        if expected_intent in matched_intent_names:
+            print(f"  ✓ PASS - Found {expected_intent}")
+        else:
+            print(f"  ✗ FAIL - Expected {expected_intent}, got {matched_intent_names}")
+        
+        print(f"  Top intents: {matched_intent_names}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+.env
+
+# Git
+.git/
+.gitignore
+
+# Tests and Coverage
+.pytest_cache/
+htmlcov/
+.coverage
+.tox/
+coverage.xml
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+Evaluation/
+coverage_comparison.png
+failure_comparison.png
+grounding_comparison.png
+intent_comparison.png
+tests_metrices/test_runner.py
+config/secrets/

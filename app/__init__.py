@@ -19,6 +19,21 @@ from google.oauth2 import service_account
 
 def create_app():
     app = Flask(__name__)
+    
+    # Load configuration
+    env = os.environ.get('FLASK_ENV', 'production')
+    if env == 'development':
+        app.config.from_object('config.environments.DevelopmentConfig')
+    elif env == 'testing':
+        app.config.from_object('config.environments.TestingConfig')
+    else:
+        app.config.from_object('config.environments.ProductionConfig')
+
+    # ─────────────────────────────────────────────
+    # Academic Explainer Flags (INTERNAL ONLY)
+    # ─────────────────────────────────────────────
+    app.config['ACADEMIC_EXPLAINER_ENABLED'] = True
+
     app.secret_key = os.environ.get('SECRET_KEY', 'pc-mlra-secret-key-2026')
     CORS(app)
     
@@ -33,11 +48,12 @@ def create_app():
     # Initialize PC-MLRA system
     pc_mlra = None
     try:
-        from src.main import PCMLRAConsole
-        pc_mlra = PCMLRAConsole()
-        app.logger.info('✅ PC-MLRA system initialized')
+        from src.response_assembler import ResponseAssembler
+        pc_mlra = ResponseAssembler()
+
+        app.logger.info('✅ ResponseAssembler loaded successfully')
     except Exception as e:
-        app.logger.warning(f'⚠️ PC-MLRA core not available: {e}')
+        app.logger.warning("❌ Failed to load ResponseAssembler", exc_info=True)
         pc_mlra = None
     
     # Initialize Google Sheets
@@ -124,8 +140,11 @@ def create_app():
         if 'session_id' not in session:
             session['session_id'] = str(uuid.uuid4())
             chat_histories[session['session_id']] = []
-        return render_template('chat.html')
-    
+        return render_template(
+            'chat.html',
+            ACADEMIC_EXPLAINER_ENABLED=app.config['ACADEMIC_EXPLAINER_ENABLED']
+        )
+
     @app.route('/api/health')
     def health_check():
         return jsonify({
@@ -159,88 +178,114 @@ def create_app():
             return jsonify({'error': str(e)}), 500
     
     @app.route('/api/query', methods=['POST'])
+    
     def process_query():
         try:
             data = request.get_json()
             if not data or 'query' not in data:
                 return jsonify({'error': 'No query provided'}), 400
-            
+
             query_text = data['query'].strip()
             if not query_text:
                 return jsonify({'error': 'Query cannot be empty'}), 400
-            
-            # Get or create session
+
+            # Session handling
             if 'session_id' not in session:
                 session['session_id'] = str(uuid.uuid4())
                 chat_histories[session['session_id']] = []
-            
+
             session_id = session['session_id']
-            
-            # Process query
-            response_data = {}
+
             intent = "unknown"
-            
+
+            # -------------------------------
+            # Core PC-MLRA processing
+            # -------------------------------
             if pc_mlra is not None:
                 try:
-                    result = pc_mlra.process_query(query_text)
-                    if result:
-                        if isinstance(result, dict):
-                            response_data = result
-                        else:
-                            response_data = {'response': str(result), 'intent': 'general_query'}
-                        intent = response_data.get('intent', 'unknown')
-                    else:
-                        response_data = {'response': "I couldn't process your query. Please try rephrasing.", 'intent': 'unknown'}
+                    response_text, proof_trace = pc_mlra.generate_response(
+                        query_text,
+                        show_proof=True
+                    )
+
+                    intent = (
+                        proof_trace.matched_intents[0][0]
+                        if proof_trace.matched_intents
+                        else "unknown"
+                    )
+
+                    response_data = {
+                        'response': response_text,
+                        'intent': intent,
+                        'academic_trace': proof_trace.to_dict()
+                    }
+
                 except Exception as e:
-                    response_data = {'response': f'System error: {str(e)}', 'intent': 'error'}
+                    app.logger.error(f'PC-MLRA processing error: {e}')
+                    response_text = "System error occurred while processing your query."
+                    response_data = {
+                        'response': response_text,
+                        'intent': 'error',
+                        'academic_trace': None
+                    }
+
             else:
-                demo_response = demo_process_query(query_text)
-                response_data = {'response': demo_response, 'intent': 'demo_mode'}
+                response_text = demo_process_query(query_text)
+                response_data = {
+                    'response': response_text,
+                    'intent': 'demo_mode',
+                    'academic_trace': None
+                }
                 intent = 'demo_mode'
-            
-            # Log to Google Sheets
+
+            # -------------------------------
+            # Logging
+            # -------------------------------
             try:
-                log_result = log_to_google_sheets(app, 
+                log_to_google_sheets(
+                    app,
                     query=query_text,
-                    response=response_data.get('response', ''),
+                    response=response_text,
                     intent=intent,
                     user_ip=request.remote_addr,
                     session_id=session_id
                 )
-                if log_result['status'] == 'success':
-                    app.logger.info('✅ Query logged to Google Sheets')
             except Exception as e:
-                app.logger.error(f'⚠️ Google Sheets logging error: {e}')
-            
-            # Store in chat history
+                app.logger.error(f'Google Sheets logging error: {e}')
+
+            # -------------------------------
+            # Store chat history
+            # -------------------------------
             timestamp = datetime.now().isoformat()
-            chat_entry = {
+            if session_id not in chat_histories:
+                chat_histories[session_id] = []
+
+            chat_histories[session_id].append({
                 'timestamp': timestamp,
                 'query': query_text,
-                'response': response_data.get('response', ''),
+                'response': response_text,
                 'intent': intent
-            }
-            
-            if session_id in chat_histories:
-                chat_histories[session_id].append(chat_entry)
-                if len(chat_histories[session_id]) > 50:
-                    chat_histories[session_id] = chat_histories[session_id][-50:]
-            
-            # Return response
+            })
+
+
+            # -------------------------------
+            # API response
+            # -------------------------------
             return jsonify({
                 'status': 'success',
                 'query': query_text,
-                'response': response_data.get('response', ''),
-                'response_html': format_response_for_html(response_data.get('response', '')),
+                'response': response_text,
+                'response_html': format_response_for_html(response_text),
                 'intent': intent,
+                'academic_trace': response_data.get('academic_trace'),
                 'timestamp': timestamp,
                 'session_id': session_id
             })
-            
+
         except Exception as e:
-            app.logger.error(f'Error in /api/query: {e}')
+            app.logger.error(f'Error in /api/query: {e}', exc_info=True)
             return jsonify({'error': 'Internal server error'}), 500
-    
+
     @app.route('/api/examples')
     def get_example_queries():
         examples = [

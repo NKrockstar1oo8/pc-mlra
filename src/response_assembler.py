@@ -23,17 +23,6 @@ EMERGENCY_KEYWORDS = {
     "immediate"
 }
 
-ABUSE_KEYWORDS = {
-    "abuse",
-    "abusing",
-    "shouted",
-    "yelled",
-    "threatened",
-    "rude",
-    "misbehaved",
-    "harassed",
-    "insulted"
-}
 @dataclass
 class ProofTrace:
     """Tracks the proof chain for a response"""
@@ -42,11 +31,14 @@ class ProofTrace:
     matched_clauses: List[Dict]
     template_used: str
     variables_used: List[str]
+    normalized_query: str
+
     
     def to_dict(self) -> Dict:
         """Convert to dictionary for display"""
         return {
             "query": self.query,
+            "normalized_query": self.normalized_query,
             "matched_intents": [
                 {"intent": intent, "confidence": confidence}
                 for intent, confidence in self.matched_intents
@@ -62,7 +54,7 @@ class ProofTrace:
             "template_used": self.template_used,
             "variables_filled": len(self.variables_used)
         }
-    
+        
     def format(self) -> str:
         """Format proof trace for display"""
         lines = []
@@ -154,12 +146,27 @@ class ResponseAssembler:
     def select_template(self, intents: List[Tuple[str, float]], clauses: List[Dict]) -> str:
         if not intents or not clauses:
             return "TEMPLATE_NO_MATCH_FOUND"
+        
+        # Get all intent names
+        intent_names = [i[0] for i in intents]
+        
+        # Check for patient_education in ANY of the matched intents
+        if "patient_education" in intent_names:
+            return "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION"
+        
+        # Check for other high-priority intents
+        if "emergency_care" in intent_names:
+            return "TEMPLATE_RIGHT_TO_EMERGENCY_CARE"
 
         top_intent = intents[0][0]
+        
+        ## 🔒 FIX: Check patient_education FIRST before anything else
+       # if top_intent == "patient_education":
+        #    return "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION"
 
-        # NHRC-17 template mapping (precedence handled in classifier)
-        if top_intent in {"grievance_redressal", "how_to_complain", "complaint_procedure"}:
-            return "TEMPLATE_RIGHT_TO_REDRESSAL"
+       # # Map grievance_redressal to existing template (NHRC-17)
+        #if top_intent in {"grievance_redressal", "how_to_complain", "complaint_procedure"}:
+        #    return "TEMPLATE_SINGLE_CLAUSE"
 
         
         # Check for specialized templates based on intent
@@ -170,18 +177,20 @@ class ResponseAssembler:
             "privacy_confidentiality": "TEMPLATE_RIGHT_TO_PRIVACY",
             "right_to_information": "TEMPLATE_RIGHT_TO_INFORMATION",
             "second_opinion": "TEMPLATE_RIGHT_TO_SECOND_OPINION",
-            "patient_education": "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION"  # ✅ REQUIRED
+            "patient_education": "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION",
+            "non_discrimination": "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION",
+            "transparent_pricing": "TEMPLATE_RIGHT_TO_TRANSPARENT_PRICING",
+            "detained_for_payment": "TEMPLATE_RIGHT_TO_DISCHARGE_BODY",
+            "body_withheld": "TEMPLATE_RIGHT_TO_DISCHARGE_BODY",
+            "clinical_trial_rights": "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION",
+            "biomedical_research": "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION",
+            "research_rights": "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION"
         }
 
         if top_intent in specialized_templates:
             return specialized_templates[top_intent]
         
-        # Check number of clauses
-        if len(clauses) == 1:
-            return "TEMPLATE_SINGLE_CLAUSE"
-        elif len(clauses) > 1:
-            return "TEMPLATE_MULTIPLE_CLAUSES"
-        
+        # Default to single clause template
         return "TEMPLATE_SINGLE_CLAUSE"
     
     def prepare_context(self, template_id: str, intents: List[Tuple[str, float]], 
@@ -195,6 +204,7 @@ class ResponseAssembler:
         }
         
         if template_id == "TEMPLATE_SINGLE_CLAUSE" and clauses:
+            # Primary clause (highest priority)
             clause = clauses[0]
             context.update({
                 "title": clause.get("title", ""),
@@ -208,15 +218,10 @@ class ResponseAssembler:
                 "timeframe_note": clause.get("timeframes", {})
             })
             
-        elif template_id == "TEMPLATE_RIGHT_TO_REDRESSAL" and clauses:
-            clause = clauses[0]
-            context.update({
-                "citation_format": clause.get("citation_format", ""),
-                "paraphrase": clause.get("paraphrase", ""),
-                "rights_bulleted": self.format_bullets(clause.get("rights", [])),
-                "obligations_bulleted": self.format_bullets(clause.get("obligations", [])),
-                "response_time": clause.get("response_time", "")
-            })
+            # Add note about additional relevant rights if present
+            if len(clauses) > 1:
+                additional = [c.get("title", "") for c in clauses[1:3]]  # Max 2 additional
+                context["additional_rights"] = additional
             
         elif template_id == "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION" and clauses:
             clause = clauses[0]
@@ -258,7 +263,6 @@ class ResponseAssembler:
             })
             
         elif template_id == "TEMPLATE_RIGHT_TO_EMERGENCY_CARE" and clauses:
-            # FIX: Find emergency care clause
             emergency_clause = next((c for c in clauses if c["id"] == "NHRC-3"), None)
             if not emergency_clause:
                 emergency_clause = clauses[0]
@@ -277,14 +281,74 @@ class ResponseAssembler:
                 "citation_format": second_opinion_clause.get("citation_format", "")
             })
 
-        elif template_id == "TEMPLATE_MULTIPLE_CLAUSES" and clauses:
-            clauses_list = self.template_engine.generate_multiple_clauses_list(clauses)
-            summary_text = f"Based on your query, {len(clauses)} relevant rights were found."
+        elif template_id == "TEMPLATE_RIGHT_TO_NON_DISCRIMINATION" and clauses:
+            non_discrimination_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-8"), None
+            )
+            if not non_discrimination_clause:
+                non_discrimination_clause = clauses[0]
+
             context.update({
-                "clauses_list": clauses_list,
-                "summary_text": summary_text
+                "citation_format": non_discrimination_clause.get("citation_format", "")
             })
-        
+
+        elif template_id == "TEMPLATE_RIGHT_TO_TRANSPARENT_PRICING" and clauses:
+            pricing_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-7"), None
+            )
+            if not pricing_clause:
+                pricing_clause = clauses[0]
+
+            context.update({
+                "citation_format": pricing_clause.get("citation_format", "")
+            })
+
+        elif template_id == "TEMPLATE_RIGHT_TO_DISCHARGE_BODY" and clauses:
+            discharge_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-15"), None
+            )
+            if not discharge_clause:
+                discharge_clause = clauses[0]
+            context.update({
+                "citation_format": discharge_clause.get("citation_format", ""),
+                "paraphrase": discharge_clause.get("paraphrase", "")
+            })
+
+        elif template_id == "TEMPLATE_RIGHT_TO_CLINICAL_TRIAL_PROTECTION" and clauses:
+            trial_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-13"), None
+            )
+            if not trial_clause:
+                trial_clause = clauses[0]
+            context.update({
+                "citation_format": trial_clause.get("citation_format", ""),
+                "paraphrase": trial_clause.get("paraphrase", ""),
+                "rights_bulleted": self.format_bullets(trial_clause.get("rights", [])),
+                "obligations_bulleted": self.format_bullets(trial_clause.get("obligations", [])),
+                "legal_references_bulleted": trial_clause.get("legal_references", [])
+            })
+
+        elif template_id == "TEMPLATE_RIGHT_TO_BIOMEDICAL_RESEARCH_PROTECTION" and clauses:
+            research_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-14"), None
+            )
+            if not research_clause:
+                research_clause = clauses[0]
+            context.update({
+                "citation_format": research_clause.get("citation_format", ""),
+                "paraphrase": research_clause.get("paraphrase", "")
+            })
+
+        elif template_id == "TEMPLATE_RIGHT_TO_INFORMED_CONSENT" and clauses:
+            consent_clause = next(
+                (c for c in clauses if c["id"] == "NHRC-4"), None
+            )
+            if not consent_clause:
+                consent_clause = clauses[0]
+            context.update({
+                "citation_format": consent_clause.get("citation_format", "")
+            })
+
         elif template_id == "TEMPLATE_NO_MATCH_FOUND":
             # Get some general rights for suggestions
             general_rights = self.kb.get_clauses_by_category("access_information")
@@ -293,28 +357,42 @@ class ResponseAssembler:
                 "user_query": query,
                 "related_rights_list": self.format_bullets(related_rights)
             })
-        elif template_id == "TEMPLATE_RIGHT_TO_DISCHARGE_BODY" and clauses:
-            discharge_clause = clauses[0]
-            context.update({
-                "citation_format": discharge_clause.get("citation_format", "")
-            })
+            
         return context
     
     def generate_response(self, user_query: str, show_proof: bool = True) -> Tuple[str, ProofTrace]:
         """Generate complete response for user query"""
         # Clean query
         cleaned_query = self.clean_query(user_query)
-        
-        query_lower = cleaned_query.lower()
+        normalized_query = cleaned_query
 
-        
-        ethics_signal = any(
-            word in query_lower for word in ABUSE_KEYWORDS
-        )
         # Step 1: Intent classification
-        intents = self.classifier.classify(cleaned_query)
+        intents, matched_indicators = self.classifier.classify(cleaned_query)
         
-        # 🚑 EMERGENCY HARD GATE
+        # Filter out low confidence matches (noise)
+        intents = [(i, s) for i, s in intents if s >= 0.3]
+        intents = intents[:3]
+
+        if not intents:
+            # Return no match template
+            template_id = "TEMPLATE_NO_MATCH_FOUND"
+            context = self.prepare_context(template_id, [], [], cleaned_query)
+            response = self.template_engine.fill_template(template_id, context)
+            proof_trace = ProofTrace(
+                query=user_query,
+                normalized_query=normalized_query,
+                matched_intents=[],
+                matched_clauses=[],
+                template_used=template_id,
+                variables_used=[]
+            )
+            disclaimer = self.template_engine.fill_template("TEMPLATE_DISCLAIMER", context)
+            response = f"{response}\n\n{disclaimer}"
+            if show_proof:
+                response += f"\n\n{proof_trace.format()}"
+            return response, proof_trace
+        
+        # 🚑 EMERGENCY HARD GATE - Remove emergency intent if no emergency signal
         intents = [
             (intent, score)
             for intent, score in intents
@@ -323,34 +401,29 @@ class ResponseAssembler:
                 and not self.has_emergency_signal(cleaned_query)
             )
         ]
-        intent_names = [intent for intent, _ in intents]
         
-        # 🔒 ACCESS TO RECORDS HAS PRIORITY OVER SECOND OPINION
-        if "access_medical_records" in intent_names:
-            intents = [(i, s) for i, s in intents if i == "access_medical_records"]
+        # 🔒 FIX: Boost emergency_care to top if present with high confidence
+        emergency_intents = [(i, s) for i, s in intents if i == "emergency_care" and s >= 0.8]
+        other_intents = [(i, s) for i, s in intents if i != "emergency_care"]
+        
+        if emergency_intents:
+            intents = emergency_intents + other_intents
+        
+        # Keep top 3
+        intents = intents[:3]
 
-        # 🔒 NHRC-16 HARD OVERRIDE
-        if "patient_education" in intent_names:
-            intents = [(i, s) for i, s in intents if i == "patient_education"]
-
-        # 🔒 NHRC-17 HARD OVERRIDE
-        elif "grievance_redressal" in intent_names:
-            intents = [(i, s) for i, s in intents if i == "grievance_redressal"]
-
-        # 🔒 NHRC-8 HARD OVERRIDE
-        elif "non_discrimination" in intent_names:
-            intents = [(i, s) for i, s in intents if i == "non_discrimination"]
-
-        # Step 2: Knowledge retrieval
+        # Step 2: Knowledge retrieval - collect clauses from ALL matched intents
         matched_clauses = []
-
+        seen_clause_ids = set()
+        
         for intent, _ in intents:
             clauses = self.kb.get_clauses_by_intent(intent)
-            if clauses:
-                matched_clauses=clauses
-                break
-            
-        # Remove duplicates
+            for clause in clauses:
+                if clause["id"] not in seen_clause_ids:
+                    seen_clause_ids.add(clause["id"])
+                    matched_clauses.append(clause)
+        
+        # Remove duplicates while preserving order
         unique_clauses = []
         seen_ids = set()
         for clause in matched_clauses:
@@ -358,50 +431,39 @@ class ResponseAssembler:
                 seen_ids.add(clause["id"])
                 unique_clauses.append(clause)
         
+        # Limit to prevent flooding (max 3 clauses)
+        unique_clauses = unique_clauses[:3]
+        
         # Step 3: Template selection
         template_id = self.select_template(intents, unique_clauses)
 
-        # Identify top intent safely
-        top_intent = intents[0][0] if intents else None
-
-        terminal_templates = {
-            "TEMPLATE_RIGHT_TO_DISCHARGE_BODY",
-            "TEMPLATE_RIGHT_TO_RECORDS",
-            "TEMPLATE_RIGHT_TO_INFORMED_CONSENT",
-            "TEMPLATE_RIGHT_TO_EMERGENCY_CARE",
-            "TEMPLATE_RIGHT_TO_PRIVACY",
-            "TEMPLATE_RIGHT_TO_INFORMATION",
-            "TEMPLATE_RIGHT_TO_SECOND_OPINION",
-            "TEMPLATE_RIGHT_TO_PATIENT_EDUCATION",
-            "TEMPLATE_RIGHT_TO_REDRESSAL",
-            "TEMPLATE_SINGLE_CLAUSE"
-        }
-
-        # 🔒 NHRC-15 hard override (absolute)
-        if top_intent in {"detained_for_payment", "body_withheld"}:
-            template_id = "TEMPLATE_RIGHT_TO_DISCHARGE_BODY"
-
-        # 🔒 Terminal template restriction (once)
-        if template_id in terminal_templates and unique_clauses:
-            unique_clauses = [unique_clauses[0]]
-
         # Step 4: Context preparation
         context = self.prepare_context(template_id, intents, unique_clauses, cleaned_query)
+        context["matched_indicators"] = matched_indicators
         context["show_proof_trace"] = show_proof
         
         # Step 5: Template filling
         response = self.template_engine.fill_template(template_id, context)
         
-        # Step 6: Append professional conduct awareness (with IMC citations) if applicable
+        # Step 6: Add additional rights note if multiple clauses exist
+        if len(unique_clauses) > 1 and "additional_rights" in context:
+            additional_note = "\n\n**Also relevant to your situation:**\n"
+            for title in context["additional_rights"]:
+                additional_note += f"• {title}\n"
+            response = response + additional_note
+        
+        # Step 7: Ethics awareness detection - based on INTENT only
         misconduct_intents = {
             "doctor_misbehavior",
             "kickback_commission",
             "advertising_issues",
             "prescription_issues",
-            "doctor_absenteeism"
+            "doctor_absenteeism",
         }
-
-        detected_misconduct = ethics_signal
+        
+        detected_misconduct = any(
+            intent in misconduct_intents for intent, _ in intents
+        )
 
         if detected_misconduct:
             bridge_note = (
@@ -427,20 +489,21 @@ class ResponseAssembler:
             )
             response = f"{response}{bridge_note}{ethics_notice}"
             
-        # Step 7: Add disclaimer
+        # Step 8: Add disclaimer
         disclaimer = self.template_engine.fill_template("TEMPLATE_DISCLAIMER", context)
         response = f"{response}\n\n{disclaimer}"
         
-        # Step 8: Create proof trace
+        # Step 9: Create proof trace
         proof_trace = ProofTrace(
-            query=cleaned_query,
+            query=user_query,
+            normalized_query=normalized_query,
             matched_intents=intents,
             matched_clauses=unique_clauses,
             template_used=template_id,
             variables_used=list(context.keys())
         )
         
-        # Step 9: Add proof trace if requested
+        # Step 10: Add proof trace if requested
         if show_proof:
             proof_section = f"\n\n{proof_trace.format()}"
             response += proof_section
