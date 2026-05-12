@@ -98,3 +98,12 @@ deploy.log
 ########################
 instance/
 .webassets-cache
+
+########################
+# Unnecessary / Test files
+########################
+Evaluation/
+tests_metrices/
+experiments/
+extensive_test_final.py
+*.png
